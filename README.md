@@ -4,9 +4,13 @@
 
 
 
-[Structure](#structure-du-cours-4tc-csc)|
-[Bases](#bases-de-la-crypto)|
-[Maths](#maths-pour-la-crypto)|
+[Structure](#structure-du-cours-4tc-csc) |
+[Bases](#bases-de-la-crypto) |
+[Maths](#maths-pour-la-crypto) |
+[Passwords](#stockage-des-mots-de-passe) |
+[PKI1](#pki1-autorités-de-certification) |
+[PKI2](#pki2-dane-et-pgp) |
+[Protocoles](#protocoles-cryptos) |
 [Biblio](#biblio)
 
 
@@ -44,7 +48,7 @@ La structure détaillée est la suivante, la préparation de chaque item est dé
 Pour interagir/discuter/commenter/poser des questions en dehors des heures de cours, vous pouvez/devez utiliser le canal Slack #4tc-csc.
 
 
-Bases de la cypto
+Bases de la crypto
 =================
 
 
