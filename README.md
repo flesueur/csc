@@ -11,7 +11,7 @@
 [PKI1](#pki1-autorités-de-certification) |
 [PKI2](#pki2-dane-et-pgp) |
 [Protocoles](#protocoles-cryptos) |
-[Biblio](#biblio)
+[Biblio](#bibliographie)
 
 
 
@@ -70,3 +70,16 @@ PKI2, DANE et PGP
 
 Protocoles cryptos
 ==================
+
+
+Bibliographie
+=============
+
+Livres :
+
+* Histoire des codes secrets : De l'Egypte des Pharaons à l'ordinateur quantique, _Simon Singh_
+
+Films :
+* Mr Robot
+* The Imitation Game
+* Citizenfour
