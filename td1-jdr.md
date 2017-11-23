@@ -64,68 +64,34 @@ Nous allons signer des chaînes de caractères. Pour cela, chaque lettre est rem
 	h = 2;
 	for (j=0; j<i; j++) {
 		h = h * 2;
-		h = h + m<sub>j</sub>;
+		h = h + m[j];
 	}
 	return h%1000;
 
 La valeur de la signature vaut alors _h(m)<sup>d</sup>[n]_. Attention, _(d,n)_ représente une clé privée, mais celle de qui ? Le haché de "crypto" vaut par exemple 831 et la signature par _(463,1147)_ est 335.
 
-<!--
+Le message est alors envoyé accompagné de sa signature. La vérification d'un message reçu _m_ signé avec _sig_ est opérée de la manière suivante :
+* Calculer _h(m)_ par rapport au _m_ reçu
+* Calculer _sig<sup>e</sup>[n]_
+* Vérifier que _h(m) == sig<sup>e</sup>[n]_ sur le message reçu
 
-Le message est alors envoyé accompagné de sa signature. La vérification d'un message reçu $m$ signé avec $sig$ est opérée de la manière suivante :
-\begin{itemize}
-	\item Calculer $h(m)$ par rapport au $m$ reçu
-	\item Calculer $sig^e[n]$% ($=h(m)^{de} [n] = h(m)$ si le message est correct)
-	\item Vérifier que $h(m) == sig^e[n]$ sur le message reçu% alors la signature est valide
-\end{itemize}
 
-% subsection signature_et_verification (end)
-
-% section definition_du_cryptosysteme (end)
-
-\section{Génération des clés} % (fold)
-\label{sec:generation_des_cles}
+Génération des clés
+===================
 
 Nous allons commencer par générer une paire de clés RSA pour chacun. Utilisez pour cela l'algorithme présenté précédemment. Gardez votre clé privée secrète et transmettez votre clé publique avec votre nom à l'enseignant, sur un papier. Elle sera inscrite au tableau (la "PKI"). 
 
-Pour calculer l'inverse modulaire ($e^{-1}\ mod\ \phi(n)$), vous pouvez utiliser \url{https://www.wolframalpha.com}.
+Pour calculer l'inverse modulaire (_e<sup>-1</sup> mod &phi;(n)_), vous pouvez utiliser [Wolfram Alpha](http://www.wolframalpha.com).
 
 Une petite liste de nombres premiers pour gagner du temps :
 
-\scriptsize{
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}\hline
-	31 & 37 & 41 & 43 & 47 &53 &59 &61 &67 &71 &73 &79 &83 &89 &97 &101 &103 &107  \\\hline
-	109 &113 &127 &131 &137 &139 &149 &151 &157 &163 &167 &173 &179 &181 &191 &193 &197 &199 \\\hline
-	211 &223 &227 &229 &233 &239 &241 &251 &257 &263 &269 &271 &277 &281 &283 &293 &307 &311 \\\hline
-	313 &317 &331 &337 &347 &349 &353 &359 &367 &373 &379 &383 &389 &397 &401 &409 &419 &421 \\\hline
-	% 431 433 439 443 449 457 461 463 467 479 487 491 499
-\end{tabular}
-}
-\normalsize
-%
-%\begin{remarque}
-%	Code Python pour calculer $a^{-1}\ mod\ b$ : \verb!modinv(a,b)!\\ (\url{http://liris.cnrs.fr/~flesueur/modinv.py}, puis taper \verb!from modinv import *!) :
-%\begin{program}
-%#prog
-%def egcd(a, b):
-%    if a == 0:
-%        return (b, 0, 1)
-%    else:
-%        g, y, x = egcd(b % a, a)
-%        return (g, x - (b // a) * y, y)
-%
-%def modinv(a, m):
-%    g, x, y = egcd(a, m)
-%    if g != 1:
-%        raise Exception('modular inverse does not exist')
-%    else:
-%        return x % m
-%\end{program}
-%\end{remarque}
+	31 , 37 , 41 , 43 , 47 ,53 ,59 ,61 ,67 ,71 ,73 ,79 ,83 ,89 ,97 ,101 ,103 ,107
+	109 ,113 ,127 ,131 ,137 ,139 ,149 ,151 ,157 ,163 ,167 ,173 ,179 ,181 ,191 ,193 ,197 ,199
+	211 ,223 ,227 ,229 ,233 ,239 ,241 ,251 ,257 ,263 ,269 ,271 ,277 ,281 ,283 ,293 ,307 ,311
+	313 ,317 ,331 ,337 ,347 ,349 ,353 ,359 ,367 ,373 ,379 ,383 ,389 ,397 ,401 ,409 ,419 ,421
 
 
-
-
+<!--
 
 % section génération_des_clés (end)
 
