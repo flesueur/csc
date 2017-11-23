@@ -25,55 +25,26 @@ Voici l'algorithme simplifié de génération de clés RSA (en réalité, d'autr
 	* _1 < e < &phi;(n)_
 	* _pgcd(e, &phi;(n)) = 1_
 	* Par exemple, un premier qui ne divise pas &phi;(n)
-* Déterminer _d equiv e<sup>-1</sup> mod &phi;(n)_
+* Déterminer _d &equiv; e<sup>-1</sup> mod &phi;(n)_
 
 L'exemple est réalisé avec p=31, q=37, n=1147, &phi;(n)=1080, e=7, d=463.
 
-<!--
-% 
-% \begin{remarque}
-% 	Code Python pour calculer $a^{-1}\ mod\ b$ : \verb!modinv(a,b)! (disponible sur Moodle) :
-% \begin{program}
-% #prog
-% def egcd(a, b):
-%     if a == 0:
-%         return (b, 0, 1)
-%     else:
-%         g, y, x = egcd(b % a, a)
-%         return (g, x - (b // a) * y, y)
-% 
-% def modinv(a, m):
-%     g, x, y = egcd(a, m)
-%     if g != 1:
-%         raise Exception('modular inverse does not exist')
-%     else:
-%         return x % m
-% \end{program}
-% \end{remarque}
+Code Python pour calculer _a<sup>-1</sup> mod b_ : `modinv(a,b)` disponible [ici](modinv.py)
 
-La clé publique est $(e,n)$, ici $(7,1147)$, et la clé privée est $(d,n)$, ici $(463,1147)$. % Gardez votre clé privée secrète et faîtes inscrire votre clé publique au tableau (la "PKI"). 
-La propriété utilisée est que pour tout message $m$, $m^{de}[n] = m$
 
-% Une petite liste de nombres premiers pour gagner du temps :
-% 
-% \scriptsize{
-% \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}\hline
-% 	31 & 37 & 41 & 43 & 47 &53 &59 &61 &67 &71 &73 &79 &83 &89 &97 &101 &103 &107  \\\hline
-% 	109 &113 &127 &131 &137 &139 &149 &151 &157 &163 &167 &173 &179 &181 &191 &193 &197 &199 \\\hline
-% 	211 &223 &227 &229 &233 &239 &241 &251 &257 &263 &269 &271 &277 &281 &283 &293 &307 &311 \\\hline
-% 	313 &317 &331 &337 &347 &349 &353 &359 &367 &373 &379 &383 &389 &397 &401 &409 &419 &421 \\\hline
-% 	% 431 433 439 443 449 457 461 463 467 479 487 491 499
-% \end{tabular}
-% }
-% \normalsize
+La clé publique est _(e,n)_, ici _(7,1147)_, et la clé privée est _(d,n)_, ici _(463,1147)_. 
+La propriété utilisée est que pour tout message _m, m<sup>de</sup>[n] = m_.
 
-% (end)
-
-\subsection{Chiffrement et déchiffrement} % (fold)
-\label{sub:chiffrement_et_dechiffrement}
+Chiffrement et déchiffrement
+----------------------------
 
 Nous allons chiffrer des chaînes de caractères. Pour cela, chaque lettre est remplacée par son rang dans l'alphabet, sur 2 chiffres :
 
+|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|
+----------------------------------------------------
+|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|
+
+<!--
 \noindent
 \tiny{
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}\hline
