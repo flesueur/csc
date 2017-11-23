@@ -83,59 +83,37 @@ Nous allons commencer par générer une paire de clés RSA pour chacun. Utilisez
 
 Pour calculer l'inverse modulaire (_e<sup>-1</sup> mod &phi;(n)_), vous pouvez utiliser [Wolfram Alpha](http://www.wolframalpha.com).
 
-Une petite liste de nombres premiers pour gagner du temps :
+Pour gagner du temps, vous pouvez trouver une liste de nombres premiers [ici](https://fr.wikipedia.org/wiki/Liste_de_nombres_premiers)
+Une petite liste de nombres premiers pour gagner du temps
 
-	31 , 37 , 41 , 43 , 47 ,53 ,59 ,61 ,67 ,71 ,73 ,79 ,83 ,89 ,97 ,101 ,103 ,107
-	109 ,113 ,127 ,131 ,137 ,139 ,149 ,151 ,157 ,163 ,167 ,173 ,179 ,181 ,191 ,193 ,197 ,199
-	211 ,223 ,227 ,229 ,233 ,239 ,241 ,251 ,257 ,263 ,269 ,271 ,277 ,281 ,283 ,293 ,307 ,311
-	313 ,317 ,331 ,337 ,347 ,349 ,353 ,359 ,367 ,373 ,379 ,383 ,389 ,397 ,401 ,409 ,419 ,421
+Échange de messages chiffrés
+============================
 
+Vous allez maintenant transmettre un message chiffré à un étudiant éloigné par un protocole multi-saut : vous le transmettez à un voisin, qui le redonne à un voisin, etc., jusqu'à sa destination. Vous jouerez à la fois les rôles d'émetteur, de routeur (malicieux ou non) et de récepteur. Le chiffrement assure la _confidentialité_ du message transmis.
+
+1. **Envoi de votre message** : Chiffrez un message de votre choix avec le cryptosystème proposé. Inscrivez sur un papier votre identité, le message chiffré et le destinataire. Envoyez-le !
+2. **Routage des autres messages** : Que fait un routeur ? Il lit un message, l'analyse, décide où l'envoyer puis le reproduit. De manière analogue, vous allez pour chaque saut retransmettre le message entrant mais vous pouvez le lire avant de le retransmettre. Pouvez-vous en déduire des informations ?
+3. **Réception d'un message** : À la réception d'un message, appliquez l'algorithme de déchiffrement. Quelqu'un d'autre sur la route du message pouvait-il obtenir le clair de ce message ?
+
+
+Échange de messages signés
+==========================
+
+Vous allez maintenant transmettre un message clair signé à un étudiant éloigné par ce même protocole multi-saut. La signature permet de vérifier l'_intégrité_ du message transmis.
+
+1. **Envoi de votre message** : Signez un message de votre choix avec le cryptosystème proposé. Inscrivez sur un papier votre identité, le message clair, la signature et le destinataire. Envoyez-le !
+2. **Routage des autres messages** : Utilisez le même protocole multi-saut que précédemment. Pour chaque saut, recopiez le message entrant sur un autre papier puis retransmettez ce second papier.
+3. **Réception d'un message** : À la réception d'un message, appliquez l'algorithme de vérification de la signature. Le message reçu est-il intègre ? Si non, quelle attaque avez-vous détectée ?
 
 <!--
-
-% section génération_des_clés (end)
-
-\section{Échange de messages chiffrés} % (fold)
-\label{sec:Echange_de_messages_chiffres}
-
-Vous allez maintenant transmettre un message chiffré à un étudiant éloigné par un protocole multi-saut : vous le transmettez à un voisin, qui le redonne à un voisin, \emph{etc.}, jusqu'à sa destination. Vous jouerez à la fois les rôles d'émetteur, de routeur (malicieux ou non) et de récepteur. Le chiffrement assure la \emph{confidentialité} du message transmis.
-
-\begin{enumerate}
-	\item \textbf{Envoi de votre message} : Chiffrez un message de votre choix avec le cryptosystème proposé. Inscrivez sur un papier votre identité, le message chiffré et le destinataire. Envoyez-le !
-	\item \textbf{Routage des autres messages} : Que fait un routeur ? Il lit un message, l'analyse, décide où l'envoyer puis le reproduit. De manière analogue, vous allez pour chaque saut retransmettre le message entrant mais vous pouvez le lire avant de le retransmettre. Pouvez-vous en déduire des informations ?
-	\item \textbf{Réception d'un message} : À la réception d'un message, appliquez l'algorithme de déchiffrement. Quelqu'un d'autre sur la route du message pouvait-il obtenir le clair de ce message ?
-\end{enumerate}
-
-% section Échange_de_messages_chiffrés (end)
-
-
-\section{Échange de messages signés} % (fold)
-\label{sec:envoi_d_un_message_signe}
-
-Vous allez maintenant transmettre un message clair signé à un étudiant éloigné par ce même protocole multi-saut. La signature permet de vérifier l'\emph{intégrité} du message transmis.% : vous le transmettez à un voisin, qui le redonne à un voisin, \emph{etc.}, jusqu'à sa destination. Vous jouerez à la fois les rôles d'émetteur, de routeur (malicieux ou non) et de récepteur.
-
-\begin{enumerate}
-	\item \textbf{Envoi de votre message} : Signez un message de votre choix avec le cryptosystème proposé. Inscrivez sur un papier votre identité, le message clair, la signature et le destinataire. Envoyez-le !
-	\item \textbf{Routage des autres messages} : Utilisez le même protocole multi-saut que précédemment. Pour chaque saut, recopiez le message entrant sur un autre papier puis retransmettez ce second papier.% Si vous avez reçu une carte "H" (Honnête), vous le recopiez tel quel. Si vous avez reçu une carte "M" (Malicieux), vous pouvez le modifier discrètement en le recopiant.
-	\item \textbf{Réception d'un message} : À la réception d'un message, appliquez l'algorithme de vérification de la signature. Le message reçu est-il intègre ? Si non, quelle attaque avez-vous détectée ?
-\end{enumerate}
-
-% section envoi_d_un_message_signé (end)
-
-\section{Attaques sur le cryptosystème proposé} % (fold)
-\label{sec:attaque_sur_le_protocole_mis_en_place}
+Attaques sur le cryptosystème proposé
+=====================================
 
 Étudiez et testez quelques attaques sur le système mis en place :
-\begin{itemize}
-	\item Modification de message en conservant la validité de la signature
-	\item Attaque de la clé privée (par factorisation de $n$ par exemple)
-	\item Attaque à message choisi
-	\item \ldots
-\end{itemize}
+* Modification de message en conservant la validité de la signature
+* Attaque de la clé privée (par factorisation de $n$ par exemple)
+* Attaque à message choisi
+* ...
 
 Toutes ces attaques sont possibles ici. Réfléchissez à leur cause et aux protections mises en place dans les cryptosystèmes réels. Implémentez une (ou plusieurs) attaque dans le langage de votre choix, proposez une contre-mesure et évaluez la complexité rajoutée par votre contre-mesure.
-
-% section attaque_sur_le_protocole_mis_en_place (end)
-
-\end{document}
 -->
