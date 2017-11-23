@@ -83,8 +83,8 @@ Nous allons commencer par générer une paire de clés RSA pour chacun. Utilisez
 
 Pour calculer l'inverse modulaire (_e<sup>-1</sup> mod &phi;(n)_), vous pouvez utiliser [Wolfram Alpha](http://www.wolframalpha.com).
 
-Pour gagner du temps, vous pouvez trouver une liste de nombres premiers [ici](https://fr.wikipedia.org/wiki/Liste_de_nombres_premiers)
-Une petite liste de nombres premiers pour gagner du temps
+Pour gagner du temps, vous pouvez trouver une liste de nombres premiers [ici](https://fr.wikipedia.org/wiki/Liste_de_nombres_premiers).
+
 
 Échange de messages chiffrés
 ============================
