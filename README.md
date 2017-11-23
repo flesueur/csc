@@ -36,4 +36,6 @@ Pour interagir/discuter/commenter/poser des questions en dehors des heures de co
 
 Le cours est [ici](cours.md)
 
+Les TD : [TD1](td1-jdr)
+
 La page Moodle TC / TCA
