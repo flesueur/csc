@@ -1,6 +1,6 @@
 # TD 1 : Usage de la cryptographie asymétrique
 
-François Lesueur (francois.lesueur@insa-lyon.fr, @FLesueur)
+_François Lesueur ([francois.lesueur@insa-lyon.fr](mailto:francois.lesueur@insa-lyon.fr), [@FLesueur](https://twitter.com/FLesueur))_
 
 Ce TD présente et applique les notions de cryptographie asymétrique :
 * Génération de clés RSA
