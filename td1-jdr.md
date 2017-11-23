@@ -12,29 +12,24 @@ Vous pourrez par exemple utiliser python pour calculer les exponentiations modul
 Définition du cryptosystème
 ===========================
 
-<!-- 
 Le cryptosystème que nous allons utiliser ici est basé sur la fonction RSA. Le cryptosystème proposé est simple et présente donc certaines vulnérabilités mais illustre le fonctionnement. Cette partie définit le cryptosystème, il n'y a rien à faire ici.
 
-\subsection{Génération de clés RSA} % (fold)
-\label{ssec:generation_de_cles_rsa}
+Génération de clés RSA
+----------------------
 
 Voici l'algorithme simplifié de génération de clés RSA (en réalité, d'autres tests doivent être réalisés) :
-\begin{itemize}
-	\item Choisir deux nombres premiers $p$ et $q$ (liste un peu plus loin)
-	\item Calculer $n = p \times q$
-	\item Calculer $\phi(n) = (p-1)(q-1)$
-	\item Choisir $e$ tel que :
-	\begin{itemize}
-		\item $1 < e < \phi(n)$
-		\item $pgcd(e, \phi(n)) = 1$
-		\item Par exemple, un premier qui ne divise pas $\phi(n)$
-	\end{itemize}
-	\item Déterminer $d \equiv e^{-1}\ mod\ \phi(n)$
-\end{itemize}
+* Choisir deux nombres premiers _p_ et _q_ (liste un peu plus loin)
+* Calculer _n = p * q_
+* Calculer _&phi;(n) = (p-1)(q-1)_
+* Choisir _e_ tel que :
+	* _1 < e < &phi;(n)_
+	* _pgcd(e, &phi;(n)) = 1_
+	* Par exemple, un premier qui ne divise pas &phi;(n)
+* Déterminer _d equiv e<sup>-1</sup> mod &phi;(n)_
 
-L'exemple est réalisé avec $p=31, q=37, n=1147, \phi(n)=1080, e=7, d=463$.
+L'exemple est réalisé avec p=31, q=37, n=1147, &phi;(n)=1080, e=7, d=463.
 
-
+<!--
 % 
 % \begin{remarque}
 % 	Code Python pour calculer $a^{-1}\ mod\ b$ : \verb!modinv(a,b)! (disponible sur Moodle) :
