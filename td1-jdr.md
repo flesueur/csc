@@ -45,49 +45,32 @@ Nous allons chiffrer des chaînes de caractères. Pour cela, chaque lettre est r
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|
 
+Par exemple, "crypto" devient `03 18 25 16 20 15`
+
+Ensuite, afin de ne pas retomber dans un chiffrement par substitution simple, les chiffres sont assemblés par blocs de 3 (complété éventuellement de 0 à la fin), ainsi `03 18 25 16 20 15` devient `031 825 162 015`.
+
+Enfin, chaque bloc clair de 3 chiffres est chiffré indépendamment par la fonction RSA : bloc<sub>chiffré</sub> = bloc<sub>clair</sub><sup>e</sup>[n]. Attention, _(e,n)_ représente une clé publique, mais celle de qui ? L'utilisation de la clé _(7,1147)_ donne le chiffré `1116 751 245 1108`.
+
+> Attention, lors de l'appel à la fonction `pow(a,b,c)` de python, n'écrivez pas de '0' en début d'entier. Par exemple, pour le bloc clair `031`, tapez `pow(31,7,1147)`. Commencer un entier par '0' le fait interpréter comme un nombre encodé en _octal_ (même principe qu'un nombre commençant par '0x' qui est interprété comme un hexadécimal).
+
+
+Le déchiffrement est opéré de manière symétrique, en utilisant la clé privée au lieu de la clé publique. Chaque bloc clair est réobtenu à partir du bloc chiffré par le calcul : bloc<sub>clair</sub> = bloc<sub>chiffré</sub><sup>d</sup>[n]
+
+Signature et vérification
+-------------------------
+
+Nous allons signer des chaînes de caractères. Pour cela, chaque lettre est remplacée par son rang dans l'alphabet. Pour un message _m = (m<sub>0</sub>, ..., m<sub>i</sub>)_ avec _(m<sub>0</sub>, ..., m<sub>i</sub>)_ les rangs de chaque lettre (attention, on ne fait plus des blocs de 3 chiffres ici), le haché _h(m)_ est calculé par l'algorithme suivant :
+
+	h = 2;
+	for (j=0; j<i; j++) {
+		h = h * 2;
+		h = h + m<sub>j</sub>;
+	}
+	return h%1000;
+
+La valeur de la signature vaut alors _h(m)<sup>d</sup>[n]_. Attention, _(d,n)_ représente une clé privée, mais celle de qui ? Le haché de "crypto" vaut par exemple 831 et la signature par _(463,1147)_ est 335.
+
 <!--
-\noindent
-\tiny{
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}\hline
-	a&b&c&d&e&f&g&h&i&j&k&l&m&n&o&p&q&r&s&t&u&v&w&x&y&z&\\\hline
-	01&02&03&04&05&06&07&08&09&10&11&12&13&14&15&16&17&18&19&20&21&22&23&24&25&26&27\\\hline
-\end{tabular}
-}
-\normalsize
-
-Par exemple, "crypto" devient \verb!03 18 25 16 20 15!
-
-Ensuite, afin de ne pas retomber dans un chiffrement par substitution simple, les chiffres sont assemblés par blocs de 3 (complété éventuellement de 0 à la fin), ainsi \verb!03 18 25 16 20 15! devient \verb!031 825 162 015!.
-
-Enfin, chaque bloc clair de 3 chiffres est chiffré indépendamment par la fonction RSA : $$bloc_{chiffr\acute{e}} = {bloc_{clair}}^e[n]$$ Attention, $(e,n)$ représente une clé publique, mais celle de qui ? L'utilisation de la clé $(7,1147)$ donne le chiffré \verb!1116 751 245 1108!.
-
-\begin{remarque}
-Attention, lors de l'appel à la fonction \verb!pow(a,b,c)! de python, n'écrivez pas de '0' en début d'entier. Par exemple, pour le bloc clair \verb!031!, tapez \verb!pow(31,7,1147)!. Commencer un entier par '0' le fait interpréter comme un nombre encodé en \emph{octal} (même principe qu'un nombre commençant par '0x' qui est interprété comme un hexadécimal).
-\end{remarque}
-
-Le déchiffrement est opéré de manière réciproque, en utilisant la clé privée au lieu de la clé publique. Chaque bloc clair est réobtenu à partir du bloc chiffré par le calcul : $bloc_{clair} = {bloc_{chiffr\acute{e}}}^d[n]$.
-
-% subsection chiffrement_et_dechiffrement (end)
-
-
-\subsection{Signature et vérification} % (fold)
-\label{sub:signature_et_verification}
-
-Nous allons signer des chaînes de caractères. Pour cela, chaque lettre est remplacée par son rang dans l'alphabet. Pour un message $m = (m_0, \ldots, m_i)$ avec $(m_0, \ldots, m_i)$ les rangs de chaque lettre (attention, on ne fait plus des blocs de 3 chiffres ici), le haché $h(m)$ est calculé par l'algorithme suivant :
-%\begin{algorithm}
-\begin{algorithmic}
-	\STATE $h \leftarrow 2$
-	\FOR{$j=0..i$}
-	\STATE{$h \leftarrow h \times 2$}
-	\STATE{$h \leftarrow h + m_j$}
-	\ENDFOR
-	\RETURN $h\ mod\ 1000$
-\end{algorithmic}
-%\end{algorithm}
-
-La valeur de la signature vaut alors $h(m)^d [n]$. Attention, $(d,n)$ représente une clé privée, mais celle de qui ? Le haché de "crypto" vaut par exemple 831 et la signature par $(463,1147)$ est 335.
-
-\clearpage
 
 Le message est alors envoyé accompagné de sa signature. La vérification d'un message reçu $m$ signé avec $sig$ est opérée de la manière suivante :
 \begin{itemize}
