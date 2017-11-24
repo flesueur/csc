@@ -59,6 +59,7 @@ Extrait du livre [Discrete Math for Computer Science Students, _Ken Bogart, Scot
 <!-- https://www.kth.se/social/files/557ec6b0f27654784e263d66/fullbook.pdf  ,  
 www.cse.iitd.ernet.in/~bagchi/courses/discrete-book/fullbook.pdf -->
 
+Ouverture (obligatoire) : [Exemple de crypto symétrique : AES](http://www.moserware.com/2009/09/stick-figure-guide-to-advanced.html)
 
 Stockage des mots de passe
 ==========================
