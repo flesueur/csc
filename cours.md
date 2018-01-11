@@ -50,12 +50,12 @@ Ouverture (facultative):
 Cette section sera conclue par le TD1.
 
 
+
 <!-- 
-
-
 
 Maths pour la crypto
 ====================
+
 
 Extrait du livre [Discrete Math for Computer Science Students, _Ken Bogart, Scot Drysdale, Cliff Stein_](https://web.archive.org/web/20170829125913/http://www.cse.iitd.ernet.in/~bagchi/courses/discrete-book/fullbook.pdf) ? -->
 
@@ -115,6 +115,8 @@ Quelques protocoles et usages de la cryptographie, à étudier de manière adapt
 Cette section sera conclue par le TP OpenSSL.
 
 -->
+
+...
 
 Bibliographie
 =============
