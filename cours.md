@@ -122,7 +122,7 @@ Bibliographie
 =============
 
 Livres :
-* Histoire des codes secrets : De l'Egypte des Pharaons à l'ordinateur quantique, _Simon Singh_
+* Histoire des codes secrets : De l'Égypte des Pharaons à l'ordinateur quantique, _Simon Singh_
 * Architectures PKI et communications sécurisées, _DUMAS Jean-Guillaume, LAFOURCADE Pascal, REDON Patrick_
 * Serious Cryptography, _Jean-Philippe Aumasson_
 
