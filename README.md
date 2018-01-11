@@ -35,10 +35,10 @@ La structure détaillée est la suivante, la préparation de chaque item est dé
 * PKI2, DANE et PGP : TD5
 * Protocoles cryptographiques : CM2, TP2
 
-Pour interagir/discuter/commenter/poser des questions en dehors des heures de cours, vous pouvez/devez utiliser le canal Slack #4tc-csc.
+Pour interagir/discuter/commenter/poser des questions en dehors des heures de cours, vous devez utiliser le canal Slack #4tc-csc.
 
 Le cours est [ici](cours.md)
 
 Les TD : [TD1](td1-jdr)
 
-La page Moodle TC / TCA
+La page Moodle TC / [TCA](https://moodle.insa-lyon.fr/course/view.php?id=4694)
