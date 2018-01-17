@@ -7,7 +7,7 @@ Ce TD présente et applique les notions de cryptographie asymétrique :
 * Distribution de clés 
 * Signature et chiffrement RSA
 
-Vous pourrez par exemple utiliser python pour calculer les exponentiations modulaires. Lancez python, puis dans l'interpréteur tapez `pow(a,b,c)` pour obtenir a<sup>b</sup>[c]. Vous pouvez également utiliser [Wolfram Alpha](http://www.wolframalpha.com).
+Vous pourrez par exemple utiliser python pour calculer les exponentiations modulaires. Lancez python, puis dans l'interpréteur tapez `pow(a,b,c)` pour obtenir a<sup>b</sup>[c]. Vous pouvez également utiliser [Wolfram Alpha](http://www.wolframalpha.com) pour le calcul de l'inverse modulaire.
 
 Définition du cryptosystème
 ===========================
@@ -29,7 +29,7 @@ Voici l'algorithme simplifié de génération de clés RSA (en réalité, d'autr
 
 L'exemple est réalisé avec p=31, q=37, n=1147, &phi;(n)=1080, e=7, d=463.
 
-Code Python pour calculer _a<sup>-1</sup> mod b_ : `modinv(a,b)` disponible [ici](modinv.py)
+<!-- Code Python pour calculer _a<sup>-1</sup> mod b_ : `modinv(a,b)` disponible [ici](modinv.py) -->
 
 
 La clé publique est _(e,n)_, ici _(7,1147)_, et la clé privée est _(d,n)_, ici _(463,1147)_. 

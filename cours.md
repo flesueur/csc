@@ -114,6 +114,11 @@ Quelques protocoles et usages de la cryptographie, à étudier de manière adapt
 <!--
 Cette section sera conclue par le TP OpenSSL.
 
+Enjeux éthiques
+===============
+
+Crypto wars https://en.wikipedia.org/wiki/Crypto_Wars
+
 -->
 
 ...
