@@ -50,9 +50,6 @@ Ouverture (facultative):
 Cette section sera conclue par le TD1.
 
 
-
-<!-- 
-
 Maths pour la crypto
 ====================
 
@@ -62,14 +59,12 @@ Chacune des deux séances de TD et TP va se dérouler en deux phases:
 
 * La première phase vise à comprendre la génération des clés RSA, la justification des choix des paramètres, le chiffrement, le déchiffrement, la preuve d’exactitude et l’évaluation du coût des opérations RSA. Le cryptosystème RSA sera mis en place en TP en utilisant Python 3 et une évaluation de temps d’exécution des opérations de chiffrement/déchiffrement en fonction des tailles de clés sera effectuée.
 
-*La deuxième phase concernera le problème RSA et son lien avec la factorisation des grands nombres entiers. Quelques algorithmes de factorisation basiques seront proposées progressivement en TD et ensuite implémentés, évalués et comparés en TP.
+* La deuxième phase concernera le problème RSA et son lien avec la factorisation des grands nombres entiers. Quelques algorithmes de factorisation basiques seront proposées progressivement en TD et ensuite implémentés, évalués et comparés en TP.
 
 Pour mieux suivre les différentes preuves et la conception de quelques algorithmes de factorisation, vous devez lire le cours de Marine Minier "Arithmétique pour la cryptographie" disponible sur http://perso.citi.insa-lyon.fr/mminier/images/Arithmetique_pour_Cryptographie_impression.pdf jusqu'au slide 31. Ce cours donne les bases d’arithmétiques nécessaires pour comprendre par la suite le cryptosystème RSA et les méthodes de factorisation qui seront traitées. Pour la Crible d'Ératosthène, lisez le principe sur [la page Wikipedia, section Algorithme](https://fr.wikipedia.org/wiki/Crible_d%27%C3%89ratosth%C3%A8ne). Pour la fonction indicatrice d'Euleur, lisez plus de détails sur la page [Wikipedia](https://fr.wikipedia.org/wiki/Indicatrice_d%27Euler).
 
 
-Pour la première phase, relisez attentivement la [page Wikipédia]( https://fr.wikipedia.org/wiki/Chiffrement_RSA) expliquant RSA jusqu’à la section « Asymétrie ». 
-
-Pour la partie problème RSA et factorisation, lisez la [page du problème RSA sur Wikipédia]( https://fr.wikipedia.org/wiki/Probl%C3%A8me_RSA) jusqu’à la section « Lien avec la factorisation ».
+Pour la première phase, relisez attentivement la [page Wikipédia]( https://fr.wikipedia.org/wiki/Chiffrement_RSA) expliquant RSA jusqu’à la section « Asymétrie ». Pour la partie problème RSA et factorisation, lisez la [page du problème RSA sur Wikipédia]( https://fr.wikipedia.org/wiki/Probl%C3%A8me_RSA) jusqu’à la section « Lien avec la factorisation ».
 
 Ouverture :
 
