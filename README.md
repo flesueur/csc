@@ -41,4 +41,4 @@ Le cours est [ici](cours.md)
 
 Les TD : [TD1](td1-jdr)
 
-La page Moodle TC / [TCA](https://moodle.insa-lyon.fr/course/view.php?id=4694)
+La page Moodle [TC](https://moodle.insa-lyon.fr/course/view.php?id=4647) / [TCA](https://moodle.insa-lyon.fr/course/view.php?id=4694)
