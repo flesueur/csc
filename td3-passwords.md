@@ -58,3 +58,10 @@ Un gestionnaire de mots de passe conserve une table liant un titre, un login et 
 Considérons que l'utilisation de ce gestionnaire de mots de passe nécessite la saisie préalable d'un mot de passe maître, lors de l'ouverture.
 
 Proposez la mise en œuvre d'un gestionnaire de mots de passe local puis d'un gestionnaire de mots de passe en ligne. Analysez les risques d'attaques par les différents acteurs (eux-mêmes ou suite à comprommission de leur infrastructure).
+
+
+Pour approfondir
+================
+
+[OWASP : https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet)
+[SOPHOS : https://nakedsecurity.sophos.com/2013/11/20/serious-security-how-to-store-your-users-passwords-safely/](https://nakedsecurity.sophos.com/2013/11/20/serious-security-how-to-store-your-users-passwords-safely/)
