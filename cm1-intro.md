@@ -6,6 +6,7 @@ Brainstorming des mots-clés crypto et sécu des coms, classification
 ===========
 
 Qu'est-ce que cela vous évoque ?
+
 * Des protocoles (TLS, HTTPS, PGP, SMIME), des algos (RSA, AES, Diffie-Hellman)
 * Des usages à QoS différentes (GSM, chat, VoIP, web)
 * Des applications (Signal [coucou la NSA], Telegram [coucou le GRU]), TOR)
@@ -32,6 +33,7 @@ Crypto et sécurité sw/hw
 ========================
 
 Qu'est-ce que la sécurité des communications ?
+
 * Sécurité du canal de transmission -> crypto
 * Sécurité de l'implémentation crypto/son déploiement
 * Sécurité du logiciel et du matériel
@@ -49,6 +51,7 @@ CSC
 Objectifs CSC
 -------------
 __Déployer une architecture de communications sécurisées adaptée à un besoin :__
+
 * Comprendre comment/pourquoi ça marche
 * Comprendre les processus d'évolution
 * Comprendre les hypothèses et les chaînes de confiance
@@ -59,6 +62,7 @@ __Déployer une architecture de communications sécurisées adaptée à un besoi
 
 Plan CSC
 --------
+
 * Principes généraux d'usage
 * Fondements mathématiques
 * Détour par la gestion des mots de passe
@@ -68,6 +72,7 @@ Plan CSC
 
 Organisation du travail
 -----------------------
+
 * Préparation en autonomie
 * QCM avec deadline à surveiller, demandes des points à éclaircir
 * Séance encadrée ensuite
