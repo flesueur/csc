@@ -26,20 +26,22 @@ Florent | QazyfRT.
 Gustave | JKhjjkde
 Henri 	| Hhgfaaz9
 
-Pour chaque schéma, étudier :
-
-* le processus et le coût de l'ajout d'un compte et de la vérification d'un mot de passe
-* l'information révélée directement par la base de mots de passe
-* le coût de cassage d'un mot de passe isolé
-* le coût de cassage de la base entière
-
-Les différents schémas à étudier :
+Étudiez les schémas suivants :
 
 * La base des mots de passe est stockée en clair ;
 * La base des mots de passe est stockée chiffrée, en RSA par exemple ;
 * La base des mots de passe est stockée sous forme de hash ;
 * La base des mots de passe est stockée sous forme de hash salé ;
 * La base des mots de passe est stockée sous forme de n itérations de hash salé (PBKDF2).
+
+Pour chaque schéma, vous devez analyser :
+
+* le processus et le coût de l'ajout d'un compte et de la vérification d'un mot de passe
+* l'information révélée directement par la base de mots de passe
+* le coût de cassage d'un mot de passe isolé
+* le coût de cassage de la base entière
+
+
 
 
 Côté client
