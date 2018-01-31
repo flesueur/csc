@@ -63,5 +63,5 @@ Proposez la mise en œuvre d'un gestionnaire de mots de passe local puis d'un ge
 Pour approfondir
 ================
 
-[OWASP : https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet)
-[SOPHOS : https://nakedsecurity.sophos.com/2013/11/20/serious-security-how-to-store-your-users-passwords-safely/](https://nakedsecurity.sophos.com/2013/11/20/serious-security-how-to-store-your-users-passwords-safely/)
+* [OWASP](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet)
+* [SOPHOS](https://nakedsecurity.sophos.com/2013/11/20/serious-security-how-to-store-your-users-passwords-safely/)
