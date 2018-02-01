@@ -32,7 +32,7 @@ Henri 	| Hhgfaaz9
 * La base des mots de passe est stockée chiffrée, en RSA par exemple ;
 * La base des mots de passe est stockée sous forme de hash ;
 * La base des mots de passe est stockée sous forme de hash salé ;
-* La base des mots de passe est stockée sous forme de n itérations de hash salé (PBKDF2).
+* La base des mots de passe est stockée sous forme de n itérations de hash salé (PBKDF2, comment choisir n, quelle évolution ?).
 
 Pour chaque schéma, vous devez analyser :
 
