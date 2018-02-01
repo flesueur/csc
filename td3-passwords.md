@@ -1,6 +1,6 @@
 # TD 3 : Stockage et utilisation des mots de passe
 
-_François Lesueur ([francois.lesueur@insa-lyon.fr](mailto:francois.lesueur@insa-lyon.fr), [\@FLesueur](https://twitter.com/FLesueur) )_
+_François Lesueur ([francois.lesueur@insa-lyon.fr](mailto:francois.lesueur@insa-lyon.fr), [@FLesueur](https://twitter.com/FLesueur) )_
 
 Ce TD présente l'univers de la vérification et de l'utilisation des mots de passe :
 
