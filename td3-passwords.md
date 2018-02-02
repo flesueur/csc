@@ -14,8 +14,8 @@ Notations
 =========
 
 * h(m) le hash de m
-* K la clé symétrique, {m}<sub>K</sub> le chiffré de m avec la clé K, m = {{m}<sub>K</sub>}<sub>K</sub>
-* K et K' les clés asymétriques complémentaires publique/privée, {m}<sub>K</sub> le chiffré de m avec la clé K et m = {{m}<sub>K</sub>}<sub>K'</sub>
+* K la clé symétrique, {m}<sub>K</sub> le chiffré de m avec la clé K, m = { {m}<sub>K</sub>}<sub>K</sub>
+* K et K' les clés asymétriques complémentaires publique/privée, {m}<sub>K</sub> le chiffré de m avec la clé K et m = { {m}<sub>K</sub>}<sub>K'</sub>
 * m signé est noté m.{h(m)}<sub>K</sub>
 
 
