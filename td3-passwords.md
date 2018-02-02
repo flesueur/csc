@@ -10,6 +10,15 @@ Ce TD présente l'univers de la vérification et de l'utilisation des mots de pa
 
 Dans l'ensemble des cas, nous souhaitons évaluer le cas d'une attaque qui exfiltre des fichiers de l'application (dont le fichier de la base de données ou le fichier `/etc/shadow` par exemple).
 
+Notations
+=========
+
+* h(m) le hash de m
+* K la clé symétrique, {m}<sub>K</sub> le chiffré de m avec la clé K, m = {{m}<sub>K</sub>}<sub>K</sub>
+* K et K' les clés asymétriques complémentaires publique/privée, {m}<sub>K</sub> le chiffré de m avec la clé K et m = {{m}<sub>K</sub>}<sub>K'</sub>
+* m signé est noté m.{h(m)}<sub>K</sub>
+
+
 Côté serveur
 ============
 
@@ -37,6 +46,7 @@ Henri 	| Hhgfaaz9
 Pour chaque schéma, vous devez analyser :
 
 * le processus et le coût de l'ajout d'un compte et de la vérification d'un mot de passe
+* la gestion d'un utilisateur qui a perdu son mot de passe
 * l'information révélée directement par la base de mots de passe
 * le coût de cassage d'un mot de passe isolé
 * le coût de cassage de la base entière
