@@ -63,6 +63,7 @@ La CRL (_Certificate Revocation List_) est une liste des certificats révoqués,
 
 1. Quelle forme peut-elle avoir ?
 2. Expliquez en quoi l'utilisation de CRL va à l'encontre de l'approche hors-ligne (non interactive) et quel risque cela pose pour la CA.
+3. Que faire en cas de CRL non à jour et de CA non disponible pour mettre à jour ?
 
 
 OCSP
@@ -72,8 +73,9 @@ OCSP (_Online Certificate Status Protocol_) permet à un client de vérifier en 
 
 1. Cela résoud-il le risque que l'utilisation de CRL fait peser sur les CA ?
 2. Avec l'agrafage OCSP (_stapling_), c'est le serveur web qui demande à la CA une preuve de validité valable 24h et la présente ensuite à ses clients. Cela résoud-il la surcharge de la CA ? Quelle différence par rapport à des certificats valables 24h ?
+3. Que faire en cas d'absence d'agrafage OCSP ?
 
-La révocation est un problème qui n'est toujours pas traité de manière satisfaisante...
+La révocation est un problème qui n'est toujours pas traité de manière satisfaisante et uniforme...
 
 Quand les problèmes commencent
 ==============================
