@@ -31,14 +31,13 @@ La structure détaillée est la suivante, la préparation de chaque item est dé
 * Bases de la crypto : CM2, TD1
 * Maths pour la crypto : TD2, TP1
 * Stockage des mots de passe : TD3
-* PKI1, autorités de certification : TD4
-* PKI2, DANE et PGP : TD5
+* PKI (autorités de certification, DANE et PGP) : TD4, TD5
 * Protocoles cryptographiques : CM2, TP2
 
 Pour interagir/discuter/commenter/poser des questions en dehors des heures de cours, vous devez utiliser le canal Slack #4tc-csc.
 
 Le cours est [ici](cours.md)
 
-Les TD : [TD1](td1-jdr) [TD3](td3-passwords) [TD4](td4-ca)
+Les TD : [TD1 (JdR)](td1-jdr) [TD3 (Passwords)](td3-passwords) [TD4 (CA)](td4-ca) [TD5 (DANE/PGP)](td5-danepgp)
 
 La page Moodle [TC](https://moodle.insa-lyon.fr/course/view.php?id=4647) / [TCA](https://moodle.insa-lyon.fr/course/view.php?id=4694)
