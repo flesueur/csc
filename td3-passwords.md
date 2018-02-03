@@ -13,10 +13,10 @@ Dans l'ensemble des cas, nous souhaitons évaluer le cas d'une attaque qui exfil
 Notations
 =========
 
-* h(m) le hash de m
-* K la clé symétrique, {m}<sub>K</sub> le chiffré de m avec la clé K, m = { {m}<sub>K</sub>}<sub>K</sub>
-* K et K' les clés asymétriques complémentaires publique/privée, {m}<sub>K</sub> le chiffré de m avec la clé K et m = { {m}<sub>K</sub>}<sub>K'</sub>
-* m signé est noté m.{h(m)}<sub>K</sub>
+* h(m) est le hash du message m
+* Si K<sub>A</sub> est une clé symétrique, {m}<sub>K<sub>A</sub></sub> est le chiffré de m avec la clé K<sub>A</sub>, m = { {m}<sub>K<sub>A</sub></sub>}<sub>K<sub>A</sub></sub>
+* Si Pub<sub>A</sub> et Priv<sub>A</sub> sont des clés asymétriques complémentaires publique/privée, {m}<sub>Pub<sub>A</sub></sub> est le chiffré de m avec la clé Pub<sub>A</sub> et m = { {m}<sub>Pub<sub>A</sub></sub>}<sub>Priv<sub>A</sub></sub>
+* m signé avec la clé Priv<sub>A</sub> est noté m.{h(m)}<sub>Priv<sub>A</sub></sub>
 
 
 Côté serveur
