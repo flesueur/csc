@@ -39,6 +39,6 @@ Pour interagir/discuter/commenter/poser des questions en dehors des heures de co
 
 Le cours est [ici](cours.md)
 
-Les TD : [TD1](td1-jdr) [TD3](td3-passwords)
+Les TD : [TD1](td1-jdr) [TD3](td3-passwords) [TD4](td4-ca)
 
 La page Moodle [TC](https://moodle.insa-lyon.fr/course/view.php?id=4647) / [TCA](https://moodle.insa-lyon.fr/course/view.php?id=4694)
