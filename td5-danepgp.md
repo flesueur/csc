@@ -57,7 +57,7 @@ Gestion de la révocation
 PGP
 ===
 
-Avec PGP, chaque utilisateur est représenté par une paire de clés et peut-être vu comme une mini autorité de certification.
+Avec PGP, chaque utilisateur est représenté par une paire de clés et peut être vu comme une mini autorité de certification.
 
 
 Initialisation
@@ -65,7 +65,7 @@ Initialisation
 
 Chaque utilisateur génère sa paire de clés publique/privée. La clé publique est classiquement téléversée (sic) sur un serveur afin de pouvoir être téléchargée par quiconque le souhaitant.
 
-1. Quelles garanties sur une clé téléchargée pour l'adresse mail `'toto@acme.org'` ?
+Quelles garanties peut-on avoir sur une clé téléchargée pour l'adresse mail `'toto@acme.org'` ?
 
 
 Reconnaissance de clés tierces
