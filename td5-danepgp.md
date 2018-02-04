@@ -22,7 +22,7 @@ Avec DANE, les certificats ou clés publiques sont stockés directement dans les
 Un peu de DNSSEC (principe simplifié)
 ----------------
 
-DNSSEC dispose d'une paire de clés racine, responsable de signer la zone racine `'.'`. Chaque niveau de hiérarchie (TLD, domaine, etc.) possède ensuite sa propre paire de clés, signée par la zone supérieure et utilisée pour signer la zone courante et ses descendantes directes.
+DNSSEC dispose d'une paire de clés racine, responsable de signer la zone racine `'.'`. Chaque niveau de hiérarchie (TLD, domaine, etc.) possède ensuite sa propre paire de clés, signée par la zone supérieure et utilisée pour signer la zone courante et les clés des zones descendantes directes.
 
 1. Proposez un schéma allant jusqu'à la zone `'insa-lyon.fr'` contenant notamment une entrée pour `'www'`.
 2. La modification d'une zone demande-t-elle du travail supplémentaire aux zones supérieures ?
