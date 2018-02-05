@@ -98,5 +98,5 @@ L'objectif des certificats est d'éviter les attaques de type _Man-in-the-Middle
 * la réception d'un mail contenant un secret envoyé sur le domaine visé par la CA (approche classique des CA, en sachant que le mail n'est pas un protocole de communication sécurisé) ;
 * la vérification que plusieurs chemins de communication disjoints existent de manière identique et que, donc, il n'y a pas de MitM entre la cible et la CA lors de cette étape (approche ACME, sous l'hypothèse que le MitM n'est pas en bout de communication côté client).
 
-1. Schématisez le processus de vérification du protocole ACME.
+1. Schématisez un processus de vérification du type du protocole ACME (hôte cible, serveurs de vérification, clés de la CA, messages échangés).
 2. Proposez un workflow de déploiement continu intégrant la création d'un certificat avec une CA locale puis avec _Let's Encrypt_.
