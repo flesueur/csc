@@ -8,7 +8,7 @@ _Walid Bechkit ([walid.bechkit@insa-lyon.fr](mailto:walid.bechkit@insa-lyon.fr))
 [Intro](#introduction-à-la-crypto) |
 [Bases](#bases-de-la-crypto) |
 [Maths](#maths-pour-la-crypto) |
-[PKI](#infrastructures-à-clés-publiques-(PKI)) |
+[PKI](#infrastructures-à-clés-publiques-pki) |
 [Protocoles](#protocoles-cryptos) |
 [Biblio](#bibliographie)
 
