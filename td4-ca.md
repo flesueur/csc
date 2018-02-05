@@ -30,7 +30,7 @@ Un site HTTPS est cryptographiquement représenté par sa paire de clés Pub<sub
 1. Quel est le problème si le serveur envoie tout simplement sa clé publique au début de l'échange ?
 2. Quelles informations doit contenir son certificat ?
 3. Quelle est sa forme signée, en utilisant la notation proposée ?
-4. Quelle est la procédure de vérification côté client web ? Quels sont les pré-requis ?
+4. Quelle est la procédure de vérification côté client HTTPS ? Quels sont les pré-requis ?
 
 
 Comment communiquer avec un voisin ?
@@ -85,3 +85,18 @@ Imaginez maintenant que l'une des autorités soit compromise (malveillante ou at
 1. Quel impact pour les clients reconnaissant cette autorité ?
 2. Quel impact pour un site dont le certificat est émis par une autre autorité ?
 3. Comment y remédier dans le cas où c'est un certificat intermédiaire qui est compromis ? Dans le cas où c'est le certificat racine qui est compromis ?
+
+
+Ouverture : création et déploiement automatisés
+===============================================
+
+Pour du déploiement rapide, la création de certificats peut être automatisée. C'est par exemple le cas du protocole ACME proposé et utilisé par _Let's Encrypt_ ou d'approches plus ou moins artisanales pour du déploiement continu en approche _DevOps_ (le protocole ACME peut aussi être utilisé dans ce cas là).
+
+L'objectif des certificats est d'éviter les attaques de type _Man-in-the-Middle_. Pour cela, un certificat valide la possession d'un nom hôte vis-à-vis de la CA émettrice. Nous pouvons imaginer un certain nombre de possibilités pour vérifier cette possession lors de la signature :
+
+* une preuve administrative envoyée à la CA (non utilisé pour les certificats classiques, nécessaire pour les "EV") ;
+* la réception d'un mail contenant un secret envoyé sur le domaine visé par la CA (approche classique des CA, en sachant que le mail n'est pas un protocole de communication sécurisé) ;
+* la vérification que plusieurs chemins de communication disjoints existent de manière identique et que, donc, il n'y a pas de MitM entre la cible et la CA lors de cette étape (approche ACME, sous l'hypothèse que le MitM n'est pas en bout de communication côté client).
+
+1. Schématisez le processus de vérification du protocole ACME.
+2. Proposez un workflow de déploiement continu intégrant la création d'un certificat avec une CA locale puis avec _Let's Encrypt_.
