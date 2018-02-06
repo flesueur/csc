@@ -1,8 +1,8 @@
 # TD 5 : DANE/PGP
 
-_François Lesueur ([francois.lesueur@insa-lyon.fr](mailto:francois.lesueur@insa-lyon.fr), [@FLesueur](https://twitter.com/FLesueur) )_
+_François Lesueur ([francois.lesueur@insa-lyon.fr](mailto:francois.lesueur@insa-lyon.fr))_
 
-Ce TD présente les modèles de PKI "DANE" et "PGP/Web of trust"
+Ce TD présente les modèles de PKI "DANE" et "PGP/Web of trust".
 
 Notations
 =========
