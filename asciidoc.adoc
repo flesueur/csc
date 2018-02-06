@@ -1,0 +1,15 @@
+// Header of this document:
+
+Asciidoc cheatsheet for GitHub
+==============================
+:toc:
+:toc-placement: preamble
+:toclevels: 1
+:showtitle:
+:Some attr: Some value
+
+// Need some preamble to get TOC:
+{empty}
+
+Some attr's value is {someattr}.
+Escaped: \{someattr} and +++{someattr}+++.
