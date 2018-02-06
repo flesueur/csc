@@ -1,6 +1,6 @@
 # TD 4 : Autorités de certification
 
-_François Lesueur ([francois.lesueur@insa-lyon.fr](mailto:francois.lesueur@insa-lyon.fr), [@FLesueur](https://twitter.com/FLesueur) )_
+_François Lesueur ([francois.lesueur@insa-lyon.fr](mailto:francois.lesueur@insa-lyon.fr))_
 
 Ce TD présente le modèle de PKI "Autorités de certification", généralement noté CA (_Certification Authority_).
 
@@ -96,6 +96,7 @@ L'objectif des certificats est d'éviter les attaques de type _Man-in-the-Middle
 
 * une preuve administrative envoyée à la CA (non utilisé pour les certificats classiques, nécessaire pour les "EV") ;
 * la réception d'un mail contenant un secret envoyé sur le domaine visé par la CA (approche classique des CA, en sachant que le mail n'est pas un protocole de communication sécurisé) ;
+* la réception d'un SMS contenant un secret (approche Signal/Telegram/etc.) ;
 * la vérification que plusieurs chemins de communication disjoints existent de manière identique et que, donc, il n'y a pas de MitM entre la cible et la CA lors de cette étape (approche ACME, sous l'hypothèse que le MitM n'est pas en bout de communication côté client).
 
 1. Schématisez un processus de vérification du type du protocole ACME (hôte cible, serveurs de vérification, clés de la CA, messages échangés).
