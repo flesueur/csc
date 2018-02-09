@@ -54,7 +54,7 @@ Enfin, chaque bloc clair de 3 chiffres est chiffré indépendamment par la fonct
 > Attention, lors de l'appel à la fonction `pow(a,b,c)` de python, n'écrivez pas de '0' en début d'entier. Par exemple, pour le bloc clair `031`, tapez `pow(31,7,1147)`. Commencer un entier par '0' le fait interpréter comme un nombre encodé en _octal_ (même principe qu'un nombre commençant par '0x' qui est interprété comme un hexadécimal).
 
 
-Le déchiffrement est opéré de manière symétrique, en utilisant la clé privée au lieu de la clé publique. Chaque bloc clair est réobtenu à partir du bloc chiffré par le calcul : bloc<sub>clair</sub> = bloc<sub>chiffré</sub><sup>d</sup>[n]
+Le déchiffrement est opéré de manière analogue, en utilisant la clé privée au lieu de la clé publique. Chaque bloc clair est réobtenu à partir du bloc chiffré par le calcul : bloc<sub>clair</sub> = bloc<sub>chiffré</sub><sup>d</sup>[n]
 
 Signature et vérification
 -------------------------

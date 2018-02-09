@@ -134,6 +134,12 @@ Vous avez vu dans le cours précédent les autorités de certification (CA) pour
 Protocoles cryptos
 ==================
 
+Faire des protocoles au tableau :
+schéma d'authentif, notion de nonce -> vers TLS, auth mutuelle
+crypto hybride
+Kerberos
+PFS
+
 Quelques protocoles et usages de la cryptographie, à étudier de manière adaptée au temps disponible :
 
 * Le protocole [TLS](https://fr.wikipedia.org/wiki/Transport_Layer_Security) pour la sécurisation des échanges, qui utilise notamment [Diffie-Hellman](https://fr.wikipedia.org/wiki/%C3%89change_de_cl%C3%A9s_Diffie-Hellman) pour la génération d'une clé de session
@@ -152,6 +158,10 @@ Enjeux éthiques
 ===============
 
 Crypto wars https://en.wikipedia.org/wiki/Crypto_Wars
+
+https://cyberlaw.stanford.edu/files/publication/files/2018-02-05%20Technical%20Response%20to%20Rosenstein-Wray%20FINAL.pdf
+
+Keys under doormat
 
 -->
 
