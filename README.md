@@ -40,4 +40,6 @@ Le cours est [ici](cours.md)
 
 Les TD : [TD1 (JdR)](td1-jdr) / [TD3 (Passwords)](td3-passwords) / [TD4 (CA)](td4-ca) / [TD5 (DANE/PGP)](td5-danepgp)
 
+Les TP : [TP 2 (OpenSSL](tp2-openssl)
+
 La page Moodle [TC](https://moodle.insa-lyon.fr/course/view.php?id=4647) / [TCA](https://moodle.insa-lyon.fr/course/view.php?id=4694)
