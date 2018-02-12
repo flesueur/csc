@@ -56,7 +56,7 @@ Chacune des deux séances de TD et TP va se dérouler en deux phases:
 
 * La deuxième phase concernera le problème RSA et son lien avec la factorisation des grands nombres entiers. Quelques algorithmes de factorisation basiques seront proposées progressivement en TD et ensuite implémentés, évalués et comparés en TP.
 
-Pour mieux suivre les différentes preuves et la conception de quelques algorithmes de factorisation, vous devez lire le cours de Marine Minier "Arithmétique pour la cryptographie" disponible [ici](http://perso.citi.insa-lyon.fr/mminier/images/Arithmetique_pour_Cryptographie_impression.pdf)  **jusqu'au slide 31**. Ce cours donne les bases d’arithmétiques nécessaires pour comprendre par la suite le cryptosystème RSA et les méthodes de factorisation qui seront traitées. Pour la Crible d'Ératosthène, lisez le principe sur [la page Wikipedia, section Algorithme](https://fr.wikipedia.org/wiki/Crible_d%27%C3%89ratosth%C3%A8ne). Pour la fonction indicatrice d'Euleur, lisez plus de détails sur la page [Wikipedia](https://fr.wikipedia.org/wiki/Indicatrice_d%27Euler).
+Pour mieux suivre les différentes preuves et la conception de quelques algorithmes de factorisation, vous devez lire le cours de Marine Minier "Arithmétique pour la cryptographie" disponible [ici](http://perso.citi.insa-lyon.fr/mminier/images/Arithmetique_pour_Cryptographie_impression.pdf)  **jusqu'au slide 31** (vous pouvez sauter les slides 26 et 27 sur le théorème des restes chinois). Ce cours donne les bases d’arithmétiques nécessaires pour comprendre par la suite le cryptosystème RSA et les méthodes de factorisation qui seront traitées. Pour la Crible d'Ératosthène, lisez le principe sur [la page Wikipedia, section Algorithme](https://fr.wikipedia.org/wiki/Crible_d%27%C3%89ratosth%C3%A8ne). Pour la fonction indicatrice d'Euleur, lisez plus de détails sur la page [Wikipedia](https://fr.wikipedia.org/wiki/Indicatrice_d%27Euler).
 
 
 Pour la première phase, relisez attentivement la [page Wikipédia]( https://fr.wikipedia.org/wiki/Chiffrement_RSA) expliquant RSA **jusqu’à la section « Asymétrie »**. Pour la partie problème RSA et factorisation, lisez la [page du problème RSA sur Wikipédia]( https://fr.wikipedia.org/wiki/Probl%C3%A8me_RSA) **jusqu’à la section « Lien avec la factorisation »**.
@@ -66,7 +66,7 @@ Ouverture :
 Pour la partie factorisation, lisez le principe de l’algorithme p-1 de Pollard [Page Wikipédia, section principe]( https://fr.wikipedia.org/wiki/Algorithme_p-1_de_Pollard), le principe de l’algorithme de Pollard Rho [Page Wikipédia, section définition formelle]( https://fr.wikipedia.org/wiki/Algorithme_rho_de_Pollard) et le principe de l’algorithme de factorisation de Fermat [Page Wikipédia, sections intuition et méthode de base](https://fr.wikipedia.org/wiki/M%C3%A9thode_de_factorisation_de_Fermat)
 
 
-Le sujet de TD est disponible [ici](https://moodle.insa-lyon.fr/pluginfile.php/124079/mod_resource/content/1/TD_CSC_Maths_Crypto.pdf)
+Le sujet de TD est disponible [ici](https://moodle.insa-lyon.fr/pluginfile.php/124789/mod_resource/content/2/TD_CSC.pdf)
 
 Le sujet de TP est en cours de finalisation :)
 
