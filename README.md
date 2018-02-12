@@ -32,13 +32,13 @@ La structure détaillée est la suivante, la préparation de chaque item est dé
 * Maths pour la crypto : TD2, TP1
 * Stockage des mots de passe : TD3
 * PKI (autorités de certification, DANE et PGP) : TD4, TD5
-* Protocoles cryptographiques : CM2, TP2
+* Protocoles cryptographiques : CM3, TP2
 
 Pour interagir/discuter/commenter/poser des questions en dehors des heures de cours, vous devez utiliser le canal Slack #4tc-csc.
 
 Le cours est [ici](cours.md)
 
-Les notes de CM : [CM1 (intro)](cm1-intro.md)
+Les notes de CM : [CM1 (intro)](cm1-intro.md) / [CM3 (wrap-up)](cm3-wrapup.md)
 
 Les TD : [TD1 (JdR)](td1-jdr.md) / [TD3 (Passwords)](td3-passwords.md) / [TD4 (CA)](td4-ca.md) / [TD5 (DANE/PGP)](td5-danepgp.md)
 
