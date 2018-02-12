@@ -32,5 +32,11 @@ Mettez en place une authentification des clients par le serveur au moyen de cert
 Révocation
 ==========
 
-Expérimentez les mécanismes de révocation disponibles pour révoquer le certificat serveur ainsi que les certificats clients.
+Expérimentez les mécanismes de révocation disponibles (CRL, OCSP en ligne ou agrafé) pour révoquer le certificat serveur ainsi que les certificats clients.
+
+
+Bonus
+=====
+
+À l'aide des fonctions de base d'openssl (génération de clés et chiffrement), mettez en œuvre un protocole de cryptographie hybride pour échanger un message avec une autre personne de la salle.
 
