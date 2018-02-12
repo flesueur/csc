@@ -8,7 +8,7 @@ _Walid Bechkit ([walid.bechkit@insa-lyon.fr](mailto:walid.bechkit@insa-lyon.fr))
 [Bases](#bases-de-la-crypto) |
 [Maths](#maths-pour-la-crypto) |
 [PKI](#infrastructures-à-clés-publiques-pki) |
-[Enjeux](#enjeux-ethiques) |
+[Enjeux](#enjeux-éthiques) |
 [Biblio](#bibliographie)
 
 
@@ -107,6 +107,7 @@ Pour conclure ce cours, nous allons nous intéresser aux enjeux de société li�
 Cette liste n'est bien sûr pas exhaustive, toutes les suggestions d'ajout sont les bienvenues.
 
 Un dernier questionnaire Moodle porte sur cette partie qui mènera à une discussion/débat lors de la séance de TD.
+
 
 Bibliographie
 =============
