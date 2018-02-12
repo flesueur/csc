@@ -3,7 +3,6 @@
 _François Lesueur ([francois.lesueur@insa-lyon.fr](mailto:francois.lesueur@insa-lyon.fr), [@FLesueur](https://twitter.com/FLesueur))_,
 _Walid Bechkit ([walid.bechkit@insa-lyon.fr](mailto:walid.bechkit@insa-lyon.fr))_
 
-<!-- ici un commentaire -->
 
 [Intro](#introduction-à-la-crypto) |
 [Bases](#bases-de-la-crypto) |
@@ -19,10 +18,6 @@ Introduction à la crypto
 Pour cette séance, vous devez étudier l'histoire de la cryptographie et de son utilisation. Nous nous baserons pour cela sur l'article de Wikipedia qui propose un bon historique : [WikipediaFR](https://fr.wikipedia.org/wiki/Histoire_de_la_cryptologie) 
 
 N'oubliez pas d'aller remplir ensuite le QCM sur moodle !
-
-<!-- La version anglaise va un peu plus loin et notamment sur les aspects politiques plus récents : [WikipediaEN](https://en.wikipedia.org/wiki/History_of_cryptography) -->
-
-<!-- Intro sur la sécurité des coms en général, de césar/ égyptien a signal -->
 
 
 Bases de la crypto
@@ -97,75 +92,21 @@ Ouvertures (facultatives) :
 
 <!-- moxie : https://www.youtube.com/watch?v=pDmj_xe7EIQ  https://www.youtube.com/watch?v=Z7Wl2FW2TcA  https://moxie.org/blog/ssl-and-the-future-of-authenticity/  https://media.defcon.org/DEF%20CON%2019/DEF%20CON%2019%20video%20and%20slides/DEF%20CON%2019%20Hacking%20Conference%20Presentation%20By%20-%20Moxie%20Marlinspike%20-%20SSL%20And%20The%20Future%20Of%20Authenticity%20-%20Video%20and%20Slides.m4v-->
 
-<!--
-
-Stockage des mots de passe
-==========================
-
-Stockage des mots de passe [Serious Security: How to store your users’ passwords safely, _Paul Ducklin_](https://nakedsecurity.sophos.com/2013/11/20/serious-security-how-to-store-your-users-passwords-safely/)
-
-[OWASP](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet)
-
-
-PKI1, autorités de certification
-================================
-
-Ouverture (facultative): 
-
-* Attaque Comodo 2011 [Lessons Learned from DigiNotar, Comodo and RSA Breaches, _Jeff Hudson, SecurityWeek_](http://www.securityweek.com/lessons-learned-diginotar-comodo-and-rsa-breaches)
--->
-
-<!-- plus orienté CA/TLS/modèles de confiance : pinning, hsts, TOFU trust on first use, révocation. puis TP plus libre, sans le début trop bidouille RSA dans openssl, démarrer à CA avec plus de réflexion. SUjet limité à 2 pages, pas pousse-bouton. https://en.wikipedia.org/wiki/Opportunistic_encryption  -->
-
-
-<!--
-
-PKI2, DANE et PGP
-=================
-
-Vous avez vu dans le cours précédent les autorités de certification (CA) pour obtenir les clés publiques de tiers. Étudiez maintenant la [toile de confiance](https://en.wikipedia.org/wiki/Web_of_trust) telle qu'utilisée par PGP pour résoudre ce même problème (avec ses avantages et ses inconvénients). L'obtention de clés publiques est un service orthogonal au service de sécurité rendu par la cryptographie (ie, un même service, le mail chiffré et signé par exemple, peut-être rendu avec une approche type CA avec S/MIME ou une approche toile de confiance avec PGP).
-
--->
-
-<!-- moxie : https://www.youtube.com/watch?v=pDmj_xe7EIQ  https://www.youtube.com/watch?v=Z7Wl2FW2TcA  https://moxie.org/blog/ssl-and-the-future-of-authenticity/  https://media.defcon.org/DEF%20CON%2019/DEF%20CON%2019%20video%20and%20slides/DEF%20CON%2019%20Hacking%20Conference%20Presentation%20By%20-%20Moxie%20Marlinspike%20-%20SSL%20And%20The%20Future%20Of%20Authenticity%20-%20Video%20and%20Slides.m4v-->
-
-<!--
-
-Protocoles cryptos
-==================
-
-Faire des protocoles au tableau :
-schéma d'authentif, notion de nonce -> vers TLS, auth mutuelle
-crypto hybride
-Kerberos
-PFS
-
-Quelques protocoles et usages de la cryptographie, à étudier de manière adaptée au temps disponible :
-
-* Le protocole [TLS](https://fr.wikipedia.org/wiki/Transport_Layer_Security) pour la sécurisation des échanges, qui utilise notamment [Diffie-Hellman](https://fr.wikipedia.org/wiki/%C3%89change_de_cl%C3%A9s_Diffie-Hellman) pour la génération d'une clé de session
-* Le protocole [Kerberos](https://fr.wikipedia.org/wiki/Kerberos_%28protocole%29) pour l'authentification et l'autorisation, qui utilise notamment [Needham–Schroeder](https://en.wikipedia.org/wiki/Needham%E2%80%93Schroeder_protocol)
-* Les [VPN](https://en.wikipedia.org/wiki/Virtual_private_network)
-
--->
-
-<!-- Ouverture (obligatoire): [One Year of SSL Internet Measurement, _Olivier Levillain, Arnaud Ébalard, Benjamin Morin,Hervé Debar_](https://www.acsac.org/2012/openconf/modules/request.php?module=oc_program&action=view.php&a=&id=163&type=4&OPENCONF=tnkb1t3p2cgfsdcegc1dl5m251) -->
-<!-- Ouverture (obligatoire): Neither Snow Nor Rain Nor MITM... An Empirical Analysis of Email Delivery Security -->
-
-<!--
-Cette section sera conclue par le TP OpenSSL.
 
 Enjeux éthiques
 ===============
 
-Crypto wars https://en.wikipedia.org/wiki/Crypto_Wars
+Pour conclure ce cours, nous allons nous intéresser aux enjeux de société liés à la cryptographie. Pour cela, vous devez consacrer le temps de préparation à lire des (parties de) documents suivants :
 
-https://cyberlaw.stanford.edu/files/publication/files/2018-02-05%20Technical%20Response%20to%20Rosenstein-Wray%20FINAL.pdf
+* [Crypto wars](https://en.wikipedia.org/wiki/Crypto_Wars)
+* [The Risks of “Responsible Encryption”, _Riana Pfefferkorn_](https://cyberlaw.stanford.edu/files/publication/files/2018-02-05%20Technical%20Response%20to%20Rosenstein-Wray%20FINAL.pdf)
+* [Keys Under Doormats: Mandating insecurity by requiring government access to all data and communications,_Abelson, Harold; Anderson, Ross; Bellovin, Steven M.; Benaloh, Josh; Blaze, Matt; Diffie, Whitfield; Gilmore, John; Green, Matthew; Landau, Susan; Neumann, Peter G.; Rivest, Ronald L.; Schiller, Jeffrey I.; Schneier, Bruce; Specter, Michael; Weitzner, Daniel J._](https://dspace.mit.edu/bitstream/handle/1721.1/97690/MIT-CSAIL-TR-2015-026.pdf?sequence=8)
+* [Listen up, FBI: Juniper code shows the problem with backdoors, _Fahmida Y. Rashid, InfoWorld_](https://www.infoworld.com/article/3018029/virtual-private-network/listen-up-fbi-juniper-code-shows-the-problem-with-backdoors.html)
+* [The Moral Character of Cryptographic Work, _Phillip Rogaway_](http://web.cs.ucdavis.edu/~rogaway/papers/moral-fn.pdf)
 
-Keys under doormat
+Cette liste n'est bien sûr pas exhaustive, toutes les suggestions d'ajout sont les bienvenues.
 
--->
-
-...
+Un dernier questionnaire Moodle porte sur cette partie qui mènera à une discussion/débat lors de la séance de TD.
 
 Bibliographie
 =============

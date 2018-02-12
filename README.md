@@ -33,6 +33,7 @@ La structure détaillée est la suivante, la préparation de chaque item est dé
 * Stockage des mots de passe : TD3
 * PKI (autorités de certification, DANE et PGP) : TD4, TD5
 * Protocoles cryptographiques : CM3, TP2
+* Enjeux éthiques : TD6
 
 Pour interagir/discuter/commenter/poser des questions en dehors des heures de cours, vous devez utiliser le canal Slack #4tc-csc.
 
