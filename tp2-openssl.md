@@ -8,6 +8,11 @@ Si, après avoir affiché à l'écran un document chiffré (par exemple avec la 
 
 Dans ce TP, vous avez besoin de travailler dans plusieurs environnements simultanément, qui peuvent être simulés avec différentes machines, différents containers docker ou au minimum des dossiers clairement distincts.
 
+Quelques exemples de bons tutoriaux :
+
+* [PKI-Tutorial](https://pki-tutorial.readthedocs.io/en/latest/simple/index.html)
+* [Jamielinux](https://jamielinux.com/docs/openssl-certificate-authority/)
+
 
 Mise en place d'une CA à étage
 ==============================
@@ -39,4 +44,6 @@ Bonus
 =====
 
 À l'aide des fonctions de base d'openssl (génération de clés et chiffrement), mettez en œuvre un protocole de cryptographie hybride pour échanger un message avec une autre personne de la salle.
+
+<!-- pinning, hsts -->
 
