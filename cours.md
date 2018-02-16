@@ -103,6 +103,7 @@ Pour conclure ce cours, nous allons nous intéresser aux enjeux de société li�
 * [The Risks of “Responsible Encryption”, _Riana Pfefferkorn_](https://cyberlaw.stanford.edu/files/publication/files/2018-02-05%20Technical%20Response%20to%20Rosenstein-Wray%20FINAL.pdf)
 * [Keys Under Doormats: Mandating insecurity by requiring government access to all data and communications,_Abelson, Harold; Anderson, Ross; Bellovin, Steven M.; Benaloh, Josh; Blaze, Matt; Diffie, Whitfield; Gilmore, John; Green, Matthew; Landau, Susan; Neumann, Peter G.; Rivest, Ronald L.; Schiller, Jeffrey I.; Schneier, Bruce; Specter, Michael; Weitzner, Daniel J._](https://dspace.mit.edu/bitstream/handle/1721.1/97690/MIT-CSAIL-TR-2015-026.pdf?sequence=8)
 * [The Moral Character of Cryptographic Work, _Phillip Rogaway_](http://web.cs.ucdavis.edu/~rogaway/papers/moral-fn.pdf)
+* [Decrypting the encryption debate](https://www.nap.edu/catalog/25010/decrypting-the-encryption-debate-a-framework-for-decision-makers)
 
 Cette liste n'est bien sûr pas exhaustive, toutes les suggestions d'ajout sont les bienvenues.
 

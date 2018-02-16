@@ -2,7 +2,7 @@
 
 _François Lesueur ([francois.lesueur@insa-lyon.fr](mailto:francois.lesueur@insa-lyon.fr))_
 
-Ce TD présente le modèle de PKI "Autorités de certification", généralement noté CA (_Certification Authority_).
+Ce TD présente le modèle de PKI "Autorités de certification", généralement noté CA (_Certification Authority_). Pour rappel, dans le cas du HTTPS par exemple, une CA doit permettre de valider la clé publique tierce obtenue pour la connexion au site demandé.
 
 Notations
 =========
@@ -27,7 +27,7 @@ Qu'est-ce qu'un certificat de site HTTPS ?
 
 Un site HTTPS est cryptographiquement représenté par sa paire de clés Pub<sub>site</sub> / Priv<sub>site</sub>.
 
-1. Quel est le problème si le serveur envoie tout simplement sa clé publique au début de l'échange ?
+1. Quel est le problème si le serveur envoie tout simplement sa clé publique au début de l'échange (typiquement un certificat auto-signé) ?
 2. Quelles informations doit contenir son certificat ?
 3. Quelle est sa forme signée, en utilisant la notation proposée ?
 4. Quelle est la procédure de vérification côté client HTTPS ? Quels sont les pré-requis ?
