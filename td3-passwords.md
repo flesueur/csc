@@ -8,7 +8,7 @@ Ce TD présente l'univers de la vérification et de l'utilisation des mots de pa
 * Stockage et utilisation côté client
 * Risques associés
 
-Dans l'ensemble des cas, nous souhaitons évaluer le cas d'une attaque qui exfiltre des fichiers de l'application (dont le fichier de la base de données ou le fichier `/etc/shadow` par exemple).
+<!-- Dans l'ensemble des cas, nous souhaitons évaluer le cas d'une attaque qui exfiltre des fichiers de l'application (dont le fichier de la base de données ou le fichier `/etc/shadow` par exemple). -->
 
 Notations
 =========
@@ -18,6 +18,23 @@ Notations
 * Si Pub<sub>A</sub> et Priv<sub>A</sub> sont des clés asymétriques complémentaires publique/privée, {m}<sub>Pub<sub>A</sub></sub> est le chiffré de m avec la clé Pub<sub>A</sub> et m = { {m}<sub>Pub<sub>A</sub></sub>}<sub>Priv<sub>A</sub></sub>
 * m signé avec la clé Priv<sub>A</sub> est noté m.{h(m)}<sub>Priv<sub>A</sub></sub>
 
+
+
+Scénario
+========
+
+Dans l'ensemble des cas, nous souhaitons évaluer le cas d'une attaque sur une application web qui exfiltre des fichiers de l'application (dont le fichier de la base de données ou le fichier `/etc/shadow` par exemple). Dans ce cadre, nous posons les points suivants :
+
+* Le serveur est déjà compromis, l'obtention d'un compte valide sur ce serveur n'a pas d'intérêt pour l'attaquant.
+* Les victimes potentielles sont les utilisateurs du site qui y ont enregistré un compte. En effet, un attaquant pourrait alors essayer de se connecter en leur nom sur des services tiers grâce aux informations récupérées.
+
+
+Pour limiter ce risque, deux approches complémentaires doivent être mises en place :
+
+1. Le serveur doit compliquer autant que possible la tâche de l'attaquant qui a volé la base en maximisant le temps nécessaire pour obtenir des informations valides à partir de la base.
+2. Les utilisateurs, n'ayant pas la possibilité de connaître les contre-mesures mises en place par le serveur, doivent limiter l'impact de cette compromission en utilisant des mots de passes différents, idéalement un pour chaque site.
+
+Ces deux mesures sont bien complémentaires car il est du devoir de chaque site de protéger les mots de passes des utilisateurs n'appliquant pas les meilleures pratiques et de chaque utilisateur de protéger au mieux de ses capacités ses mots de passes.
 
 
 Côté serveur
