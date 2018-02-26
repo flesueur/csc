@@ -1,20 +1,27 @@
+OUTDIR= output
 SRC= $(wildcard *.md)
-PDF= $(SRC:.md=.pdf)
-HTML= $(SRC:.md=.html)
+PDF= $(addprefix $(OUTDIR)/,$(SRC:.md=.pdf))
+HTML= $(addprefix  $(OUTDIR)/,$(SRC:.md=.html))
 
-all: $(PDF) $(HTML)
+
+all: $(PDF) $(HTML) directories
 
 pdf: $(PDF)
 
 html: $(HTML)
 
-%.html: %.md
+directories: $(OUTDIR)
+
+$(OUTDIR):
+	mkdir $(OUTDIR)
+
+$(OUTDIR)/%.html: %.md directories
 	pandoc $< -o $@ -s
 
-%.pdf: %.html
+$(OUTDIR)/%.pdf: $(OUTDIR)/%.html
 	wkhtmltopdf $< $@
 
 clean:
-	\rm -rf *.html *.pdf
+	\rm -rf *.html *.pdf $(OUTDIR)
 
 
