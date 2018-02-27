@@ -10,6 +10,8 @@ Ce TD présente l'univers de la vérification et de l'utilisation des mots de pa
 
 <!-- Dans l'ensemble des cas, nous souhaitons évaluer le cas d'une attaque qui exfiltre des fichiers de l'application (dont le fichier de la base de données ou le fichier `/etc/shadow` par exemple). -->
 
+<!-- TODO : Mieux cerner le cadre général. Première partie sur la robustesse des mots de passe et sur la question "casser un mdp". Puis setup de la cinématique d'authentif avec stockage plaintext, pass qui passe en plaintext dans l'appli. Puis les différents modèles ensemble en explicitant toujours mdp plaintext dans l'appli. Pas de chall/resp si on reste sur le cas d'authentif type appli web. Pas le pass manager dans ce cas. -->
+
 Notations
 =========
 
