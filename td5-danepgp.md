@@ -41,8 +41,8 @@ Mise en œuvre
 Risques
 -------
 
-1. Quel impact si un attaquant obtient ma clé privée de zone ?
-2. Quel impact si ma zone parente est maveillante ou compromise ?
+1. Quel impact si un attaquant obtient ma clé privée de zone (`'insa-lyon.fr'`) ?
+2. Quel impact si ma zone parente est maveillante ou compromise (`'.fr'`) ?
 3. Quel impact si une zone DNS non liée (par exemple `'.tv'` dans notre cas) est compromise ?
 
 
@@ -63,7 +63,7 @@ Avec PGP, chaque utilisateur est représenté par une paire de clés et peut êt
 Initialisation
 --------------
 
-Chaque utilisateur génère sa paire de clés publique/privée. La clé publique est classiquement téléversée (sic) sur un serveur afin de pouvoir être téléchargée par quiconque le souhaitant.
+Chaque utilisateur génère sa paire de clés publique/privée. La clé publique est classiquement téléversée sur un serveur afin de pouvoir être téléchargée par quiconque le souhaitant.
 
 Quelles garanties peut-on avoir sur une clé téléchargée pour l'adresse mail `'toto@acme.org'` ?
 
@@ -85,10 +85,10 @@ L'agrégation de toutes ces signatures permet de modéliser le graphe de confian
 Composantes malicieuses
 -----------------------
 
-Imaginons qu'un attaquant crée un grand nombre d'identités et signe une clé pour l'adresse mail `'toto@acme.org'`.
+Imaginons qu'un attaquant crée un grand nombre d'identités et signe une clé pour l'adresse mail `'tutu@acme.org'`.
 
 1. Ajoutez cela au graphe précédent.
-2. Évaluons la récupération de la clé de `'toto@acme.org'` par une personne donnée et le score associé.
+2. Évaluons la récupération de la clé de `'tutu@acme.org'` par une personne donnée et le score associé.
 3. Considérons maintenant que certaines personnes du graphe de confiance ne sont pas très regardantes sur leur validation et faisons évoluer le graphe en conséquence, ré-évaluez la question précédente.
 4. Quelles conclusions pouvons-nous en tirer sur la robustesse aux attaquants ?
 
