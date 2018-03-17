@@ -6,13 +6,14 @@ Ce TP présente le modèle des autorités de certification et l'applique au prot
 
 Si, après avoir affiché à l'écran un document chiffré (par exemple avec la commande `cat`), votre terminal affiche de mauvais caractères, utilisez la combinaison de touches `Ctrl+v, Ctrl+o` pour retrouver un affichage fonctionnel (ou tapez `reset`).
 
-Dans ce TP, vous avez besoin de travailler dans plusieurs environnements simultanément, qui peuvent être simulés avec différentes machines, différents containers docker ou au minimum des dossiers clairement distincts.
+Dans ce TP, vous avez besoin de travailler dans plusieurs environnements simultanément (CA racine, CA intermédiaire, serveur HTTPS, client HTTPS), qui peuvent être simulés avec différentes machines (physiques ou virtuelles), différents containers docker ou au minimum des dossiers de travail clairement distincts.
 
 Quelques exemples de bons tutoriaux :
 
 * [PKI-Tutorial](https://pki-tutorial.readthedocs.io/en/latest/simple/index.html)
 * [Jamielinux](https://jamielinux.com/docs/openssl-certificate-authority/)
 
+<!-- TODO : revoir containers/VMS/etc. + chemin vers la VM tp-sec-debian. root/root debian/debian. 8443 + 8080 redirigés -->
 
 Mise en place d'une CA à étage
 ==============================
@@ -27,6 +28,7 @@ Depuis un environnement distinct, créez et obtenez le matériel cryptographique
 
 Configurez également un client HTTPS de manière adaptée pour vous y connecter de manière sécurisée.
 
+> Pour configurer et exécuter le serveur HTTPS, vous pouvez utiliser la VM "tp-sec-debian" disponible sur les postes du département. Pour la démarrer, il faut exécuter `/machines_virtuelles/secu_vms/master/tp-sec-debian.sh`. Les comptes disponible sont ensuite `root/root` et ̀`debian/debian`. Des redirections de ports sont configurées automatiquement, les ports 80 et 443 de la VM sont accessibles depuis un navigateur exécuté sur l'hôte par les URL `http://127.0.0.1:8080` et `https://127.0.0.1:8443`.
 
 Authentification mutuelle
 =========================
