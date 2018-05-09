@@ -16,7 +16,7 @@ Schémas présentés :
 
 Quelques schémas utilisés :
 
-![Diffie-Hellman](http://www.practicalnetworking.net/wp-content/uploads/2015/11/dh-revised-1024x751.png "Diffie-Hellman")
+![Diffie-Hellman](http://www.practicalnetworking.net/wp-content/uploads/2015/11/dh-revised-1024x751.png "Diffie-Hellman"){width=40%}
 
 ![TLS](https://rebecca.meritz.com/ggm15/handshake.png "TLS")
 
