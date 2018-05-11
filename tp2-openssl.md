@@ -13,7 +13,7 @@ Quelques exemples de bons tutoriaux :
 * [PKI-Tutorial](https://pki-tutorial.readthedocs.io/en/latest/simple/index.html)
 * [Jamielinux](https://jamielinux.com/docs/openssl-certificate-authority/)
 
-<!-- TODO : revoir containers/VMS/etc. + chemin vers la VM tp-sec-debian. root/root debian/debian. 8443 + 8080 redirigés -->
+<!-- TODO : dans l'infra LXC générique ? -->
 
 Mise en place d'une CA à étage
 ==============================
