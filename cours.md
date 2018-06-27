@@ -15,7 +15,7 @@ _Walid Bechkit ([walid.bechkit@insa-lyon.fr](mailto:walid.bechkit@insa-lyon.fr))
 Introduction à la crypto
 ========================
 
-Pour cette séance, vous devez étudier l'histoire de la cryptographie et de son utilisation. Nous nous baserons pour cela sur l'article de Wikipedia qui propose un bon historique : [WikipediaFR](https://fr.wikipedia.org/wiki/Histoire_de_la_cryptologie) 
+Pour cette séance, vous devez étudier l'histoire de la cryptographie et de son utilisation. Nous nous baserons pour cela sur l'article de Wikipedia qui propose un bon historique : [WikipediaFR](https://fr.wikipedia.org/wiki/Histoire_de_la_cryptologie)
 
 N'oubliez pas d'aller remplir ensuite le QCM sur moodle !
 
@@ -32,7 +32,7 @@ Enfin, le programme [Bullrun](https://fr.wikipedia.org/wiki/Bullrun) donne un bo
 
 Ouverture (obligatoire): [La sélection de l'AES](https://videlalvaro.github.io/2014/03/you-dont-roll-your-own-crypto.html)
 
-Ouverture (facultative): 
+Ouverture (facultative):
 
 * [L'histoire de Dual\_EC\_DRBG](https://en.wikipedia.org/wiki/Dual_EC_DRBG)
 * [Listen up, FBI: Juniper code shows the problem with backdoors, _Fahmida Y. Rashid, InfoWorld_](http://www.infoworld.com/article/3018029/virtual-private-network/listen-up-fbi-juniper-code-shows-the-problem-with-backdoors.html)
@@ -78,7 +78,7 @@ Ouverture (obligatoire) : [Exemple de crypto symétrique : AES](http://www.moser
 Infrastructures à clés publiques (PKI)
 =======================================
 
-Le rôle d'une PKI est de lier une clé publique à une identité (typiquement, à une chaîne de caractères intelligible comme une URL `www.acme.org` ou une adresse mail `brice@acme.org`). L'obtention de clés publiques est un service orthogonal au service de sécurité rendu par la cryptographie (ie, un même service, le mail chiffré et signé par exemple, peut-être rendu avec une approche type CA avec S/MIME ou une approche toile de confiance avec PGP). 
+Le rôle d'une PKI est de lier une clé publique à une identité (typiquement, à une chaîne de caractères intelligible comme une URL `www.acme.org` ou une adresse mail `brice@acme.org`). L'obtention de clés publiques est un service orthogonal au service de sécurité rendu par la cryptographie (ie, un même service, le mail chiffré et signé par exemple, peut-être rendu avec une approche type CA avec S/MIME ou une approche toile de confiance avec PGP).
 
 Vous devez lire la [page anglaise de Wikipedia](https://en.wikipedia.org/wiki/Public_key_infrastructure) sur ce sujet, qui présente différentes formes de PKI (autorités de certifications, toile de confiance, SPKI, blockchain). Attention, la page française n'est pas assez détaillée.<!-- très différente et présente une vision réduites à l'approche CA, c'est uniquement la page anglaise qui fait référence pour ce cours. -->
 
@@ -86,7 +86,7 @@ Vous devez détailler chacune des différentes formes, avec une attention partic
 
 Annexe (obligatoire). Pour comprendre DANE/TLSA qui repose sur DNSSEC, vous devez avoir compris le fonctionnement et les différents acteurs du système DNS (typiquement, notions de _registry_, _registrar_, gestion d'une zone et mécanisme de résolution récursif). Vous pouvez par exemple lire [Sebsauvage](http://sebsauvage.net/comprendre/dns/) jusque "Dans ce cas, ils sont à la fois registry et registrar.", [Bortzmeyer](http://www.bortzmeyer.org/files/cours-dns-cnam-PRINT.pdf) sections "Le protocole DNS" et "Gouvernance" et/ou d'autres ressources équivalentes.
 
-Ouvertures (facultatives) : 
+Ouvertures (facultatives) :
 
 * [SSL And The Future Of Authenticity, _Moxie Marlinspike (aka Mr. Signal)_](https://moxie.org/blog/ssl-and-the-future-of-authenticity/), ainsi que la [vidéo associée](https://media.defcon.org/DEF%20CON%2019/DEF%20CON%2019%20video%20and%20slides/DEF%20CON%2019%20Hacking%20Conference%20Presentation%20By%20-%20Moxie%20Marlinspike%20-%20SSL%20And%20The%20Future%20Of%20Authenticity%20-%20Video%20and%20Slides.m4v)
 * [Quantifying Untrusted Symantec Certificates, _Arkadiy Tetelman_](https://arkadiyt.com/2018/02/04/quantifying-untrusted-symantec-certificates/)
@@ -106,6 +106,7 @@ Pour conclure ce cours, nous allons nous intéresser aux enjeux de société li�
 * [Keys Under Doormats: Mandating insecurity by requiring government access to all data and communications,_Abelson, Harold; Anderson, Ross; Bellovin, Steven M.; Benaloh, Josh; Blaze, Matt; Diffie, Whitfield; Gilmore, John; Green, Matthew; Landau, Susan; Neumann, Peter G.; Rivest, Ronald L.; Schiller, Jeffrey I.; Schneier, Bruce; Specter, Michael; Weitzner, Daniel J._](https://dspace.mit.edu/bitstream/handle/1721.1/97690/MIT-CSAIL-TR-2015-026.pdf?sequence=8)
 * [The Moral Character of Cryptographic Work, _Phillip Rogaway_](http://web.cs.ucdavis.edu/~rogaway/papers/moral-fn.pdf)
 * [Decrypting the encryption debate](https://www.nap.edu/catalog/25010/decrypting-the-encryption-debate-a-framework-for-decision-makers)
+* [Conférence de clôture du SSTIC 2018, Patrick Pailloux, Directeur technique de la DGSE (vidéo, 1h)](https://www.sstic.org/2018/presentation/2018_cloture/)
 <!-- https://www.wired.com/story/crypto-war-clear-encryption/ https://twitter.com/matthew_d_green/status/989222188287954945 https://blog.erratasec.com/2018/04/no-ray-ozzie-hasnt-solved-crypto.html  https://twitter.com/ErrataRob/status/989237973412732928 https://arstechnica.com/information-technology/2018/05/op-ed-ray-ozzies-crypto-proposal-a-dose-of-technical-reality/  -->
 
 Cette liste n'est bien sûr pas exhaustive, toutes les suggestions d'ajout sont les bienvenues.

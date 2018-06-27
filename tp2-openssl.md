@@ -1,5 +1,7 @@
 # TP 2 : Autorités de certification et HTTPS
 
+<!-- VPN avec auth mutuelle sur l'nfra LXC ? -->
+
 _François Lesueur ([francois.lesueur@insa-lyon.fr](mailto:francois.lesueur@insa-lyon.fr))_
 
 Ce TP présente le modèle des autorités de certification et l'applique au protocole HTTPS.
