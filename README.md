@@ -46,3 +46,5 @@ Les TD : [TD1 (JdR)](td1-jdr.md) / [TD3 (Passwords)](td3-passwords.md) / [TD4 (C
 Les TP : [TP2 (OpenSSL)](tp2-openssl.md)
 
 La page Moodle [TC](https://moodle.insa-lyon.fr/course/view.php?id=4647) / [TCA](https://moodle.insa-lyon.fr/course/view.php?id=4694)
+
+Les [annales](https://github.com/flesueur/csc/tree/master/annales)
