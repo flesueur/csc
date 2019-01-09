@@ -6,8 +6,8 @@ _Walid Bechkit ([walid.bechkit@insa-lyon.fr](mailto:walid.bechkit@insa-lyon.fr))
 <!-- https://tls.ulfheim.net/ -->
 
 [Intro](#introduction-à-la-crypto) |
-[Bases](#bases-de-la-crypto) |
 [Maths](#maths-pour-la-crypto) |
+[Bases](#bases-de-la-crypto) |
 [PKI](#infrastructures-à-clés-publiques-pki) |
 [Enjeux](#enjeux-éthiques) |
 [Biblio](#bibliographie)
