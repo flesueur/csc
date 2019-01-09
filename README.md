@@ -11,8 +11,8 @@ _Walid Bechkit ([walid.bechkit@insa-lyon.fr](mailto:walid.bechkit@insa-lyon.fr))
 Le cours 4TC-CSC est structuré de la manière suivante :
 
 * 2 séances de 1h de questions/réponses/discussions (CM)
-* 1 séance de 2h de cours magistral
-* 5 TD de 2h
+* 2 séance de 2h de cours magistral
+* 6 TD de 2h
 * 2 séances de 4h de TP
 * Environ 10h de travail personnel (préparation cours et TP)
 
@@ -27,13 +27,13 @@ La note finale de l'UE sera calculée comme suit :
 
 La structure détaillée est la suivante, la préparation de chaque item est détaillée dans la suite du document :
 
-* Introduction des objectifs : CM1
-* Bases de la crypto : CM2, TD1
-* Maths pour la crypto : TD2, TP1
+* Introduction des objectifs : CM1, Travail perso
+* Maths pour la crypto : CM2 (sans préparation, le seul), TD1, TP1
+* Bases de la crypto : Travail perso, CM3, TD2
 * Stockage des mots de passe : TD3
-* PKI (autorités de certification, DANE et PGP) : TD4, TD5
-* Protocoles cryptographiques : CM3, TP2
-* Enjeux éthiques : TD6
+* PKI (autorités de certification, DANE et PGP) : Travail perso, TD4, TD5
+* Protocoles cryptographiques : CM4, TP2
+* Enjeux éthiques : Travail perso, TD6
 
 Pour interagir/discuter/commenter/poser des questions en dehors des heures de cours, vous devez utiliser le canal Slack #4tc-csc.
 
@@ -41,7 +41,7 @@ Le cours est [ici](cours.md)
 
 Les notes de CM : [CM1 (intro)](cm1-intro.md) / [CM3 (wrap-up)](cm3-wrapup.md)
 
-Les TD : [TD1 (JdR)](td1-jdr.md) / [TD3 (Passwords)](td3-passwords.md) / [TD4 (CA)](td4-ca.md) / [TD5 (DANE/PGP)](td5-danepgp.md)
+Les TD : [TD2 (JdR)](td2-jdr.md) / [TD3 (Passwords)](td3-passwords.md) / [TD4 (CA)](td4-ca.md) / [TD5 (DANE/PGP)](td5-danepgp.md)
 
 Les TP : [TP2 (OpenSSL)](tp2-openssl.md)
 
