@@ -35,7 +35,7 @@ La structure détaillée est la suivante, la préparation de chaque item est dé
 * Protocoles cryptographiques : CM4, TP2
 * Enjeux éthiques : Travail perso, TD6
 
-Pour interagir/discuter/commenter/poser des questions en dehors des heures de cours, vous devez utiliser le canal Slack #4tc-csc.
+Pour interagir/discuter/commenter/poser des questions en dehors des heures de cours, vous devez utiliser le canal Slack [#4tc-csc](https://tc-insa.slack.com/messages/C7KRNDQ9K).
 
 Le cours est [ici](cours.md)
 
