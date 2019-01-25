@@ -12,10 +12,17 @@ from Crypto.Cipher import AES
 from Crypto import Random
 import base64
 import os
+import urllib
 
 # returns an array of a dictionary of passwords
 def getPassDict(nbpasswords):
-    f = open("passwords.txt")
+    try:
+        f = open("files/passwords.txt")
+    except FileNotFoundError:
+        print("Downloading a passwords list...")
+        urllib.request.urlretrieve("https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt?raw=true", "files/passwords.txt")
+        print("Done !")
+        f = open("files/passwords.txt")
     passwords = []
     #nbpasswords = 10000
     passtogen = nbpasswords
