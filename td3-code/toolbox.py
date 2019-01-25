@@ -13,6 +13,7 @@ from Crypto import Random
 import base64
 import os
 import urllib.request
+import string
 
 # returns an array of a dictionary of passwords
 def getPassDict(nbpasswords):
@@ -32,6 +33,11 @@ def getPassDict(nbpasswords):
         if passtogen == 0:
             break
     return passwords
+
+def genRandomPassword():
+    length = 12
+    chars = string.ascii_letters + string.digits
+    return ''.join(random.choice(chars) for i in range(length))
 
 # reads/writes shadow-style files
 def readfile(filename):
@@ -59,7 +65,10 @@ def genplain(nblogins,nbpasswords):
     logins = []
     for i in range(0,nblogins):
         login = "user" + str(i)
-        logins.append((login,passwords[random.randint(0,len(passwords)-1)]))
+        if (random.randint(0,10) < 4):
+            logins.append((login,passwords[random.randint(0,len(passwords)-1)]))
+        else:
+            logins.append((login,genRandomPassword()))
     return logins
 
 def authplain(login, passwd, database):
@@ -128,6 +137,7 @@ def getpassfromshahash(hashes, hash):
     for j in hashes:
         if j[0] == hash:
             return j[1]
+    return None
 
 # Salted SHA storage
 def gensaltedsha(logins):
