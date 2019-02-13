@@ -28,7 +28,7 @@ En utilisant par exemple `openssl`, mettez en œuvre une CA avec paire de clés 
 Installation d'un serveur HTTPS
 ===============================
 
-Créez et obtenez le matériel cryptographique pour mettre en place en place un serveur HTTPS. Configurez un serveur avec ce matériel, `apache httpd` par exemple.
+Créez le matériel cryptographique pour mettre en place en place un serveur HTTPS. Configurez un serveur avec ce matériel, `apache httpd` par exemple.
 
 Configurez également un client HTTPS de manière adaptée pour vous y connecter de manière sécurisée.
 
