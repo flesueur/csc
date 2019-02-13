@@ -55,6 +55,8 @@ La machine backbone est sur le chemin des paquets. Vous pouvez voir les paquets 
 
 Installez le nécessaire sur le backbone pour que la connexion vers `https://dmz.target.virt` se termine en fait sur le backbone (malicieux). Quelles en sont les limites ?
 
+Une version un peu plus aboutie peut-être obtenue avec [sslstrip](https://moxie.org/software/sslstrip/), avec cependant les mêmes limites évidemment.
+
 Bonus
 =====
 
