@@ -28,7 +28,12 @@ En utilisant par exemple `openssl`, mettez en œuvre une CA avec paire de clés 
 Installation d'un serveur HTTPS
 ===============================
 
-Créez le matériel cryptographique pour mettre en place en place un serveur HTTPS. Configurez un serveur avec ce matériel, `apache httpd` par exemple.
+Créez le matériel cryptographique pour mettre en place en place un serveur HTTPS. Configurez un serveur avec ce matériel, `apache httpd` par exemple. Dans l'installation par défaut de la DMZ, vous devez :
+
+* Activer le module TLS (HTTPS) pour apache2 : `a2enmod ssl`
+* Activer le site par défault servi en HTTPS : `a2ensite default-ssl.conf`
+* Redémarrer le serveur apache2 : `systemctl restart apache2`
+* Configurer le matériel cryptographique de ce nouveau site dans le fichier `/etc/apache2/sites-enabled/default-ssl.conf` (vous devez redémarrer le serveur apache2 après vos modifications)
 
 Configurez également un client HTTPS de manière adaptée pour vous y connecter de manière sécurisée.
 
