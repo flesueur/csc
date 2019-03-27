@@ -35,7 +35,7 @@ Créez le matériel cryptographique pour mettre en place en place un serveur HTT
 * Redémarrer le serveur apache2 : `systemctl restart apache2`
 * Configurer le matériel cryptographique de ce nouveau site dans le fichier `/etc/apache2/sites-enabled/default-ssl.conf` (vous devez redémarrer le serveur apache2 après vos modifications)
 
-Configurez également un client HTTPS de manière adaptée pour vous y connecter de manière sécurisée.
+Configurez également un client HTTPS (firefox sur la machine home) de manière adaptée pour vous y connecter de manière sécurisée.
 
 <!-- 
 > Pour configurer et exécuter le serveur HTTPS, vous pouvez utiliser la VM "tp-sec-debian" disponible sur les postes du département. Pour la démarrer, il faut exécuter `/machines_virtuelles/secu_vms/master/tp-sec-debian.sh`. Les comptes disponible sont ensuite `root/root` et ̀`debian/debian`. Des redirections de ports sont configurées automatiquement, les ports 80 et 443 de la VM sont accessibles depuis un navigateur exécuté sur l'hôte par les URL `http://127.0.0.1:8080` et `https://127.0.0.1:8443`.
