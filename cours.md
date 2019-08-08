@@ -113,6 +113,7 @@ Pour conclure ce cours, nous allons nous intéresser aux enjeux de société li�
 * [Conférence de clôture du SSTIC 2018, Patrick Pailloux, Directeur technique de la DGSE (vidéo, 1h)](https://www.sstic.org/2018/presentation/2018_cloture/)
 * [Tous connectés, tous responsables, _Guillaume Poupard, Directeur général de l’ANSSI_](https://www.liberation.fr/debats/2019/01/21/tous-connectes-tous-responsables_1704228)
 <!-- https://www.wired.com/story/crypto-war-clear-encryption/ https://twitter.com/matthew_d_green/status/989222188287954945 https://blog.erratasec.com/2018/04/no-ray-ozzie-hasnt-solved-crypto.html  https://twitter.com/ErrataRob/status/989237973412732928 https://arstechnica.com/information-technology/2018/05/op-ed-ray-ozzies-crypto-proposal-a-dose-of-technical-reality/  -->
+<!-- TLS interception : https://jhalderm.com/pub/papers/interception-ndss17.pdf -->
 
 Cette liste n'est bien sûr pas exhaustive, toutes les suggestions d'ajout sont les bienvenues.
 
