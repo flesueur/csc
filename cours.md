@@ -1,12 +1,10 @@
 # Cours de 4TC(A)-CSC : Cryptographie et Sécurité des Communications
 
-_François Lesueur ([francois.lesueur@insa-lyon.fr](mailto:francois.lesueur@insa-lyon.fr), [@FLesueur](https://twitter.com/FLesueur))_,
-_Walid Bechkit ([walid.bechkit@insa-lyon.fr](mailto:walid.bechkit@insa-lyon.fr))_
+_François Lesueur ([francois.lesueur@insa-lyon.fr](mailto:francois.lesueur@insa-lyon.fr), [@FLesueur](https://twitter.com/FLesueur))_
 
 <!-- https://tls.ulfheim.net/ -->
 
 [Intro](#introduction-à-la-crypto) |
-[Maths](#maths-pour-la-crypto) |
 [Bases](#bases-de-la-crypto) |
 [PKI](#infrastructures-à-clés-publiques-pki) |
 [Enjeux](#enjeux-éthiques) |
@@ -18,47 +16,7 @@ Introduction à la crypto
 
 Pour cette séance, vous devez étudier l'histoire de la cryptographie et de son utilisation. Nous nous baserons pour cela sur l'article de Wikipedia qui propose un bon historique : [WikipediaFR](https://fr.wikipedia.org/wiki/Histoire_de_la_cryptologie)
 
-N'oubliez pas d'aller remplir ensuite le QCM sur moodle !
 
-
-
-Maths pour la crypto
-====================
-
-**Attention, cette partie maths sera faite en amphi et ce texte ne sert que de référence complémentaire**
-
-Cette partie de cours s'intéresse principalement aux fondements mathématiques des cryptosystèmes asymétriques basés sur la difficulté du problème de la factorisation des grands nombres entiers. Le cryptosystème RSA, sera en particulier, l’objet principal des deux séances.
-
-Chacune des deux séances de TD et TP va se dérouler en deux phases:
-
-* La première phase vise à comprendre la génération des clés RSA, la justification des choix des paramètres, le chiffrement, le déchiffrement, la preuve d’exactitude et l’évaluation du coût des opérations RSA. Le cryptosystème RSA sera mis en place en TP en utilisant Python 3 et une évaluation de temps d’exécution des opérations de chiffrement/déchiffrement en fonction des tailles de clés sera effectuée.
-
-* La deuxième phase concernera le problème RSA et son lien avec la factorisation des grands nombres entiers. Quelques algorithmes de factorisation basiques seront proposées progressivement en TD et ensuite implémentés, évalués et comparés en TP.
-
-Pour mieux suivre les différentes preuves et la conception de quelques algorithmes de factorisation, vous devez lire le cours de Marine Minier "Arithmétique pour la cryptographie" disponible [ici](http://perso.citi.insa-lyon.fr/mminier/images/Arithmetique_pour_Cryptographie_impression.pdf)  **jusqu'au slide 31** (vous pouvez sauter les slides 26 et 27 sur le théorème des restes chinois). Ce cours donne les bases d’arithmétiques nécessaires pour comprendre par la suite le cryptosystème RSA et les méthodes de factorisation qui seront traitées. Pour la Crible d'Ératosthène, lisez le principe sur [la page Wikipedia, section Algorithme](https://fr.wikipedia.org/wiki/Crible_d%27%C3%89ratosth%C3%A8ne). Pour la fonction indicatrice d'Euleur, lisez plus de détails sur la page [Wikipedia](https://fr.wikipedia.org/wiki/Indicatrice_d%27Euler).
-
-
-Pour la première phase, relisez attentivement la [page Wikipédia]( https://fr.wikipedia.org/wiki/Chiffrement_RSA) expliquant RSA **jusqu’à la section « Asymétrie »**. Pour la partie problème RSA et factorisation, lisez la [page du problème RSA sur Wikipédia]( https://fr.wikipedia.org/wiki/Probl%C3%A8me_RSA) **jusqu’à la section « Lien avec la factorisation »**.
-
-Ouverture :
-
-Pour la partie factorisation, lisez le principe de l’algorithme p-1 de Pollard [Page Wikipédia, section principe]( https://fr.wikipedia.org/wiki/Algorithme_p-1_de_Pollard), le principe de l’algorithme de Pollard Rho [Page Wikipédia, section définition formelle]( https://fr.wikipedia.org/wiki/Algorithme_rho_de_Pollard) et le principe de l’algorithme de factorisation de Fermat [Page Wikipédia, sections intuition et méthode de base](https://fr.wikipedia.org/wiki/M%C3%A9thode_de_factorisation_de_Fermat)
-
-Le sujet de TD est disponible [ici](https://moodle.insa-lyon.fr/pluginfile.php/124789/mod_resource/content/2/TD_CSC.pdf)
-
-<!--
-Le sujet de TP est en cours de finalisation :)
--->
-
-<!--
-Extrait du livre [Discrete Math for Computer Science Students, _Ken Bogart, Scot Drysdale, Cliff Stein_](https://web.archive.org/web/20170829125913/http://www.cse.iitd.ernet.in/~bagchi/courses/discrete-book/fullbook.pdf) ? -->
-
-<!-- https://www.kth.se/social/files/557ec6b0f27654784e263d66/fullbook.pdf  ,  
-www.cse.iitd.ernet.in/~bagchi/courses/discrete-book/fullbook.pdf -->
-
-<!--
-Ouverture (obligatoire) : [Exemple de crypto symétrique : AES](http://www.moserware.com/2009/09/stick-figure-guide-to-advanced.html)
--->
 
 Bases de la crypto
 =================
@@ -77,7 +35,7 @@ Ouverture (facultative):
 * [L'histoire de Dual\_EC\_DRBG](https://en.wikipedia.org/wiki/Dual_EC_DRBG)
 * [Listen up, FBI: Juniper code shows the problem with backdoors, _Fahmida Y. Rashid, InfoWorld_](http://www.infoworld.com/article/3018029/virtual-private-network/listen-up-fbi-juniper-code-shows-the-problem-with-backdoors.html)
 
-Cette section sera conclue par le TD2.
+Cette section sera conclue par le TD1.
 
 Infrastructures à clés publiques (PKI)
 =======================================
@@ -114,10 +72,11 @@ Pour conclure ce cours, nous allons nous intéresser aux enjeux de société li�
 * [Tous connectés, tous responsables, _Guillaume Poupard, Directeur général de l’ANSSI_](https://www.liberation.fr/debats/2019/01/21/tous-connectes-tous-responsables_1704228)
 <!-- https://www.wired.com/story/crypto-war-clear-encryption/ https://twitter.com/matthew_d_green/status/989222188287954945 https://blog.erratasec.com/2018/04/no-ray-ozzie-hasnt-solved-crypto.html  https://twitter.com/ErrataRob/status/989237973412732928 https://arstechnica.com/information-technology/2018/05/op-ed-ray-ozzies-crypto-proposal-a-dose-of-technical-reality/  -->
 <!-- TLS interception : https://jhalderm.com/pub/papers/interception-ndss17.pdf -->
+<!-- https://citizenlab.ca/2019/09/annotated-bibliography-dual-use-technologies-network-traffic-management-and-device-intrusion-for-targeted-monitoring/ -->
 
 Cette liste n'est bien sûr pas exhaustive, toutes les suggestions d'ajout sont les bienvenues.
 
-Un dernier questionnaire Moodle porte sur cette partie qui mènera à une discussion/débat lors de la séance de TD.
+Cette partie mènera à une discussion/débat lors de la séance de TD.
 
 
 Bibliographie

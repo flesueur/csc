@@ -64,17 +64,14 @@ Plan CSC
 --------
 
 * Principes généraux d'usage
-* Fondements mathématiques
 * Détour par la gestion des mots de passe
 * Le problème de la gestion des clés
 * Les protocoles cryptographiques pour la communication et l'authentification
-
+* Les enjeux éthiques
 
 Organisation du travail
 -----------------------
 
 * Préparation en autonomie
-* QCM avec deadline à surveiller, demandes des points à éclaircir
 * Séance encadrée ensuite
-* Note CC + DS, CC validé si fait correctement
 
