@@ -35,7 +35,7 @@ Ouverture (facultative):
 * [L'histoire de Dual\_EC\_DRBG](https://en.wikipedia.org/wiki/Dual_EC_DRBG)
 * [Listen up, FBI: Juniper code shows the problem with backdoors, _Fahmida Y. Rashid, InfoWorld_](http://www.infoworld.com/article/3018029/virtual-private-network/listen-up-fbi-juniper-code-shows-the-problem-with-backdoors.html)
 
-Cette section sera conclue par le TD1.
+Cette section sera suivie d'une heure de questions-réponses (vous **devez** venir avec une question sur cette partie) puis conclue par le TD1.
 
 Infrastructures à clés publiques (PKI)
 =======================================
