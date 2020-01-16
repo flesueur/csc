@@ -1,4 +1,4 @@
-# TP 2 : Autorités de certification et HTTPS
+# TP 1 : Autorités de certification et HTTPS
 
 _François Lesueur ([francois.lesueur@insa-lyon.fr](mailto:francois.lesueur@insa-lyon.fr))_
 
