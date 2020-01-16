@@ -42,9 +42,9 @@ Le cours est [ici](cours.md)
 
 Les notes de CM : [CM1 (intro)](cm1-intro.md) / [CM3 (wrap-up)](cm3-wrapup.md)
 
-Les TD : [TD1 (JdR)](td2-jdr.md) / [TD2 (Passwords)](td3-passwords.md) / [TD3 (CA)](td4-ca.md) / [TD4 (DANE/PGP)](td5-danepgp.md)
+Les TD : [TD1 (JdR)](td1-jdr.md) / [TD2 (Passwords)](td2-passwords.md) / [TD3 (CA)](td3-ca.md) / [TD4 (DANE/PGP)](td4-danepgp.md)
 
-Les TP : [TP1 (OpenSSL)](tp2-openssl.md)
+Les TP : [TP1 (OpenSSL)](tp1-openssl.md)
 
 La page Moodle [TC](https://moodle.insa-lyon.fr/course/view.php?id=4647) / [TCA](https://moodle.insa-lyon.fr/course/view.php?id=4694)
 
