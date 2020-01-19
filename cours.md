@@ -83,7 +83,7 @@ Bibliographie
 =============
 
 Livres :
-* [Secure communication principles, _UKNCSC_](https://github.com/ukncsc/secure-communication-principles)
+* [Secure communication principles, _UKNCSC_](https://www.ncsc.gov.uk/guidance/secure-communication-principles-alpha-release)
 * Histoire des codes secrets : De l'Égypte des Pharaons à l'ordinateur quantique, _Simon Singh_
 * Architectures PKI et communications sécurisées, _DUMAS Jean-Guillaume, LAFOURCADE Pascal, REDON Patrick_
 * Serious Cryptography, _Jean-Philippe Aumasson_
