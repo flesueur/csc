@@ -24,7 +24,7 @@ Ces deux mesures sont bien complémentaires car il est du devoir de chaque site 
 Squelette de code fourni
 ========================
 
-Vous devez télécharger le squelette de code [ici](https://github.com/flesueur/csc/tree/master/td3-code). Vous pouvez récupérer l'intégralité du dépôt en tapant `git clone https://github.com/flesueur/csc.git`
+Vous devez télécharger le squelette de code [ici](https://github.com/flesueur/csc/tree/master/td2-code). Vous pouvez récupérer l'intégralité du dépôt en tapant `git clone https://github.com/flesueur/csc.git`
 
 * `toolbox.py` est la bibliothèque contenant la boîte à outils, il peut être intéressant d'aller la consulter mais elle n'est pas à modifier ;
 * `skeleton.py` contient le programme à écrire.
