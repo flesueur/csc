@@ -33,7 +33,7 @@ La structure détaillée est la suivante, la préparation de chaque item est dé
 * Stockage des mots de passe : TD2
 * PKI (autorités de certification, DANE et PGP) : Travail perso, TD3, TD4
 * Protocoles cryptographiques : CM3, TP1
-* Systèmes de communication : Travail perso, TP2, CM4
+* Projet d'arpentage : Travail perso, TP2, CM4
 * Enjeux éthiques : Travail perso, TD5
 
 Pour interagir/discuter/commenter/poser des questions en dehors des heures de cours, vous devez utiliser le canal Slack [#4tc-csc](https://tc-insa.slack.com/messages/C7KRNDQ9K).
@@ -45,6 +45,8 @@ Les notes de CM : [CM1 (intro)](cm1-intro.md) / [CM3 (wrap-up)](cm3-wrapup.md)
 Les TD : [TD1 (JdR)](td1-jdr.md) / [TD2 (Passwords)](td2-passwords.md) / [TD3 (CA)](td3-ca.md) / [TD4 (DANE/PGP)](td4-danepgp.md)
 
 Les TP : [TP1 (OpenSSL)](tp1-openssl.md)
+
+Le projet d'arpentage : [Projet](arpentage.md)
 
 La page Moodle [TC](https://moodle.insa-lyon.fr/course/view.php?id=4647) / [TCA](https://moodle.insa-lyon.fr/course/view.php?id=4694)
 
