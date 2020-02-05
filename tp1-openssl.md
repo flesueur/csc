@@ -37,7 +37,7 @@ Pour sécuriser les communications vers `www.target.milxc`, nous allons créer, 
 
 Quelques exemples de bons tutoriaux pour la création d'une CA sont proposés. Attention, dans cette partie, vous devez générer uniquement la CA (début du tuto, donc). La partie concernant la génération des clés du serveur web se fait dans la partie suivante, sur la machine target-admin.
 
-* [PKI-Tutorial](https://pki-tutorial.readthedocs.io/en/latest/simple/index.html)
+* [PKI-Tutorial](https://pki-tutorial.readthedocs.io/en/latest/simple/index.html) (attention, pour ce tuto, dans les fichiers de conf .cnf, remplacer `default_md = sha1` par `default_md = sha256`)
 * [Jamielinux](https://jamielinux.com/docs/openssl-certificate-authority/)
 
 Si, après avoir affiché à l'écran un document chiffré (par exemple avec la commande `cat`), votre terminal affiche de mauvais caractères, utilisez la combinaison de touches `Ctrl+v, Ctrl+o` pour retrouver un affichage fonctionnel (ou tapez `reset`).
