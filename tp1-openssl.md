@@ -35,7 +35,7 @@ Création d'une CA
 
 Pour sécuriser les communications vers `www.target.milxc`, nous allons créer, déployer et utiliser une CA. Cette CA sera hébergée dans l'AS mica et manipulée sur la machine mica-ca. Sur cette machine, en graphique, vous disposez d'un compte mail configuré `ca@mica.milxc`.
 
-Quelques exemples de bons tutoriaux pour la création d'une CA :
+Quelques exemples de bons tutoriaux pour la création d'une CA sont proposés. Attention, dans cette partie, vous devez générer uniquement la CA (début du tuto, donc). La partie concernant la génération des clés du serveur web se fait dans la partie suivante, sur la machine target-admin.
 
 * [PKI-Tutorial](https://pki-tutorial.readthedocs.io/en/latest/simple/index.html)
 * [Jamielinux](https://jamielinux.com/docs/openssl-certificate-authority/)
