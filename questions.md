@@ -188,6 +188,29 @@ La racine DNS et les registrars
 </details>
 
 
+Niveau 2
+========
+
+1. Vous héritez de la maintenance d'une vieille application web dans laquelle les mots de passe des utilisateurs sont stockés sous forme de hash MD5. Vous décidez d'améliorer ce point.
+* Pourquoi ce point pose-t-il problème ? Face à quel genre d'attaque ?
+* Comment les mots de passe devraient-ils être stockés ? Pourquoi ?
+* Sachant que vous ne disposez pas des mots de passe en clair mais uniquement des hash MD5, proposez une démarche de migration vers votre nouvelle solution.
+
+2. Proposez un protocole basé sur de la cryptographie asymétrique permettant l'authentification d'un client par un serveur. Vous devez décrire  le matériel cryptographique initialement en possession du client et du serveur ainsi que les messages échangés lors de l'authentification. Un attaquant peut observer ou modifier le canal, ce qui peut faire échouer l'authentification. Si l'authentification réussit, le serveur est certain de communiquer avec le bon client et un canal de communication sûr (chiffré) a été mis en place.
+
+3. Proposez un algorithme d'authentification mutuelle basé sur de la cryptographie asymétrique permettant à un serveur d'authentifier un client et au client d'authentifier le serveur. Vous devez décrire  le matériel cryptographique initialement en possession du client et du serveur ainsi que les messages échangés lors de l'authentification mutuelle.
 
 
+Niveau 3
+========
 
+1. D'après Wikipedia, _le chiffrement de bout en bout (en anglais, End-to-end encryption ou E2EE) est un système de communication où seules les personnes qui communiquent peuvent lire les messages échangés. En principe, il empêche l'écoute électronique, y compris par les fournisseurs de télécommunications, par les fournisseurs d'accès Internet et même par le fournisseur du service de communication. Avec le chiffrement de bout en bout, personne n'est en mesure d'accéder aux clés cryptographiques nécessaires pour déchiffrer la conversation. Les systèmes de chiffrement de bout en bout sont conçus pour résister à toute tentative de surveillance ou de falsification, car aucun tiers ne peut déchiffrer les données communiquées ou stockées. En particulier, les entreprises qui offrent un service de chiffrement de bout en bout sont incapables de remettre une version déchiffrée des messages de leurs clients aux autorités._
+
+Proposez la conception cryptographique d'une telle messagerie chiffrée (inscription des utilisateurs, échange de messages, sauvegarde d'un historique de communication). Le serveur ne doit pas pouvoir espionner ou falsifier les communications, même sous la contrainte. Analysez ensuite votre solution, en particulier son ergonomie, sa facilité d'utilisation, ce qui reste éventuellement espionnable, les risques restants et la gestion du changement de périphérique d'un utilisateur (remplacement du smartphone, typiquement). L'utilisabilité de la solution proposée et la qualité de son analyse critique sont importantes.
+
+2. Une carte à puce (carte bancaire, SIM, etc.) est un mini-ordinateur intégrant des clés cryptographiques et offrant des fonctions permettant d'utiliser ces clés. Un code PIN permet de débloquer l'usage de ces fonctions. Une fois débloquées, ces fonctions permettent de chiffrer, déchiffrer, signer, vérifier. Les clés cryptographiques restent toujours dans la puce, elles ne sont jamais exportées, c'est la puce uniquement qui les exploite et ne renvoie que le résultat des opérations demandées.
+
+* Proposez un système de cartes bancaires (il n'est pas nécessaire que cela corresponde au système réel, vous devez faire une proposition pertinente). Vous décrirez notamment la création initiale de la carte, son matériel cryptographique, qui le connaît, ce qui se passe lors d'un paiement.
+* Est-il possible, avec votre solution, de faire un faux-paiement avec une fausse carte ? Autrement dit, une carte créée indépendamment, non liée à une banque et à un compte, peut-elle tromper le terminal de paiement et lui faire croire que le paiement est valide (alors que le commerçant ne pourra pas être payé, la carte n'étant attachée à aucun compte bancaire) ? Si cela est possible, quelle solution pouvez-vous proposer ? Vous étudierez le cas où le terminal de paiement a accès au réseau (il peut typiquement interroger une banque de manière interactive) et le cas où le terminal n'a pas accès au réseau. On se concentrera ici sur les aspects réseaux et cryptographiques, pas sur l'aspect visuel de la carte.
+
+_Les YesCards étaient de fausses cartes qui permettaient ce type d'attaque. La vulnérabilité associée a bien sûr depuis été corrigée.

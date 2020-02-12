@@ -50,4 +50,6 @@ Le projet d'arpentage : [Projet](arpentage.md)
 
 La page Moodle [TC](https://moodle.insa-lyon.fr/course/view.php?id=4647) / [TCA](https://moodle.insa-lyon.fr/course/view.php?id=4694)
 
+Les questions d'auto-évaluation : [Questions](questions.md)
+
 Les [annales](https://github.com/flesueur/csc/tree/master/annales)
