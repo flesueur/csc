@@ -7,7 +7,7 @@ Les questions sont organisées en 3 niveaux :
 * Niveau 2 : C'est une question moyenne, des éléments de réponse seulement sont fournis. La compréhension du cours doit permettre de répondre.
 * Niveau 3 : C'est une question compliquée, sans correction unique, à discuter de vive voix.
 
-Les réponses'
+Les réponses, quand disponibles, sont accessibles en cliquant sur le texte de la question.
 
 Niveau 1
 ========
