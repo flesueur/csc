@@ -200,10 +200,12 @@ Niveau 2
 
 <details>
 <summary>2. Proposez un protocole basé sur de la cryptographie asymétrique permettant l'authentification d'un client par un serveur. Vous devez décrire  le matériel cryptographique initialement en possession du client et du serveur ainsi que les messages échangés lors de l'authentification. Un attaquant peut observer ou modifier le canal, ce qui peut faire échouer l'authentification. Si l'authentification réussit, le serveur est certain de communiquer avec le bon client et un canal de communication sûr (chiffré) a été mis en place.</summary>
+Le serveur doit authentifier le client : le client a une paire de clés publique/privée, soit le client a un certificat signé par une CA reconnue par le serveur, soit le serveur connaît la clé publique du client. Le serveur doit challenger le client pour vérifier qu'il possède la clé privée associée. Une clé de session peut-être envoyée par le serveur ou un Diffie-Hellman authentifié.
 </details>
 
 <details>
 <summary>3. Proposez un algorithme d'authentification mutuelle basé sur de la cryptographie asymétrique permettant à un serveur d'authentifier un client et au client d'authentifier le serveur. Vous devez décrire  le matériel cryptographique initialement en possession du client et du serveur ainsi que les messages échangés lors de l'authentification mutuelle.</summary>
+L'authentification est mutuelle, le client a une paire de clés asymétriques et le serveur également. Soit il y a une CA, chaque participant reconnaît la CA et a un certificat signé par cette CA, soit chaque participant connaît au départ la clé publique de l'autre. Chacun doit challenger que l'autre possède bien la clé privée associée.
 </details>
 
 Niveau 3
