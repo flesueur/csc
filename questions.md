@@ -123,10 +123,12 @@ Un système permettant d'associer une clé publique à une identité
 
 <details>
 <summary>Quelle garantie nous offre a priori une PKI ?
-	* Que la communication pourra être confidentielle et intègre
-	* Que ma machine ne sera pas compromise lors de la communication
-	* Que le serveur auquel je vais me connecter est bien celui qu'il prétend être
-	* Que le serveur auquel je vais me connecter n'est pas compromis</summary>
+<ol>
+	<li> Que la communication pourra être confidentielle et intègre</li>
+	<li> Que ma machine ne sera pas compromise lors de la communication</li>
+	<li> Que le serveur auquel je vais me connecter est bien celui qu'il prétend être</li>
+	<li> Que le serveur auquel je vais me connecter n'est pas compromis</li>
+</ol></summary>
 1 et 3
 </details>
 
@@ -140,10 +142,12 @@ Je ne peux pas
 
 <details>
 <summary>En général, comment sont validées les demandes de certificats par les CA ?
-	* Par email
-	* Par courrier postal
-	* En personne
-	* Par un formulaire administratif géré par chaque état
+<ol>
+	<li> Par email</li>
+	<li> Par courrier postal</li>
+	<li> En personne</li>
+	<li> Par un formulaire administratif géré par chaque état</li>
+</ol>
 </summary>
 Par email
 </details>
@@ -156,10 +160,12 @@ Des entreprises privées
 
 <details>
 <summary>Dans la toile de confiance :
-	* Il y a un point central
-	* Chaque participant a un rôle équivalent
-	* Chacun choisit explicitement à qui il fait confiance
-	* Le fonctionnement est simple et automatique
+<ol>
+	<li> Il y a un point central</li>
+	<li> Chaque participant a un rôle équivalent</li>
+	<li> Chacun choisit explicitement à qui il fait confiance</li>
+	<li> Le fonctionnement est simple et automatique</li>
+</ol>
 </summary>
 2 et 3
 </details>
@@ -171,10 +177,12 @@ CA
 
 <details>
 <summary>Avec DANE, quel sont les points de confiance les plus importants ?
-	* La racine DNS ?
-	* Les registrars ?
-	* Les autorités de certification ?
-	* Les utilisateurs du système ?
+<ol>
+	<li> La racine DNS ?</li>
+	<li> Les registrars ?</li>
+	<li> Les autorités de certification ?</li>
+	<li> Les utilisateurs du système ?</li>
+</ol>
 </summary>
 La racine DNS et les registrars
 </details>
