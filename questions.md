@@ -191,15 +191,20 @@ La racine DNS et les registrars
 Niveau 2
 ========
 
+
 1. Vous héritez de la maintenance d'une vieille application web dans laquelle les mots de passe des utilisateurs sont stockés sous forme de hash MD5. Vous décidez d'améliorer ce point.
-* Pourquoi ce point pose-t-il problème ? Face à quel genre d'attaque ?
-* Comment les mots de passe devraient-ils être stockés ? Pourquoi ?
-* Sachant que vous ne disposez pas des mots de passe en clair mais uniquement des hash MD5, proposez une démarche de migration vers votre nouvelle solution.
+* <details><summary>Pourquoi ce point pose-t-il problème ? Face à quel genre d'attaque ?</summary>hash faible, attaques par énumération/dictionnaire si vol de la base</details>
+* <details><summary>Comment les mots de passe devraient-ils être stockés ? Pourquoi ?</summary>PBKDF2, hash salé couteux</details>
+* <details><summary>Sachant que vous ne disposez pas des mots de passe en clair mais uniquement des hash MD5, proposez une démarche de migration vers votre nouvelle solution.</summary>renouvellement lors de la connexion des usagers</details>
 
-2. Proposez un protocole basé sur de la cryptographie asymétrique permettant l'authentification d'un client par un serveur. Vous devez décrire  le matériel cryptographique initialement en possession du client et du serveur ainsi que les messages échangés lors de l'authentification. Un attaquant peut observer ou modifier le canal, ce qui peut faire échouer l'authentification. Si l'authentification réussit, le serveur est certain de communiquer avec le bon client et un canal de communication sûr (chiffré) a été mis en place.
 
-3. Proposez un algorithme d'authentification mutuelle basé sur de la cryptographie asymétrique permettant à un serveur d'authentifier un client et au client d'authentifier le serveur. Vous devez décrire  le matériel cryptographique initialement en possession du client et du serveur ainsi que les messages échangés lors de l'authentification mutuelle.
+<details>
+<summary>2. Proposez un protocole basé sur de la cryptographie asymétrique permettant l'authentification d'un client par un serveur. Vous devez décrire  le matériel cryptographique initialement en possession du client et du serveur ainsi que les messages échangés lors de l'authentification. Un attaquant peut observer ou modifier le canal, ce qui peut faire échouer l'authentification. Si l'authentification réussit, le serveur est certain de communiquer avec le bon client et un canal de communication sûr (chiffré) a été mis en place.</summary>
+</details>
 
+<details>
+<summary>3. Proposez un algorithme d'authentification mutuelle basé sur de la cryptographie asymétrique permettant à un serveur d'authentifier un client et au client d'authentifier le serveur. Vous devez décrire  le matériel cryptographique initialement en possession du client et du serveur ainsi que les messages échangés lors de l'authentification mutuelle.</summary>
+</details>
 
 Niveau 3
 ========
@@ -213,4 +218,4 @@ Proposez la conception cryptographique d'une telle messagerie chiffrée (inscrip
 * Proposez un système de cartes bancaires (il n'est pas nécessaire que cela corresponde au système réel, vous devez faire une proposition pertinente). Vous décrirez notamment la création initiale de la carte, son matériel cryptographique, qui le connaît, ce qui se passe lors d'un paiement.
 * Est-il possible, avec votre solution, de faire un faux-paiement avec une fausse carte ? Autrement dit, une carte créée indépendamment, non liée à une banque et à un compte, peut-elle tromper le terminal de paiement et lui faire croire que le paiement est valide (alors que le commerçant ne pourra pas être payé, la carte n'étant attachée à aucun compte bancaire) ? Si cela est possible, quelle solution pouvez-vous proposer ? Vous étudierez le cas où le terminal de paiement a accès au réseau (il peut typiquement interroger une banque de manière interactive) et le cas où le terminal n'a pas accès au réseau. On se concentrera ici sur les aspects réseaux et cryptographiques, pas sur l'aspect visuel de la carte.
 
-_Les YesCards étaient de fausses cartes qui permettaient ce type d'attaque. La vulnérabilité associée a bien sûr depuis été corrigée.
+_Les YesCards étaient de fausses cartes qui permettaient ce type d'attaque. La vulnérabilité associée a bien sûr depuis été corrigée._
