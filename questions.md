@@ -91,12 +91,13 @@ symétrique
 <details>
 <summary>Dans la stratégie de la NSA pour casser les chiffrements (Bullrun), quels sont les axes de travail ?</summary>
 Wikipedia :
-
-* des mesures pour s'assurer le contrôle sur l'établissement de normes américaines et internationales de chiffrement (NIST, normes ISO),
-* la collaboration avec des entreprises technologiques pour intégrer — dès la conception — des portes dérobées dans leurs solutions de chiffrement (logiciels ou puces électroniques),
-* la collaboration avec des fournisseurs de services Internet pour récupérer des certificats de chiffrement,
-* l'investissement dans des ordinateurs à hautes performances,
-* voire des cyberattaques ou l'espionnage des sociétés pour leur voler leurs clés numériques.
+<ol>
+<li> des mesures pour s'assurer le contrôle sur l'établissement de normes américaines et internationales de chiffrement (NIST, normes ISO),</li>
+<li> la collaboration avec des entreprises technologiques pour intégrer — dès la conception — des portes dérobées dans leurs solutions de chiffrement (logiciels ou puces électroniques),</li>
+<li> la collaboration avec des fournisseurs de services Internet pour récupérer des certificats de chiffrement,</li>
+<li> l'investissement dans des ordinateurs à hautes performances,</li>
+<li> voire des cyberattaques ou l'espionnage des sociétés pour leur voler leurs clés numériques.</li>
+</ol>
 </details>
 
 <details>
@@ -111,11 +112,12 @@ PKI
 
 <details>
 <summary>Qu'est-ce qu'une PKI ?
-	* Un système permettant d'associer une clé publique à une identité
-	* Un synonyme d'autorité de certification
-	* Un synonyme de toile de confiance
-	* Un serveur dédié à la récupération de clés privées</summary>
-
+<ol>
+	<li> Un système permettant d'associer une clé publique à une identité</li>
+	<li> Un synonyme d'autorité de certification</li>
+	<li> Un synonyme de toile de confiance</li>
+	<li> Un serveur dédié à la récupération de clés privées</li></summary>
+</ol>
 Un système permettant d'associer une clé publique à une identité
 </details>
 
