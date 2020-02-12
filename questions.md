@@ -116,8 +116,8 @@ PKI
 	<li> Un système permettant d'associer une clé publique à une identité</li>
 	<li> Un synonyme d'autorité de certification</li>
 	<li> Un synonyme de toile de confiance</li>
-	<li> Un serveur dédié à la récupération de clés privées</li></summary>
-</ol>
+	<li> Un serveur dédié à la récupération de clés privées</li>
+</ol></summary>
 Un système permettant d'associer une clé publique à une identité
 </details>
 
