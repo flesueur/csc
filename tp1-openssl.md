@@ -19,21 +19,24 @@ L'objectif du TP est de permettre à la machine isp-a-home de naviguer de maniè
 Connexion en clair
 ==================
 
-Depuis la machine isp-a-home, ouvrez un navigateur pour vous connecter à `http://www.target.milxc`. Dans un premier temps, nous allons attaquer depuis l'AS ecorp la communication en clair, non sécurisée, entre isp-a-home et target-dmz. Deux pistes peuvent être explorées :
+Depuis la machine isp-a-home, ouvrez un navigateur pour vous connecter à `http://www.target.milxc`. Vous accédez à une page Dokuwiki, qui est bien la page attendue.
+
+Nous allons maintenant attaquer depuis l'AS ecorp cette communication en clair, non sécurisée, entre isp-a-home et target-dmz. L'objectif est que le navigateur, lorsqu'il souhaite se connecter à l'URL `http://www.target.milxc`, arrive en fait sur la machine ecorp-infra. Deux pistes peuvent être explorées :
 
 * Attaque DNS qui, via le registrar, consisterait à altérer l'enregistrement DNS pour target.milxc dans la zone du TLD .milxc. Sur la machine milxc-ns :
-	* Altération de `/etc/nsd/milxc.zone` puis `service nsd restart` (le DNS de ecorp est déjà configuré pour répondre aux requêtes pour target.milxc)
+	* Altération de `/etc/nsd/milxc.zone` pour diriger les requêtes DNS pour `target.milxc` vers 10.101.0.2 (appartenant à ecorp)
+	* Puis `service nsd restart` (le DNS de ecorp est déjà configuré pour répondre aux requêtes pour target.milxc)
 * Attaque BGP qui consisterait à dérouter les paquets à destination de l'AS target vers l'AS ecorp : 
 	* Sur la machine ecorp-router : prendre une IP de l'AS target qui déclenchera l'annonce du réseau en BGP (`ifconfig eth1:0 10.100.1.1 netmask 255.255.255.0`)
 	* Sur la machine ecorp-infra : prendre l'IP de `www.target.milxc` (`ifconfig eth0:0 10.100.1.2 netmask 255.255.255.0`)
 
-Nous constatons ainsi le cas d'attaque que nous souhaitons détecter : un utilisateur sur isp-a-home qui, en tapant l'URL `www.target.milxc`, arrive en fait sur un autre service que celui attendu. Remettez le système en bon ordre de marche pour continuer.
+Nous constatons ainsi le cas d'attaque que nous souhaitons détecter : un utilisateur sur isp-a-home qui, en tapant l'URL `www.target.milxc`, arrive en fait sur un autre service que celui attendu. Remettez le système en bon ordre de marche pour continuer (pour DNS, remettre la bonne IP 10.100.1.2 ; pour BGP, désactivez l'interface eth1:0 sur ecorp-router `ifconfig eth1:0 down`).
 
 
 Création d'une CA
 =================
 
-Pour sécuriser les communications vers `www.target.milxc`, nous allons créer, déployer et utiliser une CA. Cette CA sera hébergée dans l'AS mica et manipulée sur la machine mica-ca. Sur cette machine, en graphique, vous disposez d'un compte mail configuré `ca@mica.milxc`.
+Pour sécuriser les communications vers `www.target.milxc`, nous allons créer, déployer et utiliser une CA. Cette CA sera hébergée dans l'AS mica et manipulée sur la machine mica-ca. Sur cette machine, en graphique, vous disposez d'un compte mail configuré `ca@mica.milxc` (application claws-mail dans le menu d'applications ou depuis un terminal).
 
 Quelques exemples de bons tutoriaux pour la création d'une CA sont proposés. Attention, dans cette partie, vous devez générer uniquement la CA (début du tuto, donc). La partie concernant la génération des clés du serveur web se fait dans la partie suivante, sur la machine target-admin.
 
@@ -57,25 +60,25 @@ Sur l'AS target, vous disposez :
 	* Activer le module TLS (HTTPS) pour apache2 : `a2enmod ssl`
 	* Activer le site par défault servi en HTTPS : `a2ensite default-ssl.conf`
 	* Redémarrer le serveur apache2 : `systemctl restart apache2`
-	* Configurer le matériel cryptographique de ce nouveau site dans le fichier `/etc/apache2/sites-enabled/default-ssl.conf` (vous devez redémarrer le serveur apache2 après vos modifications)
+	* Configurer le matériel cryptographique de ce nouveau site dans le fichier `/etc/apache2/sites-enabled/default-ssl.conf` (attention, vous devrez configurer la chaîne complète de certificats depuis la racine, c'est-à-dire concaténer les certificats racine, intermédiaire et serveur dans un unique fichier spécifié par cette configuration). Vous devez redémarrer le serveur apache2 après vos modifications.
 
-Vous devrez également configurer le client Firefox sur isp-a-home de manière adaptée pour vous y connecter de manière sécurisée.
+Vous devrez également configurer le client Firefox sur isp-a-home de manière adaptée (inclure le certificat racine de la CA) pour vous y connecter de manière sécurisée.
 
 
 Risques lors de la création du certificat
 =========================================
 
-En reprenant les attaques du début, obtenez depuis ecorp un certificat bien signé par mica lié à l'URL `www.target.milxc`. Le serveur de mail de ecorp est configuré pour accepter des mails @target.milxc (s'ils arrivent sur ce serveur, ce qui n'est évidemment pas le cas en temps normal). L'adresse `admin@target.milxc` peut ainsi être relevée depuis la machine ecorp-hacker si le mail arrive sur le serveur ecorp-infra.
+En reprenant les attaques du début, obtenez depuis ecorp un certificat bien signé par mica lié à l'URL `www.target.milxc`. Ces attaques DNS/BGP vont vous permettre de vous faire passer pour Target auprès de mica, lors de la phase de création du certificat (échange de mails). Le serveur de mail de ecorp est configuré pour accepter des mails @target.milxc (s'ils arrivent sur ce serveur, ce qui n'est évidemment pas le cas en temps normal). L'adresse `admin@target.milxc` peut ainsi être relevée depuis la machine ecorp-hacker si le mail arrive sur le serveur ecorp-infra.
 
 Validez la réussite en vous connectant depuis isp-a-home vers ce faux serveur, sans alerte de sécurité.
 
-Authentification mutuelle
+Bonus : Authentification mutuelle
 =========================
 
 Mettez en place une authentification des clients par le serveur au moyen de certificats clients.
 
 
-Révocation
+Bonus : Révocation
 ==========
 
 Expérimentez les mécanismes de révocation disponibles (CRL, OCSP en ligne ou agrafé) pour révoquer le certificat serveur ainsi que les certificats clients.
