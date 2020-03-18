@@ -53,7 +53,9 @@ Sur l'AS target, vous disposez :
 
 * de la machine target-admin, graphique, sur laquelle est configuré un client mail pour l'adresse `admin@target.milxc` :
 	* Génération de la paire de clés
-	* Demande du certificat (côté CA, vous devrez vérifier que la requête est légitime. En envoyant un challenge par mail ? Quelle sécurité ?)
+	* Génération de la Certificate Signing Request (.csr), qui sera envoyée à la CA. La CSR est, grosso-modo, le contenu qui sera dans le certificat final mais pas encore signé.
+	* Demande du certificat à la CA en lui envoyant la .csr par mail à `ca@mica.milxc` (application claws-mail dans le menu d'applications ou depuis un terminal)
+	* Côté CA (donc machine mica-ca), vous devrez vérifier que la requête est légitime. En envoyant un challenge par mail ? Quelle sécurité ? Puis renvoyer le certificat par mail.
 	* Configuration du serveur web sur target-dmz via ssh
 
 * du serveur target-dmz sur lequel il faut déployer du matériel cryptographique pour faire du HTTPS. Vous devrez notamment :
