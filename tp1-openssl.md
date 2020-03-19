@@ -7,6 +7,7 @@ Une CA préconfigurée (et donc dans le TP, il faut l'opérer) et déjà reconnu
 Un certificat de nouvelle CA diffusé dans une maj de browser
 Passer à du ACME avec Boulder/certbot
 Faire un début style TD : après les premières attaques, une partie feuille avec récap au tableau sur tout le setup qu'il faudra mettre en place avec openssl
+Mieux clarifier/séparer les différents rôles à jouer
 -->
 
 Ce TP présente le modèle des autorités de certification et l'applique au protocole HTTPS. Il sera réalisé dans l'infrastructure MI-LXC, disponible [ici](https://github.com/flesueur/mi-lxc) ou dans la VM "tp-sec-debian" disponible en salle de TP (`/machines_virtuelles/secu_vms/master/tp-sec-debian.sh`, root/root). L'infrastructure déployée simule plusieurs postes dont le SI de l'entreprise _target_ (routeur, serveur web, poste admin), le SI de l'autorité de certification _mica_, un AS d'attaquant _ecorp_ et quelques autres servant à l'intégration de l'ensemble.
