@@ -56,6 +56,8 @@ Ouvertures (facultatives) :
 
 <!-- moxie : https://www.youtube.com/watch?v=pDmj_xe7EIQ  https://www.youtube.com/watch?v=Z7Wl2FW2TcA  https://moxie.org/blog/ssl-and-the-future-of-authenticity/  https://media.defcon.org/DEF%20CON%2019/DEF%20CON%2019%20video%20and%20slides/DEF%20CON%2019%20Hacking%20Conference%20Presentation%20By%20-%20Moxie%20Marlinspike%20-%20SSL%20And%20The%20Future%20Of%20Authenticity%20-%20Video%20and%20Slides.m4v-->
 
+<!-- CT https://emilymstark.com/2020/07/20/certificate-transparency-a-birds-eye-view.html -->
+
 
 Enjeux éthiques
 ===============
