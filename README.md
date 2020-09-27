@@ -18,7 +18,7 @@ Le cours 4TC-CSC est structuré de la manière suivante :
 
 Pour chaque séance, vous aurez un travail de préparation qui est décrit dans la suite de ce document. La préparation consiste à lire des ressources externes, les comprendre, répondre au quizz moodle correspondant et préparer des questions pour la séance de cours/TP associée. Attention, le volume de travail personnel n'est pas négligeable et ne peut donc pas être réalisé au dernier moment (du temps de face-à-face a été libéré de l'EC en contrepartie). La préparation a pour but d'acquérir les _connaissances_ nécessaires pour appréhender les _compétences_ qui seront vues en CM/TD/TP. Les connaissances ne seront **pas** traitées dans les heures de face-à-face, uniquement les questions _précises_ que vous aurez amenées (pas de réponses générales, uniquement aux questions montrant que le travail de préparation a été fait).
 
-<!-- 
+<!--
 La note finale de l'UE sera calculée comme suit :
 
 * 15% contrôle continu : validation de chaque quizz
@@ -53,3 +53,8 @@ La page Moodle [TC](https://moodle.insa-lyon.fr/course/view.php?id=4647) / [TCA]
 Les questions d'auto-évaluation : [Questions](questions.md)
 
 Les [annales](https://github.com/flesueur/csc/tree/master/annales)
+
+Licence
+=======
+
+![https://creativecommons.org/licenses/by-nc-sa/2.0/fr/](https://i.creativecommons.org/l/by-nc-sa/2.0/fr/88x31.png) L'intégralité de ce dépôt est mis à disposition selon les termes de la [Licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 2.0 France](https://creativecommons.org/licenses/by-nc-sa/2.0/fr/).
