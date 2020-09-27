@@ -3,6 +3,7 @@
 # Avoir une lib avec des briques prêtes
 # Avoir un script qui crée les fichiers de password SHA/PB/etc. pour pouvoir les manipuler en texte
 # TD : associer les briques pour évaluer les attaques sur un pass / une base
+# mettre un « except ImportError » et ressayer avec « Cryptodome » a la place de « Crypto »
 
 import re
 import time
