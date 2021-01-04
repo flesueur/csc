@@ -38,7 +38,7 @@ La structure détaillée est la suivante, la préparation de chaque item est dé
 
 Pour interagir/discuter/commenter/poser des questions en dehors des heures de cours, vous devez utiliser le canal Discord.
 
-Le cours est [ici](cours.md)
+Le cours (pour les séances de travail personnel) est [ici](cours.md)
 
 Les notes de CM : [CM1 (intro)](cm1-intro.md) / [CM3 (wrap-up)](cm3-wrapup.md)
 
