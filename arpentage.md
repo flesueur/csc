@@ -9,7 +9,7 @@ Déroulé :
 
 Liste de sujets proposés :
 * Des algorithmes et protocoles : RSA, AES, OAEP, post-quantum cryptography, double ratchet
-* Des applications et usages : Signal+Telegram (ou séparément), Matrix/Riot, Olvid, Briar, Delta Chat
+* Des applications et usages : Signal+Telegram (ou séparément), Threema, Matrix/Riot, Olvid, Briar, Delta Chat
 * Des outils PKI : Protocole ACME (Let's Encrypt), Certificate Transparency, PGP poisoning, Keybase.io, clé racine DNSSEC (génération, rollover)
 
 Pour chaque sujet choisi, faire un framapad et l'enregistrer sur ce [framapad d'index](https://mensuel.framapad.org/p/9etp-a67jx5l944).
