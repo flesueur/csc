@@ -63,15 +63,14 @@ __Déployer une architecture de communications sécurisées adaptée à un besoi
 Plan CSC
 --------
 
+* Les enjeux éthiques
 * Principes généraux d'usage
 * Détour par la gestion des mots de passe
 * Le problème de la gestion des clés
 * Les protocoles cryptographiques pour la communication et l'authentification
-* Les enjeux éthiques
 
 Organisation du travail
 -----------------------
 
 * Préparation en autonomie
 * Séance encadrée ensuite
-
