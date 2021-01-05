@@ -16,6 +16,10 @@ Introduction à la crypto
 
 Pour cette séance, vous devez étudier l'histoire de la cryptographie et de son utilisation. Nous nous baserons pour cela sur l'article de Wikipedia qui propose un bon historique : [WikipediaFR](https://fr.wikipedia.org/wiki/Histoire_de_la_cryptologie)
 
+Ouverture facultative :
+
+* [Public Key Cryptography’s Impact on Society: How Diffie and Hellman Changed the World, _Paul C. van Oorschot_](https://people.scs.carleton.ca/~paulv/papers/society-impact-of-pkc-v3.pdf)
+
 
 Enjeux éthiques
 ===============
@@ -30,8 +34,8 @@ Pour cette séance, nous allons nous intéresser aux enjeux de société liés �
 * [Decrypting the encryption debate](https://www.nap.edu/catalog/25010/decrypting-the-encryption-debate-a-framework-for-decision-makers)
 * [Conférence de clôture du SSTIC 2018, Patrick Pailloux, Directeur technique de la DGSE (vidéo, 1h)](https://www.sstic.org/2018/presentation/2018_cloture/)
 * [Tous connectés, tous responsables, _Guillaume Poupard, Directeur général de l’ANSSI_](https://www.liberation.fr/debats/2019/01/21/tous-connectes-tous-responsables_1704228)
-<!-- https://www.wired.com/story/crypto-war-clear-encryption/ https://twitter.com/matthew_d_green/status/989222188287954945 https://blog.erratasec.com/2018/04/no-ray-ozzie-hasnt-solved-crypto.html  https://twitter.com/ErrataRob/status/989237973412732928 https://arstechnica.com/information-technology/2018/05/op-ed-ray-ozzies-crypto-proposal-a-dose-of-technical-reality/  -->
-<!-- TLS interception : https://jhalderm.com/pub/papers/interception-ndss17.pdf -->
+* Sur un mécanisme de séquestre proposé en 2018 par Ray Ozzie, lire [la proposition](https://www.wired.com/story/crypto-war-clear-encryption/), ainsi qu'au moins une critique [1](https://blog.erratasec.com/2018/04/no-ray-ozzie-hasnt-solved-crypto.html) [2](https://twitter.com/matthew_d_green/status/989222188287954945) [3](https://arstechnica.com/information-technology/2018/05/op-ed-ray-ozzies-crypto-proposal-a-dose-of-technical-reality/)
+
 <!-- https://citizenlab.ca/2019/09/annotated-bibliography-dual-use-technologies-network-traffic-management-and-device-intrusion-for-targeted-monitoring/ -->
 
 Cette liste n'est bien sûr pas exhaustive, toutes les suggestions d'ajout sont les bienvenues.
@@ -44,8 +48,7 @@ Bases de la crypto
 
 Vous devez lire le cours de [Ghislaine Labouret](https://web.archive.org/web/20170516210655/http://www.hsc.fr/ressources/cours/crypto/crypto.pdf) <!-- http://www.hsc.fr/ressources/cours/crypto/crypto.pdf https://doc.lagout.org/security/Cryptographie%20.%20Algorithmes%20.%20Steganographie/HSC%20-%20Introduction%20a%20la%20cryptographie.pdf --> (jusqu'à la page 27/32). Vous y verrez les notions de cryptographie symétrique (ex AES), asymétrique (ex RSA), hash, chiffrement, signature ainsi que le problème de la distribution des clés. Ce cours est intéressant car bien construit mais assez ancien (2001). Les notions, principes et difficultés n'ont pas changé depuis, les algorithmes et tailles de clés si : cela vous donne une idée de l'évolution à attendre pendant les 10 prochaines années (hors découverte majeure). À vous de chercher quels sont les algorithmes souhaitables aujourd'hui. Pour les tailles de clés, le site [Key Length](http://www.keylength.com/) est très pratique.
 
-<!--
-La suite du travail est d'étudier le fonctionnement de RSA (sans entrer, pour l'instant, dans les fondements mathématiques), par exemple sur [Wikipedia](https://fr.wikipedia.org/wiki/Chiffrement_RSA). Prêtez une attention particulière à la génération des clés, aux mécanismes de chiffrement et déchiffrement. -->
+La suite du travail est d'étudier le fonctionnement de RSA (sans entrer, pour l'instant, dans les fondements mathématiques), par exemple sur [Wikipedia](https://fr.wikipedia.org/wiki/Chiffrement_RSA). Prêtez une attention particulière à la génération des clés, aux mécanismes de chiffrement et déchiffrement.
 
 Enfin, le programme [Bullrun](https://fr.wikipedia.org/wiki/Bullrun) donne un bon aperçu des forces et faiblesses de la cryptographie moderne : la partie mathématique est plutôt sûre, les attaques se concentrent sur l'usage (standardisation), le déploiement, l'implémentation, etc.
 
@@ -55,8 +58,9 @@ Ouverture (facultative):
 
 * [L'histoire de Dual\_EC\_DRBG](https://en.wikipedia.org/wiki/Dual_EC_DRBG)
 * [Listen up, FBI: Juniper code shows the problem with backdoors, _Fahmida Y. Rashid, InfoWorld_](http://www.infoworld.com/article/3018029/virtual-private-network/listen-up-fbi-juniper-code-shows-the-problem-with-backdoors.html)
+* [Cryptographic competitions, _Daniel J. Bernstein_](https://eprint.iacr.org/2020/1608.pdf)
 
-Cette section sera suivie d'une heure de questions-réponses (vous **devez** venir avec une question sur cette partie) puis conclue par le TD1.
+Cette section sera suivie d'une heure de questions-réponses (vous **devez** venir avec une question sur cette partie) puis conclue par le TD2 JDR.
 
 Infrastructures à clés publiques (PKI)
 =======================================
@@ -77,7 +81,15 @@ Ouvertures (facultatives) :
 
 <!-- moxie : https://www.youtube.com/watch?v=pDmj_xe7EIQ  https://www.youtube.com/watch?v=Z7Wl2FW2TcA  https://moxie.org/blog/ssl-and-the-future-of-authenticity/  https://media.defcon.org/DEF%20CON%2019/DEF%20CON%2019%20video%20and%20slides/DEF%20CON%2019%20Hacking%20Conference%20Presentation%20By%20-%20Moxie%20Marlinspike%20-%20SSL%20And%20The%20Future%20Of%20Authenticity%20-%20Video%20and%20Slides.m4v-->
 
-<!-- CT https://emilymstark.com/2020/07/20/certificate-transparency-a-birds-eye-view.html -->
+
+Protocoles cryptographiques
+===========================
+
+Cette partie ne contient pas de travail personnel (uniquement le CM3 et le TP1). À la suite de ces séances, voici une liste d'ouvertures facultatives :
+
+* [Certificate Transparency: a bird's-eye view, _Emily M. Stark_](https://emilymstark.com/2020/07/20/certificate-transparency-a-birds-eye-view.html)
+* [The Security Impact of HTTPS Interception, _Zakir Durumeric et al._](https://jhalderm.com/pub/papers/interception-ndss17.pdf)
+* [Annotated Bibliography on Dual-Use Technologies, _Siena Anstis, Sharly Chan, Adam Senft, and Ron Deibert_](https://citizenlab.ca/2019/09/annotated-bibliography-dual-use-technologies-network-traffic-management-and-device-intrusion-for-targeted-monitoring/)
 
 
 Bibliographie
