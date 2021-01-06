@@ -37,6 +37,7 @@ Qu'est-ce que la sécurité des communications ?
 * Sécurité du canal de transmission -> crypto
 * Sécurité de l'implémentation crypto/son déploiement
 * Sécurité du logiciel et du matériel
+
 C'est en général les deux derniers éléments qui pourront être attaqués.
 
 Attention, les communications ne sont pas que numériques, la crypto n'est qu'une partie de la solution. La sécurité des communications, plus globalement, relève de l'_OPSEC_, la sécurité opérationnelle, qui englobe toutes les méthodes allant du filtre écran dans le TGV (voire le non-travail dans le TGV) aux bonnes pratiques de mise à jour de logiciels en passant par la sécurité physique des terminaux nomades (pas altérés, pas laissés sans surveillance, etc.) L'utilisation de crypto forte n'est donc pas une garantie de non-observabilité (quitte à ce que cela demande des moyens qui peuvent aller à la pose de micros/caméras, comme depuis relativement longtemps).
