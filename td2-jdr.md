@@ -78,7 +78,7 @@ Mise en pratique
 Vous allez maintenant transmettre un message chiffré à un autre étudiant. Pour cette partie, contrairement aux explications en début de sujet, vous pouvez déposer ce fichier sur le chat du général et non en message privé : le chiffrement assure la _confidentialité_ du message transmis.
 
 1. **Chiffrement de votre message** : Chiffrez un message de votre choix avec le cryptosystème proposé.
-2. **Envoi de votre message** : Écrivez le message chiffre dans le chat du BBB général.
+2. **Envoi de votre message** : Écrivez le message chiffré dans le chat du BBB général.
 3. **Réception d'un message** : À la réception d'un message, appliquez l'algorithme de déchiffrement. Quelqu'un d'autre pouvait-il obtenir le clair de ce message ?
 
 
