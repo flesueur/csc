@@ -9,8 +9,17 @@ import re
 import time
 import random
 import hashlib
-from Crypto.Cipher import AES
-from Crypto import Random
+# tweak to (try to) handle different crypto lib naming across systems (Linux, Mac, Win)
+try:
+    from Crypto.Cipher import AES
+    from Crypto import Random
+except ImportError:
+    try:
+        from crypto.Cipher import AES
+        from crypto import Random
+    except ImportError:
+        from Cryptodome.Cipher import AES
+        from Cryptodome import Random
 import base64
 import os
 import urllib.request
