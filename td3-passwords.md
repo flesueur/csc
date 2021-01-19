@@ -24,7 +24,7 @@ Ces deux mesures sont bien complémentaires car il est du devoir de chaque site 
 Squelette de code fourni
 ========================
 
-Vous devez télécharger le squelette de code [ici](https://github.com/flesueur/csc/tree/master/td2-code). Vous pouvez récupérer l'intégralité du dépôt en tapant `git clone https://github.com/flesueur/csc.git`. Vous pourriez avoir besoin d'installer la bibliothèque python pycryto ou pycryptodome (selon la version de python utilisée)
+Vous devez télécharger le squelette de code [ici](https://github.com/flesueur/csc/tree/master/td3-code). Vous pouvez récupérer l'intégralité du dépôt en tapant `git clone https://github.com/flesueur/csc.git`. Vous pourriez avoir besoin d'installer la bibliothèque python pycryto ou pycryptodome (selon la version de python utilisée)
 
 * `toolbox.py` est la bibliothèque contenant la boîte à outils, il peut être intéressant d'aller la consulter mais elle n'est pas à modifier ;
 * `skeleton.py` contient le programme à écrire.
@@ -64,13 +64,13 @@ Notations
 * h(m) est le hash du message m
 * Si K<sub>A</sub> est une clé symétrique, {m}<sub>K<sub>A</sub></sub> est le chiffré de m avec la clé K<sub>A</sub>, m = { {m}<sub>K<sub>A</sub></sub>}<sub>K<sub>A</sub></sub>
 * Si Pub<sub>A</sub> et Priv<sub>A</sub> sont des clés asymétriques complémentaires publique/privée, {m}<sub>Pub<sub>A</sub></sub> est le chiffré de m avec la clé Pub<sub>A</sub> et m = { {m}<sub>Pub<sub>A</sub></sub>}<sub>Priv<sub>A</sub></sub>
-* m signé avec la clé Priv<sub>A</sub> est noté m.{h(m)}<sub>Priv<sub>A</sub></sub> 
+* m signé avec la clé Priv<sub>A</sub> est noté m.{h(m)}<sub>Priv<sub>A</sub></sub>
 -->
 
 
 
 
-<!-- 
+<!--
 
 Côté client
 ===========
@@ -98,4 +98,3 @@ Pour approfondir
 * [OWASP : Password Storage Cheat Sheet](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet)
 * [Micode : 30 000 MOTS DE PASSE CRACKÉS EN 5 MINUTES ! (vidéo)](https://youtu.be/_1ONcmFUOxE)
 * [Des exemples de dictionnaires](https://weakpass.com/wordlist)
-
