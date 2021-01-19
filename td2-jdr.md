@@ -12,6 +12,20 @@ Pour calculer l'inverse modulaire, vous pouvez utiliser [Wolfram Alpha](http://w
 
 Le cryptosystème que nous allons utiliser ici est basé sur la fonction RSA. Le cryptosystème proposé est simple et présente donc certaines vulnérabilités mais illustre le fonctionnement.
 
+Mode d'emploi distanciel
+========================
+
+**Merci de bien lire ces explications avant de démarrer**
+
+Le TD aura lieu sur les BBB (BigBlueButton) transmis sur le canal Discord du cours. Il y aura 2 salons :
+
+* Un salon "CSC", le général, auquel vous devez tous vous connecter en mode micro (mute, mais micro prêt à être activé) et rester tout le long de la séance, qui servira pour les annonces et discussions générales. Il sera limité à ces discussions générales, vous devez garder le son allumé pour entendre les moments d'annonce (ils ne seront pas annoncés à l'écrit, mais le canal vocal de ce BBB général sera suffisamment calme pour que vous puissiez le garder allumé tout le long sans être déconcentrés dans votre travail).
+* Un salon "Bureau", audio-vidéo également, dans lequel l'enseignant sera en permanence en écoute, et qui est donc l'endroit où aller pour lui poser des questions (et, ainsi, ne pas polluer le général). Vous pouvez rejoindre ce second salon sans quitter le général.
+
+Sur le BBB général, gardez bien le panneau de gauche ouvert et si possible visible, avec la liste des utilisateurs, et consultez-le régulièrement : c'est ici que vous recevrez les messages privés (des enseignants ou des autres étudiants, relatifs aux messages échangés comme vous le verrez dans la suite du sujet).
+
+Lors des communications à faire avec l'enseignant ou avec d'autres étudiants (décrites dans la suite du sujet), passez bien par ces messages privés BBB afin de ne pas polluer le canal de discussion général : clic sur le nom de la personne, "Démarrer une conversation privée".
+
 Génération de clés RSA
 ======================
 
@@ -27,7 +41,7 @@ Nous allons commencer par générer une paire de clés RSA pour chacun. Voici l'
 * Déterminer _d &equiv; e<sup>-1</sup> mod &phi;(n)_
 * La clé publique est _(e,n)_ et la clé privée est _(d,n)_
 
-Gardez votre clé privée secrète et transmettez votre clé publique avec votre nom à l'enseignant, sur un papier. Elle sera inscrite au tableau (la "PKI").
+Gardez votre clé privée secrète et transmettez votre clé publique à l'enseignant via un _message privé_ dans BBB. Elle sera inscrite dans le registre tenu par l'enseignant et affiché par BBB (la "PKI").
 
 Les exemples dans la suite du sujet sont réalisés avec p=31, q=37, n=1147, &phi;(n)=1080, e=7, d=463. La clé publique est _(e,n)_, ici _(7,1147)_, et la clé privée est _(d,n)_, ici _(463,1147)_.
 
@@ -61,11 +75,11 @@ Le déchiffrement est opéré de manière analogue, en utilisant la clé privée
 Mise en pratique
 ----------------
 
-Vous allez maintenant transmettre un message chiffré à un étudiant éloigné par un protocole multi-saut : vous le transmettez à un voisin, qui le redonne à un voisin, etc., jusqu'à sa destination. Vous jouerez à la fois les rôles d'émetteur, de routeur et de récepteur. Le chiffrement assure la _confidentialité_ du message transmis.
+Vous allez maintenant transmettre un message chiffré à un autre étudiant. Pour cette partie, contrairement aux explications en début de sujet, vous pouvez déposer ce fichier sur le chat du général et non en message privé : le chiffrement assure la _confidentialité_ du message transmis.
 
-1. **Envoi de votre message** : Chiffrez un message de votre choix avec le cryptosystème proposé. Inscrivez sur un papier votre identité, le message chiffré et le destinataire. Envoyez-le !
-2. **Routage des autres messages** : Que fait un routeur ? Il lit un message, l'analyse, décide où l'envoyer puis le reproduit. De manière analogue, vous allez pour chaque saut retransmettre le message entrant mais vous pouvez le lire avant de le retransmettre. Pouvez-vous en déduire des informations ?
-3. **Réception d'un message** : À la réception d'un message, appliquez l'algorithme de déchiffrement. Quelqu'un d'autre sur la route du message pouvait-il obtenir le clair de ce message ?
+1. **Chiffrement de votre message** : Chiffrez un message de votre choix avec le cryptosystème proposé.
+2. **Envoi de votre message** : Écrivez le message chiffre dans le chat du BBB général.
+3. **Réception d'un message** : À la réception d'un message, appliquez l'algorithme de déchiffrement. Quelqu'un d'autre pouvait-il obtenir le clair de ce message ?
 
 
 Signature et vérification
@@ -95,10 +109,10 @@ Le message est alors envoyé accompagné de sa signature. La vérification d'un 
 Mise en pratique
 ----------------
 
-Vous allez maintenant transmettre un message clair (non chiffré) signé à un étudiant éloigné par ce même protocole multi-saut. La signature permet de vérifier l'_intégrité_ du message transmis.
+Vous allez maintenant transmettre un message clair (non chiffré) signé à un autre étudiant, par message privé. La signature permet de vérifier l'_intégrité_ du message transmis.
 
-1. **Envoi de votre message** : Signez un message de votre choix avec le cryptosystème proposé. Inscrivez sur un papier votre identité, le message clair, la signature et le destinataire. Envoyez-le !
-2. **Routage des autres messages** : Utilisez le même protocole multi-saut que précédemment. Pour chaque saut, recopiez le message entrant sur un autre papier puis retransmettez ce second papier.
+1. **Signature de votre message** : Signez un message de votre choix avec le cryptosystème proposé.
+1. **Envoi de votre message** : Écrivez le message par message privé (attention, il faut bien envoyer le message en clair + la signature !)
 3. **Réception d'un message** : À la réception d'un message, appliquez l'algorithme de vérification de la signature. Le message reçu est-il intègre ? Si non, quelle attaque avez-vous détectée ?
 
 
