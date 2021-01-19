@@ -5,10 +5,10 @@ _François Lesueur ([francois.lesueur@insa-lyon.fr](mailto:francois.lesueur@insa
 Ce TD présente et applique les notions de cryptographie asymétrique :
 
 * Génération de clés RSA
-* Distribution de clés 
+* Distribution de clés
 * Signature et chiffrement RSA
 
-Pour calculer l'inverse modulaire, vous pouvez utiliser [Wolfram Alpha](http://www.wolframalpha.com). Pour calculer les exponentiations modulaires, vous pouvez utiliser python (dans l'interpréteur, tapez `pow(a,b,c)` pour obtenir a<sup>b</sup>[c]) ou [Wolfram Alpha](http://www.wolframalpha.com).
+Pour calculer l'inverse modulaire, vous pouvez utiliser [Wolfram Alpha](http://www.wolframalpha.com) (attention, pas le `pow` Python pour ça !). Pour calculer les exponentiations modulaires, vous pouvez utiliser python (dans l'interpréteur, tapez `pow(a,b,c)` pour obtenir a<sup>b</sup>[c]) ou [Wolfram Alpha](http://www.wolframalpha.com).
 
 Le cryptosystème que nous allons utiliser ici est basé sur la fonction RSA. Le cryptosystème proposé est simple et présente donc certaines vulnérabilités mais illustre le fonctionnement.
 
@@ -27,9 +27,9 @@ Nous allons commencer par générer une paire de clés RSA pour chacun. Voici l'
 * Déterminer _d &equiv; e<sup>-1</sup> mod &phi;(n)_
 * La clé publique est _(e,n)_ et la clé privée est _(d,n)_
 
-Gardez votre clé privée secrète et transmettez votre clé publique avec votre nom à l'enseignant, sur un papier. Elle sera inscrite au tableau (la "PKI"). 
+Gardez votre clé privée secrète et transmettez votre clé publique avec votre nom à l'enseignant, sur un papier. Elle sera inscrite au tableau (la "PKI").
 
-Les exemples dans la suite du sujet sont réalisés avec p=31, q=37, n=1147, &phi;(n)=1080, e=7, d=463. La clé publique est _(e,n)_, ici _(7,1147)_, et la clé privée est _(d,n)_, ici _(463,1147)_. 
+Les exemples dans la suite du sujet sont réalisés avec p=31, q=37, n=1147, &phi;(n)=1080, e=7, d=463. La clé publique est _(e,n)_, ici _(7,1147)_, et la clé privée est _(d,n)_, ici _(463,1147)_.
 
 <!-- Code Python pour calculer _a<sup>-1</sup> mod b_ : `modinv(a,b)` disponible [ici](modinv.py) -->
 

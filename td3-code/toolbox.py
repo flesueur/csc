@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 # Avoir une lib avec des briques prêtes
 # Avoir un script qui crée les fichiers de password SHA/PB/etc. pour pouvoir les manipuler en texte
