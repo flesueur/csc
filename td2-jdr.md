@@ -8,8 +8,6 @@ Ce TD présente et applique les notions de cryptographie asymétrique :
 * Distribution de clés
 * Signature et chiffrement RSA
 
-Pour calculer l'inverse modulaire, vous pouvez utiliser [Wolfram Alpha](http://www.wolframalpha.com) (attention, pas le `pow` Python pour ça !). Pour calculer les exponentiations modulaires, vous pouvez utiliser python (dans l'interpréteur, tapez `pow(a,b,c)` pour obtenir a<sup>b</sup>[c]) ou [Wolfram Alpha](http://www.wolframalpha.com).
-
 Le cryptosystème que nous allons utiliser ici est basé sur la fonction RSA. Le cryptosystème proposé est simple et présente donc certaines vulnérabilités mais illustre le fonctionnement.
 
 Mode d'emploi distanciel
