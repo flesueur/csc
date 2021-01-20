@@ -73,7 +73,7 @@ Le déchiffrement est opéré de manière analogue, en utilisant la clé privée
 Mise en pratique
 ----------------
 
-Vous allez maintenant transmettre un message chiffré à un autre étudiant. Pour cette partie, contrairement aux explications en début de sujet, vous pouvez déposer ce fichier sur le chat du général et non en message privé : le chiffrement assure la _confidentialité_ du message transmis.
+Vous allez maintenant transmettre un message chiffré à un autre étudiant. Pour cette partie, contrairement aux explications en début de sujet, vous pouvez déposer ce message chiffré sur le chat du général et non en message privé : le chiffrement assure la _confidentialité_ du message transmis.
 
 1. **Chiffrement de votre message** : Chiffrez un message de votre choix avec le cryptosystème proposé.
 2. **Envoi de votre message** : Écrivez le message chiffré dans le chat du BBB général.
