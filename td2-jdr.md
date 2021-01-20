@@ -36,7 +36,7 @@ Nous allons commencer par générer une paire de clés RSA pour chacun. Voici l'
 	* _1 < e < &phi;(n)_
 	* _pgcd(e, &phi;(n)) = 1_
 	* Par exemple, un premier qui ne divise pas &phi;(n)
-* Déterminer l'inverse modulaire _d &equiv; e<sup>-1</sup> mod &phi;(n)_. Vous pouvez utiliser [DCODE](https://www.dcode.fr/inverse-modulaire) pour cela (attention, pas le `pow` Python pour ça !) <!-- Vous pouvez utiliser [Wolfram Alpha](http://www.wolframalpha.com), avec une requête de la forme `7 ^ -1 mod 1147` (attention, pas le `pow` Python pour ça !) -->
+* Déterminer l'inverse modulaire _d &equiv; e<sup>-1</sup> mod &phi;(n)_. Vous pouvez utiliser [DCODE](https://www.dcode.fr/inverse-modulaire) pour cela (attention, pas le `pow` Python pour ça, sauf si vous êtes *certain* d'avoir python 3.8 !) <!-- Vous pouvez utiliser [Wolfram Alpha](http://www.wolframalpha.com), avec une requête de la forme `7 ^ -1 mod 1147` (attention, pas le `pow` Python pour ça !) -->
 * La clé publique est _(e,n)_ et la clé privée est _(d,n)_
 
 Gardez votre clé privée secrète et transmettez votre clé publique à l'enseignant via un _message privé_ dans BBB. Elle sera inscrite dans le registre tenu par l'enseignant et affiché par BBB (la "PKI").
