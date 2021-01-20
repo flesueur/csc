@@ -38,7 +38,7 @@ Nous allons commencer par générer une paire de clés RSA pour chacun. Voici l'
 	* _1 < e < &phi;(n)_
 	* _pgcd(e, &phi;(n)) = 1_
 	* Par exemple, un premier qui ne divise pas &phi;(n)
-* Déterminer _d &equiv; e<sup>-1</sup> mod &phi;(n)_
+* Déterminer _d &equiv; e<sup>-1</sup> mod &phi;(n)_ . Vous pouvez utiliser [Wolfram Alpha](http://www.wolframalpha.com), avec une requête de la forme `7 ^ -1 mod 1147` (attention, pas le `pow` Python pour ça !)
 * La clé publique est _(e,n)_ et la clé privée est _(d,n)_
 
 Gardez votre clé privée secrète et transmettez votre clé publique à l'enseignant via un _message privé_ dans BBB. Elle sera inscrite dans le registre tenu par l'enseignant et affiché par BBB (la "PKI").
@@ -67,7 +67,7 @@ Ensuite, afin de ne pas retomber dans un chiffrement par substitution simple, le
 
 Enfin, chaque bloc clair de 3 chiffres est chiffré indépendamment par la fonction RSA : bloc<sub>chiffré</sub> = bloc<sub>clair</sub><sup>e</sup>[n]. Attention, _(e,n)_ représente une clé publique, mais celle de qui ? L'utilisation de la clé _(7,1147)_ donne le chiffré `1116 751 245 1108`.
 
-> Attention, lors de l'appel à la fonction `pow(a,b,c)` de python, n'écrivez pas de '0' en début d'entier. Par exemple, pour le bloc clair `031`, tapez `pow(31,7,1147)`. Commencer un entier par '0' le fait interpréter comme un nombre encodé en _octal_ (même principe qu'un nombre commençant par '0x' qui est interprété comme un hexadécimal).
+> Pour calculer les exponentiations modulaires, vous pouvez utiliser python (dans l'interpréteur, tapez `pow(a,b,c)` pour obtenir a<sup>b</sup>[c]) ou [Wolfram Alpha](http://www.wolframalpha.com). Attention, lors des calculs, n'écrivez pas de '0' en début d'entier. Par exemple, pour le bloc clair `031`, tapez `pow(31,7,1147)`. Commencer un entier par '0' le fait interpréter comme un nombre encodé en _octal_ (même principe qu'un nombre commençant par '0x' qui est interprété comme un hexadécimal).
 
 
 Le déchiffrement est opéré de manière analogue, en utilisant la clé privée au lieu de la clé publique. Chaque bloc clair est réobtenu à partir du bloc chiffré par le calcul : bloc<sub>clair</sub> = bloc<sub>chiffré</sub><sup>d</sup>[n]
