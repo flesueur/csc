@@ -120,7 +120,7 @@ Attaques sur le cryptosystème proposé
 Étudiez et testez quelques attaques sur le système mis en place :
 
 * Modification de message en conservant la validité de la signature
-* Attaque de la clé privée (par factorisation de $n$ par exemple)
+* Attaque de la clé privée (par factorisation de _n_ par exemple)
 * Attaque à message choisi
 * ...
 
