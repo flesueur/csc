@@ -99,6 +99,7 @@ Bibliographie
 
 Livres :
 * [Secure communication principles, _UKNCSC_](https://www.ncsc.gov.uk/guidance/secure-communication-principles-alpha-release)
+* [The Cyber Security Body of Knowledge](https://www.cybok.org/media/downloads/CyBOK-version-1.0.pdf), en particulier le chapitre 10 dédié à la cryptographie
 * Histoire des codes secrets : De l'Égypte des Pharaons à l'ordinateur quantique, _Simon Singh_
 * Architectures PKI et communications sécurisées, _DUMAS Jean-Guillaume, LAFOURCADE Pascal, REDON Patrick_
 * Serious Cryptography, _Jean-Philippe Aumasson_
