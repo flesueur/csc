@@ -52,10 +52,10 @@ Vous pouvez visualiser tous ces fichiers dans un éditeur de texte classique et 
 Analyse des différents schémas
 ==============================
 
-Pour chaque schéma, vous devez :
+Pour chaque schéma (clair `plain`, chiffré `enc`, hash `sha`, hash salé `saltedsha`, hash salé coûteux `pbkdf2`), vous devez :
 
-* analyser le processus et le coût de l'ajout d'un compte et de la vérification d'un mot de passe
-* proposer la gestion d'un utilisateur qui a perdu son mot de passe
+* analyser le processus de l'ajout d'un compte et de la vérification d'un mot de passe
+* proposer la procédure de récupération pour un utilisateur qui a perdu son mot de passe
 * évaluer l'information révélée directement par la base de mots de passe
 * évaluer le coût de cassage d'un mot de passe isolé
 * évaluer le coût de cassage de la base entière
