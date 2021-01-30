@@ -4,6 +4,8 @@ _François Lesueur ([francois.lesueur@insa-lyon.fr](mailto:francois.lesueur@insa
 
 Ce TD présente le modèle de PKI "Autorités de certification", généralement noté CA (_Certification Authority_). Pour rappel, dans le cas du HTTPS par exemple, une CA doit permettre de valider la clé publique tierce obtenue pour la connexion au site demandé.
 
+Dans le mode distanciel, essayez de réfléchir en _petits_ groupes (groupes de 2-3 ?) dans des salons de discussion.
+
 Notations
 =========
 
@@ -13,46 +15,74 @@ Notations
 * m signé avec la clé Priv<sub>A</sub> est noté m.{h(m)}<sub>Priv<sub>A</sub></sub>
 
 
-Qu'est-ce qu'une CA ?
-=====================
+Point de départ et objectif
+===========================
 
-Une CA est une organisation cryptographiquement représentée par sa paire de clés Pub<sub>CA</sub> / Priv<sub>CA</sub>. Cette CA auto-signe son propre certificat.
+Nos deux interlocuteurs sont Alice (client HTTPS, ie, un navigateur web) et Bob (serveur HTTPS, ie, un serveur web). Même si le protocole permet l'authentification mutuelle (chaque acteur authentifie cryptographiquement l'autre), nous allons étudier le cas le plus diffusé où seul le client HTTPS authentifie le serveur HTTPS. L'authentification permet d'établir un canal sécurisé en sachant que la bonne personne est de l'autre côté : il faut pour cela connaître la bonne clé publique de son interlocuteur.
 
-1. Quelles informations contient son certificat ?
-2. Quelle est sa forme signée, en utilisant la notation proposée ?
+Nous allons décrire au fur et à mesure la connaissance des différents acteurs. Au départ, Alice n'a pas de connaissance particulière, Bob connaît son couple de clés Pub<sub>B</sub>/Priv<sub>B</sub> (c'est lui qui l'a généré).
 
-
-Qu'est-ce qu'un certificat de site HTTPS ?
-==========================================
-
-Un site HTTPS est cryptographiquement représenté par sa paire de clés Pub<sub>site</sub> / Priv<sub>site</sub>.
-
-1. Quel est le problème si le serveur envoie tout simplement sa clé publique au début de l'échange (typiquement un certificat auto-signé) ?
-2. Quelles informations doit contenir son certificat ?
-3. Quelle est sa forme signée, en utilisant la notation proposée ?
-4. Quelle est la procédure de vérification côté client HTTPS ? Quels sont les pré-requis ?
+L'objectif est qu'Alice obtienne la connaissance (B, Pub<sub>B</sub>), ie, l'association valide de la clé publique de Bob à son identité.
 
 
-Comment communiquer avec un voisin ?
-====================================
 
-Simulez maintenant une connexion vers le site de votre voisin, récupérez son certificat.
+Échange direct
+==============
 
-1. Pouvez-vous vérifier son certificat ?
-2. Expliquez comment récupérer de manière adaptée les données qu'il vous manque.
-3. Dans le cas de HTTPS, avec une multitude de CA (87 organisations, 166 certificats sur l'installation testée), comment cela est-il géré ?
+Alice et Bob communiquent à travers un canal non sécurisé. La première façon pour Alice d'obtenir l'association attendue serait de la demander à Bob à travers ce canal. C'est ce qu'il se passe lorsque l'on parle, en HTTPS, de _certificats auto-signés_.
+
+1. Sans prendre en compte la sécurité, est-ce que cela peut fonctionner ?
+2. Si cela fonctionne, quel peut être le risque (en prenant maintenant en compte la sécurité) ? A-t-on gagné quelque chose par rapport à une communication en clair ?
+3. Décrivez une attaque possible par [_man-in-the-middle_](https://fr.wikipedia.org/wiki/Attaque_de_l%27homme_du_milieu).
+
+Une PKI, et donc par exemple une CA, vise à sécuriser l'obtention de cette association (identité, clé publique).
+
+> Un premier type d'alerte de sécurité des navigateurs concerne ces certificats auto-signés.
+
+Ajout d'un nouvel acteur : la CA
+========================
+
+Nous intégrons un troisième acteur C (CA), qui va agir comme un tiers de confiance, et ajoutons les connaissances suivantes :
+
+* C connaît Pub<sub>C</sub>/Priv<sub>C</sub> (son couple de clés)
+* A connaît Pub<sub>C</sub> et fait confiance à C
+* L'objectif est que C certifie beaucoup d'associations (identité, clé publique), afin de servir de pivot unique pour de nombreuses communications
+
+1. À partir du cours, refaites la cinématique de CA/HTTPS dans ce modèle : les échanges entre B et C, puis entre B et A (A et C ne communiquent jamais directement !). Quel élément est le _certificat_ ? Vous utiliserez les notations présentées en début de sujet.
+2. Comment C vérifie-t-elle l'association déclarée (B, Pub<sub>B</sub>) ?
+3. Comment A vérifie-t-elle l'association obtenue (B, Pub<sub>B</sub>) ? Quelle est la chaîne de confiance ?
+4. Que déduire si le certificat reçu par A est bien signé mais pour une identité différente de B ? (en HTTPS, l'identité attendue, B par exemple, correspond au nom d'hôte de la requête, par exemple `www.insa-lyon.fr` pour une requête à `https://www.insa-lyon.fr/index.html`)
+
+> Un second type d'alerte de sécurité des navigateurs concerne des certificats bien signés mais valides pour un autre site.
+
+> Un certificat est essentiellement cette association (identité, clé publique) assortie d'une durée de vie limitée, le tout signé par une autorité de certification. La norme X509v3 contient évidemment de nombreux autres champs.
+
+<!--
+3. Comment A peut-il obtenir Pub<sub>C</sub> pour faire confiance à C ? Quelle sécurité ?
+4. Comment C peut-il vérifier l'association (B, Pub<sub>B</sub>) ? Quelle sécurité ?
+-->
 
 
-Organisation d'une CA à étages
-==============================
 
-Pour limiter les risques et impacts d'une compromission, les CA emploient plusieurs clés de niveaux de sensibilité différents. Typiquement, un certificat racine avec une durée de vie longue (30 ans par exemple) est intégré aux navigateurs. La clé privée associée à ce certificat est stockée hors-ligne et est utilisée, chaque année, pour signer un certificat intermédiaire avec une durée de vie plus courte (1 an). C'est ensuite ce certificat intermédiaire qui est utilisé au quotidien. Formalisez cette organisation (matériel côté CA, matériel côté site, matériel côté client).
+L'écosystème HTTPS
+==================
+
+Ce modèle est tout à fait possible avec une unique CA. Cependant, en pratique, il s'est développé avec une multitude de CA, notamment pour HTTPS. Chaque serveur a le choix de quelle CA il veut être certifié. Du coup, un navigateur reconnaît typiquement de l'ordre d'une petite centaine de CA différentes.
+
+Imaginez maintenant que l'une des autorités soit compromise (malveillante ou attaquée):
+
+1. Quel impact pour les clients reconnaissant cette autorité ?
+2. Quel impact pour un site dont le certificat est émis par une autre autorité ?
+
+
+
+
 
 
 Révocation
 ==========
 
-La certification est un processus _hors-ligne_, c'est-à-dire qu'une fois émis, un certificat reste valide jusqu'à une date fixée lors de la signature (typiquement en années). Il ne s'agit pas d'une validation interactive valable à l'instant de la requête HTTP.
+La certification est un processus _hors-ligne_, c'est-à-dire qu'une fois émis, un certificat reste valide jusqu'à une date fixée lors de la signature (typiquement en années). Il ne s'agit pas d'une validation interactive valable à l'instant de la requête HTTPS.
 
 Dans ses processus, une CA doit donc permettre de révoquer des certificats lorsqu'un site se fait voler sa clé privée.
 
@@ -61,9 +91,8 @@ CRL
 
 La CRL (_Certificate Revocation List_) est une liste des certificats révoqués, émise et tenue à jour par la CA.
 
-1. Quelle forme peut-elle avoir ?
-2. Expliquez en quoi l'utilisation de CRL va à l'encontre de l'approche hors-ligne (non interactive) et quel risque cela pose pour la CA.
-3. Que faire en cas de CRL non à jour et de CA non disponible pour mettre à jour ?
+1. En quoi l'utilisation de CRL va à l'encontre de l'approche hors-ligne (non interactive) et quel risque cela pose pour la CA ?
+2. Que faire en cas de CRL non à jour et de CA non disponible pour mettre à jour ?
 
 
 OCSP
@@ -77,27 +106,18 @@ OCSP (_Online Certificate Status Protocol_) permet à un client de vérifier en 
 
 La révocation est un problème qui n'est toujours pas traité de manière satisfaisante et uniforme...
 
-Quand les problèmes commencent
+
+Organisation d'une CA à étages
 ==============================
 
-Imaginez maintenant que l'une des autorités soit compromise (malveillante ou attaquée).
+Pour limiter les risques et impacts d'une compromission, chaque certificat a une durée de vie limitée, spécifiée dans l'association. Les CA emploient de plus plusieurs clés de niveaux de sensibilité différents. Cela permet d'avoir une ancre de confiance connue par A avec une longue durée de vie (par exemple 30 ans) tout en utilisant quotidiennement du matériel cryptographique avec une durée de vie plus courte (par exemple 1 an).
 
-1. Quel impact pour les clients reconnaissant cette autorité ?
-2. Quel impact pour un site dont le certificat est émis par une autre autorité ?
-3. Comment y remédier dans le cas où c'est un certificat intermédiaire qui est compromis ? Dans le cas où c'est le certificat racine qui est compromis ?
+C a ainsi, à l'instant _t_ :
 
+* Pub<sub>CL</sub>/Priv<sub>CL</sub>, les clés longues, liées au certificat _racine_
+* Pub<sub>CC</sub>/Priv<sub>CC</sub>, les clés courtes, liées au certificat _intermédiaire_
 
-Ouverture : création et déploiement automatisés
-===============================================
+Typiquement, un certificat racine avec une durée de vie longue (30 ans par exemple) est intégré aux navigateurs. La clé privée associée à ce certificat est stockée hors-ligne et est utilisée, chaque année, pour signer un certificat intermédiaire avec une durée de vie plus courte (1 an). C'est ensuite ce certificat intermédiaire qui est utilisé au quotidien.
 
-Pour du déploiement rapide, la création de certificats peut être automatisée. C'est par exemple le cas du protocole ACME proposé et utilisé par _Let's Encrypt_ ou d'approches plus ou moins artisanales pour du déploiement continu en approche _DevOps_ (le protocole ACME peut aussi être utilisé dans ce cas là).
-
-L'objectif des certificats est d'éviter les attaques de type _Man-in-the-Middle_. Pour cela, un certificat valide la possession d'un nom hôte vis-à-vis de la CA émettrice. Nous pouvons imaginer un certain nombre de possibilités pour vérifier cette possession lors de la signature :
-
-* une preuve administrative envoyée à la CA (non utilisé pour les certificats classiques, nécessaire pour les "EV") ;
-* la réception d'un mail contenant un secret envoyé sur le domaine visé par la CA (approche classique des CA, en sachant que le mail n'est pas un protocole de communication sécurisé) ;
-* la réception d'un SMS contenant un secret (approche Signal/Telegram/etc.) ;
-* la vérification que plusieurs chemins de communication disjoints existent de manière identique et que, donc, il n'y a pas de MitM entre la cible et la CA lors de cette étape (approche ACME, sous l'hypothèse que le MitM n'est pas en bout de communication côté client).
-
-1. Schématisez un processus de vérification du type du protocole ACME (hôte cible, serveurs de vérification, clés de la CA, messages échangés).
-2. Proposez un workflow de déploiement continu intégrant la création d'un certificat avec une CA locale puis avec _Let's Encrypt_.
+1. Formalisez cette organisation (matériel côté CA, matériel côté site, matériel côté client).
+2. Comment remédier dans le cas où un certificat intermédiaire est compromis ? Dans le cas où le certificat racine est compromis ?
