@@ -4,7 +4,7 @@ _François Lesueur ([francois.lesueur@insa-lyon.fr](mailto:francois.lesueur@insa
 
 Ce TD présente le modèle de PKI "Autorités de certification", généralement noté CA (_Certification Authority_). Pour rappel, dans le cas du HTTPS par exemple, une CA doit permettre de valider la clé publique tierce obtenue pour la connexion au site demandé.
 
-Dans le mode distanciel, essayez de réfléchir en _petits_ groupes (groupes de 2-3 ?) dans des salons de discussion.
+Dans le mode distanciel, essayez de réfléchir en _petits_ groupes (groupes de 2-4 ?) dans des salons de discussion.
 
 Notations
 =========
