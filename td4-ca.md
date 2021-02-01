@@ -31,15 +31,9 @@ L'objectif est qu'Alice obtienne la connaissance (B, Pub<sub>B</sub>), ie, l'ass
 
 Alice et Bob communiquent à travers un canal non sécurisé. La première façon pour Alice d'obtenir l'association attendue serait de la demander à Bob à travers ce canal. C'est ce qu'il se passe lorsque l'on parle, en HTTPS, de _certificats auto-signés_.
 
-1. <details><summary>Sans prendre en compte la sécurité, est-ce que cela peut fonctionner ?</summary>
-Oui, on obtient en général une clé fonctionnelle
-</details>
-2. <details><summary>Si cela fonctionne, quel peut être le risque (en prenant maintenant en compte la sécurité) ? A-t-on gagné quelque chose par rapport à une communication en clair ?</summary>
-S'il y a un attaquant, il peut remplacer la clé sur le chemin. On a en fait rien gagné : soit il n'y a pas d'attaquant sur le chemin, on obtient la bonne clé mais la crypto ne sert pas à grand chose (vu qu'il n'y a pas d'attaquant) ; soit il y a un attaquant et on se fait MitM
-</details>
-3. <details><summary>Décrivez une attaque possible par <a href="https://fr.wikipedia.org/wiki/Attaque_de_l%27homme_du_milieu">man-in-the-middle</a>.</summary>
-L'idée est de modifier la clé en chemin et de s'interfacer dans la communication, il faut détailler.
-</details>
+1. <details><summary>Sans prendre en compte la sécurité, est-ce que cela peut fonctionner ?</summary>Oui, on obtient en général une clé fonctionnelle</details>
+2. <details><summary>Si cela fonctionne, quel peut être le risque (en prenant maintenant en compte la sécurité) ? A-t-on gagné quelque chose par rapport à une communication en clair ?</summary>S'il y a un attaquant, il peut remplacer la clé sur le chemin. On a en fait rien gagné : soit il n'y a pas d'attaquant sur le chemin, on obtient la bonne clé mais la crypto ne sert pas à grand chose (vu qu'il n'y a pas d'attaquant) ; soit il y a un attaquant et on se fait MitM</details>
+3. <details><summary>Décrivez une attaque possible par <a href="https://fr.wikipedia.org/wiki/Attaque_de_l%27homme_du_milieu">man-in-the-middle</a>.</summary>L'idée est de modifier la clé en chemin et de s'interfacer dans la communication, il faut détailler.</details>
 
 Une PKI, et donc par exemple une CA, vise à sécuriser l'obtention de cette association (identité, clé publique).
 
