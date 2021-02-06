@@ -108,6 +108,8 @@ Chaque arc allant de A vers B a 2 valeurs :
 1. <details><summary>La clé de Henry par Jesse</summary>Le meilleur chemin est Jesse-Walter-Henry. Jesse a une confiance correcte en Walter pour certifier (la flèche moyenne), puis Henry a une forte confiance en l'identité qu'il associe à la clé de Henry. C'est un bon chemin et Jesse peut récupérer la clé de Henry ainsi avec une bonne confiance.</details>
 2. <details><summary>La clé de Jesse par Saul</summary>Le meilleur chemin est Saul-Walter-Jesse. Saul a très peu confiance en Walter (flèche pointillée) pour vérifier les identités et donc le chemin ne valide pas. L'autre chemin Saul-Mike-Walter-Jesse bute également sur le chemin pointillé entre Mike et Walter</details>
 
+> Concrètement, chaque arc/valuation est signée par son émetteur, Walter signe ainsi par exemple un message décrivant qu'il a une confiance (3, gras) vis-à-vis de la clé de Henry. Ces messages signés sont déposés et accessibles publiquement sur un serveur de clés. L'ensemble de tous ces messages signés définit le graphe de confiance tel que représenté ici.
+
 > Il s'agit ainsi de parcourir le graphe, trouver les meilleurs chemins satisfaisant un seuil de confiance minimal. Plus le chemin est long plus la confiance va baisser (très vite), la présence de chemins multiples et disjoints peut ré-améliorer ce score. Il faut bien distinguer la confiance dans une identité (le nombre, ne dépend pas de l'attitude de la cible) de la confiance dans le comportement de la cible (l'épaisseur de la flèche). Chaque utilisateur a un rôle à jouer : bien faire son travail, et évaluer le travail qui sera fait par les autres. C'est difficile !
 
 Composantes malicieuses
