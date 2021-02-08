@@ -24,7 +24,7 @@ Avec DANE, les certificats ou clés publiques sont stockés directement dans les
 Un peu de DNS
 -------------
 
-Allez vraiment lire la ressource donnée dans le cours [Bortzmeyer](http://www.bortzmeyer.org/files/cours-dns-cnam-PRINT.pdf), pages 3 à 9 et 18 à 19, ainsi que [Sebsauvage](http://sebsauvage.net/comprendre/dns/) jusque "Dans ce cas, ils sont à la fois registry et registrar.".
+Allez vraiment lire la ressource donnée dans le cours [Bortzmeyer](http://www.bortzmeyer.org/files/cours-dns-cnam-PRINT.pdf), pages 3 à 9 et 18 à 19, ainsi que [Sebsauvage](http://sebsauvage.net/comprendre/dns/) jusque "Dans ce cas, ils sont à la fois registry et registrar.". Les caches sont aussi illustrés ici ![@b0rk](https://wizardzines.com/comics/updating-dns/updating-dns.png).
 
 1. <details><summary>Qui héberge le contenu de la zone `'.fr'` ?</summary>L'AFNIC (un registry)</details>
 2. <details><summary>Qui vend le service d'enregistrer un `'.fr'` ?</summary>OVH, Gandi, etc. (des registrars)</details>
