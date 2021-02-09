@@ -24,8 +24,8 @@ Vous pouvez afficher un plan de réseau avec `./mi-lxc.py print`.
 
 Pour vous connecter à une machine :
 
-* `./mi-lxc.py display isp-a-home` : pour afficher le bureau de la machine isp-a-home qui vous servira de navigateur web dans ce TP
-* `./mi-lxc.py attach target-dmz` : pour obtenir un shell root sur la machine target-dmz qui héberge le serveur web à sécuriser
+* `./mi-lxc.py display isp-a-home` : pour afficher le bureau de la machine isp-a-home qui vous servira de navigateur web dans ce TP (en tant qu'utilisateur debian)
+* `./mi-lxc.py attach target-dmz` : pour obtenir un shell sur la machine target-dmz qui héberge le serveur web à sécuriser (en tant qu'utilisateur root)
 
 Toutes les machines ont les deux comptes suivants : debian/debian et root/root (login/mot de passe).
 
