@@ -25,7 +25,7 @@ Vous pouvez afficher un plan de réseau avec `./mi-lxc.py print`.
 Pour vous connecter à une machine :
 
 * `./mi-lxc.py display isp-a-home` : pour afficher le bureau de la machine isp-a-home qui vous servira de navigateur web dans ce TP
-* `./mi-lxc.py attach target-dmz` : pour obtenir un shell sur la machine target-dmz qui héberger le serveur web à sécuriser
+* `./mi-lxc.py attach target-dmz` : pour obtenir un shell root sur la machine target-dmz qui héberge le serveur web à sécuriser
 
 Toutes les machines ont les deux comptes suivants : debian/debian et root/root (login/mot de passe).
 
@@ -44,32 +44,37 @@ Depuis la machine isp-a-home, ouvrez un navigateur pour vous connecter à `http:
 Nous allons maintenant attaquer depuis l'AS ecorp cette communication en clair, non sécurisée, entre isp-a-home et target-dmz. L'objectif est que le navigateur, lorsqu'il souhaite se connecter à l'URL `http://www.target.milxc`, arrive en fait sur la machine ecorp-infra. Deux pistes peuvent être explorées :
 
 * Attaque DNS qui, via le registrar, consisterait à altérer l'enregistrement DNS pour target.milxc dans la zone du TLD .milxc. Sur la machine milxc-ns :
-	* Altération de `/etc/nsd/milxc.zone` pour diriger les requêtes DNS pour `target.milxc` vers 10.101.0.2 (appartenant à ecorp)
+	* Altération de `/etc/nsd/milxc.zone` pour diriger les requêtes DNS pour `target.milxc` vers 100.81.0.2 (appartenant à ecorp)
 	* Puis `service nsd restart` (le DNS de ecorp est déjà configuré pour répondre aux requêtes pour target.milxc)
 * Attaque BGP qui consisterait à dérouter les paquets à destination de l'AS target vers l'AS ecorp (un [exemple de BGP hijacking réel en 2020](https://radar.qrator.net/blog/as1221-hijacking-266asns)) :
-	* Sur la machine ecorp-router : prendre une IP de l'AS target qui déclenchera l'annonce du réseau en BGP (`ifconfig eth1:0 10.100.1.1 netmask 255.255.255.0`)
-	* Sur la machine ecorp-infra : prendre l'IP de `www.target.milxc` (`ifconfig eth0:0 10.100.1.2 netmask 255.255.255.0`)
+	* Sur la machine ecorp-router : prendre une IP de l'AS target qui déclenchera l'annonce du réseau en BGP (`ifconfig eth1:0 100.80.1.1 netmask 255.255.255.0`)
+	* Sur la machine ecorp-infra : prendre l'IP de `www.target.milxc` (`ifconfig eth0:0 100.80.1.2 netmask 255.255.255.0`)
 
-Nous constatons ainsi le cas d'attaque que nous souhaitons détecter : un utilisateur sur isp-a-home qui, en tapant l'URL `www.target.milxc`, arrive en fait sur un autre service que celui attendu. Remettez le système en bon ordre de marche pour continuer (pour DNS, remettre la bonne IP 10.100.1.2 ; pour BGP, désactivez l'interface eth1:0 sur ecorp-router `ifconfig eth1:0 down`).
+Nous constatons ainsi le cas d'attaque que nous souhaitons détecter : un utilisateur sur isp-a-home qui, en tapant l'URL `www.target.milxc`, arrive en fait sur un autre service que celui attendu. Remettez le système en bon ordre de marche pour continuer (pour DNS, remettre la bonne IP 100.80.1.2 ; pour BGP, désactivez l'interface eth1:0 sur ecorp-router `ifconfig eth1:0 down`).
 
 
 Création d'une CA
 =================
 
-Pour sécuriser les communications vers `www.target.milxc`, nous allons créer, déployer et utiliser une CA. Cette CA sera hébergée dans l'AS mica et manipulée sur la machine mica-ca. Nous utiliserons le protocole ACME (celui de Let's Encrypt) pour l'opération de la CA (challenges, émission des certificats) via la suite d'outils de Smallstep.
+Pour sécuriser les communications vers `www.target.milxc`, nous allons créer, déployer et utiliser une CA. Cette CA sera hébergée dans l'AS mica et manipulée sur la machine mica-infra (son nom DNS dans l'infra sera `www.mica.milxc`). Nous utiliserons le protocole ACME (celui de Let's Encrypt) pour l'opération de la CA (challenges, émission des certificats) via la suite d'outils de Smallstep.
 
-Dans un premier temps, il faut initialiser une nouvelle CA (création d'une paire de clés, d'un certificat racine, etc.) ([doc](https://smallstep.com/docs/step-ca/getting-started)) :
+Dans un premier temps, il faut initialiser une nouvelle CA en tant que root (création d'une paire de clés, d'un certificat racine, etc.) ([doc](https://smallstep.com/docs/step-ca/getting-started)) :
 
-	# step ca init             <- le # dénote une commande shell à taper en root
-	# step ca root root.crt    <- ceci extrait le certificat racine vers le fichier root.crt
+	# step ca init                  <- le # dénote une commande shell à taper en root
+	# step-ca .step/config/ca.json  <- démarre le serveur de CA
+	# step ca root root.crt         <- ceci extrait le certificat racine vers le fichier root.crt
 
-Dans un second temps, il faut activer le protocole ACME pour cette CA ([doc](https://smallstep.com/docs/tutorials/acme-challenge)) <!-- (https://smallstep.com/blog/private-acme-server/)-->
+> La commande step-ca est bloquante, soit vous la mettez en arrière plan avec Ctrl+z puis `bg`, soit vous ouvrez ensuite un autre terminal
+
+Dans un second temps, il faut activer le protocole ACME pour cette CA ([doc](https://smallstep.com/docs/tutorials/acme-challenge), le protocole ACME est responsable des défis/réponse pour la génération automatique des certificats) <!-- (https://smallstep.com/blog/private-acme-server/)-->
 
 	# step ca provisioner add acme --type ACME
 
 Rendez le certificat racine accessible au téléchargement, par exemple en le copiant (avec les bons droits) vers `/var/www/html` (il sera ainsi accessible depuis toutes les autres machines par l'URL `http://www.mica.milxc/root.crt`).
 
 > Si, après avoir affiché à l'écran un document chiffré (par exemple avec la commande `cat`), votre terminal affiche de mauvais caractères, utilisez la combinaison de touches `Ctrl+v, Ctrl+o` pour retrouver un affichage fonctionnel (ou tapez `reset`).
+
+> Pour reprendre la configuration à 0, il faut supprimer le dossier `/root/.step` sur la machine mica-infra
 
 
 Intégration de la CA à l'écosystème HTTPS
@@ -83,7 +88,7 @@ Vous devez pour cela :
 * Passer le filtre des éditeurs de navigateurs et les convaincre de reconnaître votre CA. Il s'agit bien évidemment d'une opération complexe, longue, coûteuse et rare. Ici, nous la simulerons chez l'éditeur de navigateur Gozilla. La machine `gozilla-infra` peut intégrer un certificat préalablement téléchargé au trousseau par défaut avec la commande `addcatofox.sh <certificate>` . Une fois cette commande exécutée, la distribution du navigateur (ou de ses mises à jour) intégrera ce nouveau certificat.
 * Déclencher la mise à jour du navigateur par le client, en exécutant `updatefox.sh` en tant que root sur la machine `isp-a-home`
 
-La nouvelle CA est ainsi devenue une CA par défaut, reconnue globalement. Vous pouvez la retrouver dans le magasin de certiticats de Firefox (il faut le redémarrer).
+La nouvelle CA est ainsi devenue une CA par défaut, reconnue globalement. Vérifiez, après avoir redémarré Firefox, que vous la retrouvez bien dans le magasin de certiticats de Firefox.
 
 
 Sécurisation du serveur target-dmz
@@ -91,14 +96,19 @@ Sécurisation du serveur target-dmz
 
 Sur l'AS target, vous disposez du serveur target-dmz sur lequel il faut déployer du matériel cryptographique pour faire du HTTPS. Vous devrez notamment :
 
-* Générer une paire de clés et obtenir le certificat correspondant depuis la CA MICA (les clés arrivent dans `/etc/letsencrypt/live/keys`) :
+* Générer une paire de clés et obtenir le certificat correspondant depuis la CA MICA (les clés arrivent dans `/etc/letsencrypt/live/www.target.milxc/`) :
+
+		# service apache2 stop    <- on libère le port 80 nécessaire à certbot
 		# certbot certonly -n --standalone -d www.target.milxc \
-			--server https://www.mica.milxc/acme/acme/directory \
-			--agree-tos --email "fr@fr.fr"
-* Configurer le matériel cryptographique de ce nouveau site dans le fichier `/etc/apache2/sites-enabled/default-ssl.conf` (attention, vous devrez configurer la chaîne complète de certificats depuis la racine, c'est-à-dire utiliser `fullchain.pem`).
+			--server https://www.mica.milxc/acme/acme/directory
+		# service apache2 start
+
+* Configurer le matériel cryptographique de ce nouveau site dans le fichier `/etc/apache2/sites-enabled/default-ssl.conf` (vous devrez utiliser la chaîne complète de certificats depuis la racine, c'est-à-dire `fullchain.pem`, et la clé `privkey.pem`).
 * Vous devez redémarrer le serveur apache2 après vos modifications : `systemctl restart apache2`
 
-Connectez-vous maintenant en HTTPS depuis `isp-a-home` (si vous aviez ajouté une exception de sécurité à un moment du TP, retirez-la avant). Tout doit se dérouler sans alerte.
+Connectez-vous maintenant en HTTPS depuis `isp-a-home` (si vous aviez ajouté une exception de sécurité à un moment du TP, retirez-la avant). Tout doit se dérouler sans alerte, visualisez le certificat reçu. (Vous arrivez sur une page par défaut, le dokuwiki est accessible à l'URL `https://www.target.milxc/dokuwiki/`)
+
+<!-- ou apt install python3-certbot-apache puis un --apache au lieu du --standalone -->
 
 Attaques sur un serveur HTTPS
 =============================
@@ -106,7 +116,9 @@ Attaques sur un serveur HTTPS
 Attaque sur la connexion au serveur
 -----------------------------------
 
-Refaîtes l'attaque du début (DNS ou BGP) et vérifiez que la connexion depuis isp-a-home, lorsqu'elle est routée vers le serveur attaquant, génère bien une alerte de sécurité.
+Refaites l'attaque du début (DNS ou BGP) et vérifiez que la connexion depuis isp-a-home, lorsqu'elle est routée vers le serveur attaquant, génère bien une alerte de sécurité.
+
+<!-- il faudrait un certificat plus joli -->
 
 Quelle est d'habitude votre réaction face à ce genre d'alerte ? Que pouvons nous en conclure sur la protection et le risque restant avec HTTPS ?
 
@@ -114,9 +126,9 @@ Quelle est d'habitude votre réaction face à ce genre d'alerte ? Que pouvons no
 Attaque lors de la création du certificat
 -------------------------------
 
-En reprenant les attaques du début, obtenez depuis ecorp un certificat bien signé par MICA lié à l'URL `www.target.milxc`. Ces attaques DNS/BGP vont vous permettre de vous faire passer pour Target auprès de mica, lors de la phase de création du certificat.
+En reprenant les attaques du début, obtenez depuis ecorp-infra un certificat bien signé par MICA lié à l'URL `www.target.milxc`. Ces attaques DNS/BGP vont vous permettre de vous faire passer pour Target auprès de mica, lors de la phase de création du certificat.
 
-Validez la réussite en vous connectant depuis isp-a-home vers ce faux serveur, sans alerte de sécurité.
+Validez la réussite en vous connectant depuis isp-a-home vers ce faux serveur, maintenant sans alerte de sécurité.
 
 Bonus : Authentification mutuelle
 =========================
