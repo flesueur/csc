@@ -91,7 +91,7 @@ Vous devez pour cela :
 La nouvelle CA est ainsi devenue une CA par défaut, reconnue globalement. Vérifiez, après avoir redémarré Firefox, que vous la retrouvez bien dans le magasin de certiticats de Firefox.
 
 
-Sécurisation du serveur target-dmz
+Certification du serveur target-dmz
 ==================================
 
 Sur l'AS target, vous disposez du serveur target-dmz sur lequel il faut déployer du matériel cryptographique pour faire du HTTPS. Vous devrez notamment :
@@ -129,6 +129,7 @@ Attaque lors de la création du certificat
 En reprenant les attaques du début, obtenez depuis ecorp-infra un certificat bien signé par MICA lié à l'URL `www.target.milxc`. Ces attaques DNS/BGP vont vous permettre de vous faire passer pour Target auprès de mica, lors de la phase de création du certificat.
 
 Validez la réussite en vous connectant depuis isp-a-home vers ce faux serveur, maintenant sans alerte de sécurité.
+
 
 Bonus : Authentification mutuelle
 =========================
