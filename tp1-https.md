@@ -136,6 +136,8 @@ Bonus : Authentification mutuelle
 
 Mettez en place une authentification des clients par le serveur au moyen de certificats clients.
 
+Attention vous ne pourrez pas le faire avec ACME (les certificats clients ne correspondent pas à des noms d'hôtes et ne sont donc pas validables avec ACME). La partie de doc nécessaire est [ici](https://smallstep.com/onboarding/client-create-certificate)
+
 
 Bonus : Révocation
 ==========
