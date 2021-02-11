@@ -145,6 +145,8 @@ Bonus : Révocation
 Expérimentez les mécanismes de révocation disponibles (CRL, OCSP en ligne ou agrafé) pour révoquer le certificat serveur ainsi que les certificats clients.
 -->
 
+> Dans Smallstep, la révocation par CRL/OCSP n'est pas (encore) gérée. À la place, les certificats ont par défaut une durée courte (24h) et doivent être renouvelés automatiquement, ce qui limite largement le besoin de révocation explicite. Ce positionnement et toutes les limites de la révocation explicite sont très bien expliqués par les auteurs [ici](https://smallstep.com/blog/passive-revocation/)
+
 
 
 <!-- pinning, hsts -->
