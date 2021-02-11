@@ -138,12 +138,12 @@ Mettez en place une authentification des clients par le serveur au moyen de cert
 
 Attention vous ne pourrez pas le faire avec ACME (les certificats clients ne correspondent pas à des noms d'hôtes et ne sont donc pas validables avec ACME). La partie de doc nécessaire est [ici](https://smallstep.com/onboarding/client-create-certificate)
 
-
+<!--
 Bonus : Révocation
 ==========
 
 Expérimentez les mécanismes de révocation disponibles (CRL, OCSP en ligne ou agrafé) pour révoquer le certificat serveur ainsi que les certificats clients.
-
+-->
 
 
 
