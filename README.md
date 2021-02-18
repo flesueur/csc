@@ -46,7 +46,7 @@ Les TD : [TD2 (JdR)](td2-jdr.md) / [TD3 (Passwords)](td3-passwords.md) / [TD4 (C
 
 Les TP : [TP1 (HTTPS)](tp1-https.md)
 
-Le projet d'arpentage : [Projet](arpentage.md)
+Le projet d'arpentage communications : [Projet](arpentage.md)
 
 <!--
 La page Moodle [TC](https://moodle.insa-lyon.fr/course/view.php?id=4647) / [TCA](https://moodle.insa-lyon.fr/course/view.php?id=4694)
