@@ -86,7 +86,7 @@ Signature et vérification
 Description
 -----------
 
-Nous allons signer des chaînes de caractères. Pour cela, chaque lettre est remplacée par son rang dans l'alphabet. Pour un message _m = (m<sub>0</sub>, ..., m<sub>i</sub>)_ avec _(m<sub>0</sub>, ..., m<sub>i</sub>)_ les rangs de chaque lettre (attention, on ne fait plus des blocs de 3 chiffres ici), le haché _h(m)_ est calculé par l'algorithme suivant :
+Nous allons signer des chaînes de caractères. Pour cela, chaque lettre est remplacée par son rang dans l'alphabet. Pour un message _m = (m<sub>0</sub>, ..., m<sub>i</sub>)_ avec _(0, ..., i)_ les rangs de chaque lettre (attention, on ne fait plus des blocs de 3 chiffres ici), le haché _h(m)_ est calculé par l'algorithme suivant :
 
 	h = 2;
 	for (j=0; j<i; j++) {
