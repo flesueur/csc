@@ -121,8 +121,7 @@ Attaques sur le cryptosystème proposé
 
 * Modification de message en conservant la validité de la signature
 * Attaque de la clé privée (par factorisation de _n_ par exemple)
-* Attaque à message choisi
-* ...
+
 
 Toutes ces attaques sont possibles ici. Réfléchissez à leur cause et aux protections mises en place dans les cryptosystèmes réels. Implémentez une (ou plusieurs) attaque dans le langage de votre choix, proposez une contre-mesure et évaluez la complexité rajoutée par votre contre-mesure.
 
