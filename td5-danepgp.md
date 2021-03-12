@@ -4,7 +4,7 @@ _François Lesueur ([francois.lesueur@insa-lyon.fr](mailto:francois.lesueur@insa
 
 Ce TD présente les modèles de PKI "DANE" et "PGP/Web of trust". Comme pour le cas de la CA, ces PKI doivent permettre de valider la clé publique tierce obtenue pour une identité demandée.
 
-Dans le mode distanciel, réfléchissez en _petits_ groupes (groupes de 2 à 4) dans des salons de discussion spécifiques. Des éléments de réponse sont accessibles pour chaque question (en cliquant sur les questions) : réfléchissez sans ces éléments, puis regardez et intégrez ces éléments. L'enseignant fera le tour des groupes pour échanger sur les points nécessaires.
+Dans le mode distanciel, réfléchissez en groupes de 4 dans des salons de discussion spécifiques. Des éléments de réponse sont accessibles pour chaque question (en cliquant sur les questions) : réfléchissez sans ces éléments, puis regardez et intégrez ces éléments. L'enseignant fera le tour des groupes pour échanger sur les points nécessaires.
 
 
 Notations
