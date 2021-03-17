@@ -121,7 +121,7 @@ Imaginons qu'un attaquant crée un grand nombre d'identités et signe une clé p
 
 1. <details><summary>Évaluez la récupération de la clé de Henry par Jesse</summary>Aucun changement, la recherche ne peut pas rentrer dans la composante malicieuse qui est inatteignable pour Jesse</details>
 2. <details><summary>Considérons maintenant que certaines personnes du graphe de confiance ne sont pas très regardantes sur leur validation et que Mike certifie William (score 3, gras). <img src="td5-figures/pgp3.png"> Évaluez la récupération de la clé de Henry par Saul</summary>Cette fois-ci, Saul va récupérer une mauvaise clé. Évidemment, il ne peut pas le savoir. Le chemin, pour cet exemple, est un peu long (Saul-Mike-William-Henry) et serait peut-être, en pratique, refusé, chaque saut dégradant le score. Mais c'est l'idée de ce risque.</details>
-3. <details><summary>Quelles conclusions pouvons-nous en tirer sur la robustesse aux attaquants ?</summary>La robustesse aux attaquants est liée au bon usage de l'outil par chacun (ici, Skyler n'a pas bien évalué la confiance à accorder à Jack, mais Jesse est également en faute d'avoir lui-même accordé trop de confiance à Walter). L'usage est donc complexe, ce qui nuit à la sécurité finale.</details>
+3. <details><summary>Quelles conclusions pouvons-nous en tirer sur la robustesse aux attaquants ?</summary>La robustesse aux attaquants est liée au bon usage de l'outil par chacun (ici, Mike n'a pas bien évalué la confiance à accorder à William, mais Saul est également en faute d'avoir lui-même accordé trop de confiance à Mike). L'usage est donc complexe, ce qui nuit à la sécurité finale.</details>
 
 
 Révocation
