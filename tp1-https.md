@@ -62,6 +62,11 @@ Dans un premier temps, il faut initialiser une nouvelle CA en tant que root (cr�
 
 	# step ca init                  <- le # dénote une commande shell à taper en root
 
+Pour cette initialisation, les paramètres ont peu d'importance (l'essentiel est la création du matériel cryptographique) et les choix suggérés par défaut à chaque question seront suffisants. Il faut juste faire attention aux questions :
+* "What DNS names or IP addresses would you like to add to your new CA?", à laquelle il faut répondre "www.mica.milxc"
+* "What address will your new CA listen at?", à laquelle il faut bien répondre ":443" (comme suggéré par défaut) et non "127.0.0.1:8443" (comme suggéré dans la doc liée précédemment). La CA doit, dans notre cas, écouter sur l'interface réseau externe et non sur localhost pour permettre l'émission du certificat de target-dmz dans la partie suivante.
+* "What do you want your password to be?", à laquelle il est préférable de choisir un mot de passe vous-mêmes
+
 Dans un second temps, il faut activer le protocole ACME pour cette CA ([doc](https://smallstep.com/docs/tutorials/acme-challenge), le protocole ACME est responsable des défis/réponse pour la génération automatique des certificats) : <!-- (https://smallstep.com/blog/private-acme-server/)-->
 
 	# step ca provisioner add acme --type ACME
@@ -72,9 +77,12 @@ Il faut démarrer le serveur de la CA (il doit rester actif pour la suite du TP)
 
 > La commande step-ca est bloquante, soit vous la mettez en arrière plan avec Ctrl+z puis `bg`, soit vous ouvrez ensuite un autre terminal. Ne la lancez pas avec un &, elle doit en effet demander au lancement le mot de passe de la clé privée, ce qu'elle ne pourrait pas faire lancée avec un &.
 
-Rendez enfin le certificat racine `root.crt` accessible au téléchargement, en l'extrayant grâce à la commande suivante puis en le copiant (avec les bons droits) vers `/var/www/html` (il sera ainsi accessible depuis toutes les autres machines par l'URL `http://www.mica.milxc/root.crt`).
+Vous aurez besoin du certificat public de la racine par la suite. Le plus simple est de le diffuser par le site web de la CA comme suit. Extrayez-le grâce à la commande suivante :
 
 	# step ca root root.crt         <- ceci extrait le certificat racine vers le fichier root.crt
+
+Puis copiez-le vers `/var/www/html` (avec les droits permettant sa lecture par le serveur web, donc `chmod 644 /var/www/html/root.crt`). Il sera ainsi accessible depuis toutes les autres machines par l'URL `http://www.mica.milxc/root.crt`.
+
 
 
 > Si, après avoir affiché à l'écran un document chiffré (par exemple avec la commande `cat`), votre terminal affiche de mauvais caractères, utilisez la combinaison de touches `Ctrl+v, Ctrl+o` pour retrouver un affichage fonctionnel (ou tapez `reset`).
@@ -101,7 +109,7 @@ Certification du serveur target-dmz
 
 Sur l'AS target, vous disposez du serveur target-dmz sur lequel il faut déployer du matériel cryptographique pour faire du HTTPS. Vous devrez notamment :
 
-* Générer une paire de clés et obtenir le certificat correspondant depuis la CA MICA (les clés arrivent dans `/etc/letsencrypt/live/www.target.milxc/`) :
+* Générer une paire de clés et obtenir le certificat correspondant depuis la CA MICA, les clés arrivent dans `/etc/letsencrypt/live/www.target.milxc/` (les erreurs de certbot de type "InsecureRequestWarning" peuvent être ignorées, il faut par contre vérifier que son message final confirme bien la création des clés attendues) :
 
 		# service apache2 stop    <- on libère le port 80 nécessaire à certbot
 		# certbot certonly -n --standalone -d www.target.milxc \
@@ -109,7 +117,7 @@ Sur l'AS target, vous disposez du serveur target-dmz sur lequel il faut déploye
 		# service apache2 start
 
 * Configurer le matériel cryptographique de ce nouveau site dans le fichier `/etc/apache2/sites-enabled/default-ssl.conf` (vous devrez utiliser la chaîne complète de certificats depuis la racine, c'est-à-dire `fullchain.pem`, et la clé `privkey.pem`).
-* Vous devez redémarrer le serveur apache2 après vos modifications : `systemctl restart apache2`
+* Vous devez redémarrer le serveur apache2 après vos modifications : `service apache2 restart`
 
 Connectez-vous maintenant en HTTPS depuis `isp-a-home` (si vous aviez ajouté une exception de sécurité à un moment du TP, retirez-la avant). Tout doit se dérouler sans alerte, visualisez le certificat reçu. (Vous arrivez sur une page par défaut, le dokuwiki est accessible à l'URL `https://www.target.milxc/dokuwiki/`)
 
@@ -141,7 +149,13 @@ Bonus : Authentification mutuelle
 
 Mettez en place une authentification des clients par le serveur au moyen de certificats clients.
 
-Attention vous ne pourrez pas le faire avec ACME (les certificats clients ne correspondent pas à des noms d'hôtes et ne sont donc pas validables avec ACME). La partie de doc nécessaire est [ici](https://smallstep.com/onboarding/client-create-certificate)
+Déroulé général :
+* Côté serveur (donc target-dmz), vous devez limiter l'accès aux seuls clients détenteurs d'un certificat valide (directive [SSLCACertificateFile](https://httpd.apache.org/docs/2.4/fr/mod/mod_ssl.html#sslcacertificatefile) dans `/etc/apache2/sites-enabled/default-ssl.conf`, en obtenant et spécifiant donc le crt de la CA [pas le crt de ce serveur www.target.milxc !])
+* Validez depuis isp-a-home que l'accès TLS à `https://www.target.milxc` vous est bien refusé
+* Générez un certificat client sur la machine `mica-infra`. Il faut faire un `step-ca certificate "VotreNomÀCertifier" client.crt client.key` et utiliser le provisioner par défaut JWK (pas le ACME)
+* Packagez ensemble ce certificat et cette clé client avec `openssl pkcs12 -export -in client.crt -inkey client.key -out client.p12`
+* Le client (la machine isp-a-home) doit récupérer ce client.p12 et l'importer dans Firefox (Préférences -> Sécurité -> Certificats -> Mes certificats -> Importer)
+* Validez que l'accès est maintenant autorisé
 
 <!--
 Bonus : Révocation
