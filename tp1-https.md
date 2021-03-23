@@ -111,8 +111,7 @@ Sur l'AS target, vous disposez du serveur target-dmz sur lequel il faut déploye
 
 * Générer une paire de clés et obtenir le certificat correspondant depuis la CA MICA, les clés arrivent dans `/etc/letsencrypt/live/www.target.milxc/` (les erreurs de certbot de type "InsecureRequestWarning" peuvent être ignorées, il faut par contre vérifier que son message final confirme bien la création des clés attendues). Durant cette étape, le serveur MICA va transmettre à certbot des défis (sous forme de chaîne aléatoire) puis va venir les requêter via le nom d'hôte demandé dans le certificat. Si cette requête fonctionne, cela montre que le client certbot est bien situé sur le serveur pour lequel il demande un certificat :
 
-		# certbot certonly -n --apache -d www.target.milxc \
-			--server https://www.mica.milxc/acme/acme/directory
+		# certbot certonly -n --apache -d www.target.milxc --server https://www.mica.milxc/acme/acme/directory
 
 * Configurer le matériel cryptographique de ce nouveau site dans le fichier `/etc/apache2/sites-enabled/default-ssl.conf` (vous devrez utiliser la chaîne complète de certificats depuis la racine, c'est-à-dire `fullchain.pem`, et la clé `privkey.pem`).
 * Vous devez redémarrer le serveur apache2 après vos modifications : `service apache2 restart`
