@@ -148,7 +148,9 @@ Bonus : Authentification mutuelle
 Mettez en place une authentification des clients par le serveur au moyen de certificats clients.
 
 Déroulé général :
-* Côté serveur (donc target-dmz), vous devez limiter l'accès aux seuls clients détenteurs d'un certificat valide (directive [SSLCACertificateFile](https://httpd.apache.org/docs/2.4/fr/mod/mod_ssl.html#sslcacertificatefile) dans `/etc/apache2/sites-enabled/default-ssl.conf`, en obtenant et spécifiant donc le crt de la CA [pas le crt de ce serveur www.target.milxc !])
+* Côté serveur (donc target-dmz), vous devez limiter l'accès aux seuls clients détenteurs d'un certificat valide. Dans `/etc/apache2/sites-enabled/default-ssl.conf` :
+	* Paramétrez la directive [SSLCACertificateFile](https://httpd.apache.org/docs/2.4/fr/mod/mod_ssl.html#sslcacertificatefile) en obtenant et spécifiant le crt de la CA (root.crt, pas le crt de ce serveur www.target.milxc !)
+	* Décommentez la directive [SSLVerifyClient require](https://httpd.apache.org/docs/2.4/fr/mod/mod_ssl.html#sslverifyclient) pour forcer l'authentification des clients
 * Validez depuis isp-a-home que l'accès TLS à `https://www.target.milxc` vous est bien refusé
 * Générez un certificat client sur la machine `mica-infra`. Il faut faire un `step-ca certificate "VotreNomÀCertifier" client.crt client.key` et utiliser le provisioner par défaut JWK (pas le ACME)
 * Packagez ensemble ce certificat et cette clé client avec `openssl pkcs12 -export -in client.crt -inkey client.key -out client.p12`
