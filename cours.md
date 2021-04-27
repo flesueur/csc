@@ -92,6 +92,8 @@ Cette partie ne contient pas de travail personnel (uniquement le CM3 et le TP1).
 * [Certificate Transparency: a bird's-eye view, _Emily M. Stark_](https://emilymstark.com/2020/07/20/certificate-transparency-a-birds-eye-view.html)
 * [The Security Impact of HTTPS Interception, _Zakir Durumeric et al._](https://jhalderm.com/pub/papers/interception-ndss17.pdf)
 * [Annotated Bibliography on Dual-Use Technologies, _Siena Anstis, Sharly Chan, Adam Senft, and Ron Deibert_](https://citizenlab.ca/2019/09/annotated-bibliography-dual-use-technologies-network-traffic-management-and-device-intrusion-for-targeted-monitoring/)
+* [SSL/TLS and PKI History](https://www.feistyduck.com/ssl-tls-and-pki-history/)
+
 
 
 Bibliographie
