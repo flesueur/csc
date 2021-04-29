@@ -74,8 +74,7 @@ Imaginez maintenant que l'une des autorités soit compromise (malveillante ou at
 1. <details><summary>Quel impact pour les clients reconnaissant cette autorité ?</summary>Ils accepteront potentiellement de mauvais certificats (puisqu'ils auront une signature valide pour le site demandé)</details>
 2. <details><summary>Quel impact pour un site dont le certificat est émis par une autre autorité ?</summary>Il a perdu aussi, puisque ses usagers, qui reconnaissent cette CA compromise, accepteront potentiellement une autre clé lorsqu'ils tenteront de s'y connecter, il n'a pas la main sur ce que croiront ses usagers</details>
 
-
-
+<!-- DNS CAA https://fr.wikipedia.org/wiki/DNS_Certification_Authority_Authorization -->
 
 
 
