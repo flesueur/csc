@@ -77,6 +77,7 @@ Vous devez détailler chacune des différentes formes, avec une attention partic
 
 Ouvertures (facultatives) :
 
+* [Experiences Deploying Multi-Vantage-Point Domain Validation at Let's Encrypt, _Henry Birge-Lee, Liang Wang, Daniel McCarney, Roland Shoemaker, Jennifer Rexford and Prateek Mittal_](https://www.usenix.org/system/files/sec21fall-birge-lee.pdf)
 * [SSL And The Future Of Authenticity, _Moxie Marlinspike (aka Mr. Signal)_](https://moxie.org/blog/ssl-and-the-future-of-authenticity/), ainsi que la [vidéo associée](https://media.defcon.org/DEF%20CON%2019/DEF%20CON%2019%20video%20and%20slides/DEF%20CON%2019%20Hacking%20Conference%20Presentation%20By%20-%20Moxie%20Marlinspike%20-%20SSL%20And%20The%20Future%20Of%20Authenticity%20-%20Video%20and%20Slides.m4v)
 * [Quantifying Untrusted Symantec Certificates, _Arkadiy Tetelman_](https://arkadiyt.com/2018/02/04/quantifying-untrusted-symantec-certificates/)
 
